@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.Date;
 
 @MappedSuperclass
 @NoArgsConstructor
@@ -29,7 +30,7 @@ public abstract class Person {
 
     @DateTimeFormat
     @NotEmpty
-    private String dateOfBirth;
+    private Date dateOfBirth;
 
     @NotEmpty
     private long phoneNum;

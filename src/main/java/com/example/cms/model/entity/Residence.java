@@ -23,6 +23,6 @@ public class Residence {
     @NotEmpty
     private String name;
 
-    @OneToMany (mappedBy = "residence")
-    private ArrayList<Room> rooms;
+    //@OneToMany (mappedBy = "residence")
+    //private ArrayList<Room> rooms;
 }
