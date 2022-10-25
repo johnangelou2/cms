@@ -25,28 +25,22 @@ public abstract class Person {
     private String fullName;
 
     //M = man W = woman, N = Non Binary / Choose not to say
-    @NotEmpty
     private char gender;
 
     @DateTimeFormat
-    @NotEmpty
     private Date dateOfBirth;
 
-    @NotEmpty
     private long phoneNum;
 
     @Email
-    @NotEmpty
     private String email;
 
     //Emergancy Contact Attributes
-    @NotEmpty
+
     private long emgPhoneNum;
 
-    @NotEmpty
     private String emgFullName;
 
-    @Nullable
     private String emgRelationship;
 
 }

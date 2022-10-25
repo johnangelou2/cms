@@ -14,7 +14,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Table(name = "admins")
-public class Admin {
+public class Admin extends Person {
 
     private String role;
 
