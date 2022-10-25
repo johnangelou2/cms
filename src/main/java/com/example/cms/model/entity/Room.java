@@ -6,23 +6,25 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
 
 @Entity
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "residences")
-public class Residence {
-    @Id
-    private String address;
+@Table(name = "rooms")
+public class Room {
 
     @NotEmpty
-    private String name;
+    private String residence;
 
-    @OneToMany (mappedBy = "residence")
-    private ArrayList<Room> rooms;
+    @Id
+    private int roomNum;
+
+    @NotEmpty
+    private String roomType;
+
+    private int capacity;
+
 }
