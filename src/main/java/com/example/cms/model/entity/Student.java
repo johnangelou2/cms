@@ -30,6 +30,9 @@ public class Student extends Person {
     @DateTimeFormat
     private String stayStart;
 
+    @ManyToOne
+    @JoinColumn(name = "roomNum")
+    private Room room;
 
 
 }

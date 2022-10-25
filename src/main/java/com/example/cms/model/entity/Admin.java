@@ -5,8 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -26,4 +25,9 @@ public class Admin extends Person {
 
     //1 2 3 or 4 level
     private int privilegeLevel;
+
+    @OneToOne
+    @JoinColumn(name = "name")
+    private Residence residence;
+
 }

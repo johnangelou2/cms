@@ -17,7 +17,7 @@ import javax.validation.constraints.NotEmpty;
 public class Room {
 
     @NotEmpty
-    private String residence;
+    private String residenceName;
 
     @Id
     private int roomNum;
