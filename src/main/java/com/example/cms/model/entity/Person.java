@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.Date;
 
 @MappedSuperclass
 @NoArgsConstructor
@@ -24,28 +25,23 @@ public abstract class Person {
     private String fullName;
 
     //M = man W = woman, N = Non Binary / Choose not to say
-    @NotEmpty
     private char gender;
 
     @DateTimeFormat
-    @NotEmpty
-    private String dateOfBirth;
+    private Date dateOfBirth;
 
-    @NotEmpty
     private long phoneNum;
 
     @Email
-    @NotEmpty
     private String email;
 
     //Emergancy Contact Attributes
-    @NotEmpty
-    private long emgPhoneNum;
-
-    @NotEmpty
-    private String emgFullName;
 
     @Nullable
+    private long emgPhoneNum;
+
+    private String emgFullName;
+
     private String emgRelationship;
 
 }
