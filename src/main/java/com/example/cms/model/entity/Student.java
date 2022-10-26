@@ -34,5 +34,7 @@ public class Student extends Person {
     @JoinColumn(name = "roomNum")
     private Room room;
 
+    
+
 
 }

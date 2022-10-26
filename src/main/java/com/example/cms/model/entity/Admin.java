@@ -6,7 +6,9 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -29,5 +31,9 @@ public class Admin extends Person {
     @OneToOne
     @JoinColumn(name = "name")
     private Residence residence;
+
+    @OneToMany
+    @JoinColumn(name = "id")
+    private List<Report> reports = new ArrayList<>();
 
 }

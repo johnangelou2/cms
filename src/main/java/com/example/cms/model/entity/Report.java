@@ -6,9 +6,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.sql.Time;
 import java.util.Date;
@@ -36,4 +34,9 @@ public class Report {
 
     @NotEmpty
     private String status;
+
+    @OneToMany
+    @JoinColumn(name = "fullName")
+    private Admin author;
+
 }
