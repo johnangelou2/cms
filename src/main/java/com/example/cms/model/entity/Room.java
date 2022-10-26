@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
@@ -16,8 +14,9 @@ import javax.validation.constraints.NotEmpty;
 @Table(name = "rooms")
 public class Room {
 
-    @NotEmpty
-    private String residenceName;
+    @ManyToOne
+    @JoinColumn(name = "name")
+    private Residence residenceName;
 
     @Id
     private int roomNum;
