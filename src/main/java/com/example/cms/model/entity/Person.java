@@ -6,8 +6,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
 
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
@@ -33,6 +32,16 @@ public abstract class Person {
     private long phoneNum;
 
     private String password;
+
+    @OneToOne
+    @JoinColumn(name = "name")
+    @Nullable
+    private Residence residence;
+
+    @ManyToOne
+    @JoinColumn(name = "roomNum")
+    @Nullable
+    private Room room;
 
     @Email
     private String email;

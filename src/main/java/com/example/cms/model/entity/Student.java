@@ -31,10 +31,7 @@ public class Student extends Person {
     @DateTimeFormat
     private String stayEnd;
 
-    @ManyToOne
-    @JoinColumn(name = "roomNum")
-    @Nullable
-    private Room room;
+
 
     
 

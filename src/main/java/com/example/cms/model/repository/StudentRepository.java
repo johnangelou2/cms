@@ -1,5 +1,6 @@
 package com.example.cms.model.repository;
 
+import com.example.cms.model.entity.Residence;
 import com.example.cms.model.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,11 +12,17 @@ import java.util.List;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
+    //Find Students through name
     @Query(value = "select * from students s " +
-            "where lower(s.firstName) like lower(concat('%', :searchTerm, '%')) " +
-            "or lower(s.lastName) like lower(concat('%', :searchTerm, '%'))", nativeQuery = true)
+            "where lower(s.fullName) like lower(concat('%', :searchTerm, '%')) ", nativeQuery = true)
     List<Student> search(@Param("searchTerm") String searchTerm);
 
+    //Find Students through Residence
+    @Query(value = "select * from students s " +
+            "where residence.name = residences.name", nativeQuery = true)
+    List<Student> searchByRes(@Param("residence") Residence residence);
+
+    /**
     @Query(value = "select * from students s " +
             "where lower(s.initials) like lower(concat('%', :searchIni, '%'))", nativeQuery = true)
     List<Student> searchIn(@Param("searchIni") String searchIni);
@@ -24,4 +31,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
             "id IN (SELECT s.id FROM STUDENTS s INNER JOIN MARKS m ON s.id = m.studentID " +
             "group by s.id HAVING AVG(Mark) >= 90)", nativeQuery = true)
     List<Student> findTopStudents();
+     **/
 }

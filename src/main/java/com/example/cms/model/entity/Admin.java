@@ -36,4 +36,8 @@ public class Admin extends Person {
     @JoinColumn(name = "id")
     private List<Report> reports = new ArrayList<>();
 
+    @OneToMany
+    @JoinColumn(name = "id")
+    private List<Student> students = new ArrayList<>();
+
 }
