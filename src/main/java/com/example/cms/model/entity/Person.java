@@ -32,6 +32,8 @@ public abstract class Person {
 
     private long phoneNum;
 
+    private String password;
+
     @Email
     private String email;
 
