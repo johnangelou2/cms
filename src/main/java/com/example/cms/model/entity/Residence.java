@@ -23,6 +23,7 @@ public class Residence {
     @NotEmpty
     private String name;
 
+    //Honestly I dont think this attribute needs to exist but for now its here
     @OneToMany (mappedBy = "residenceName")
     @Nullable
     private List<Room> rooms = new ArrayList<>();
