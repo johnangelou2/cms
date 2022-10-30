@@ -1,7 +1,7 @@
 package com.example.cms.controller;
 
 import com.example.cms.controller.exceptions.RoomNotFoundException;
-import com.example.cms.controller.exceptions.StudentNotFoundException;
+import com.example.cms.model.entity.Residence;
 import com.example.cms.model.entity.Room;
 import com.example.cms.model.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +37,19 @@ public class RoomController {
     @GetMapping("/rooms/{id}")
     Room retrieveRoom(@PathVariable("id") Long roomID) {
         return repository.findById(roomID)
-                .orElseThrow(() -> new StudentNotFoundException(roomID));
+                .orElseThrow(() -> new RoomNotFoundException(roomID));
+    }
+
+    @PutMapping("/rooms/{id}")
+    Room updateRooms(@RequestBody Room newRoom, @PathVariable("id") Long roomId) {
+        return repository.findById(roomId)
+                .map(room -> {
+                    room.setRoomType(newRoom.getRoomType());
+                    return repository.save(room);
+                })
+                .orElseGet(() -> {
+                    newRoom.setRoomNum(roomId);
+                    return repository.save(newRoom);
+                });
     }
 }
