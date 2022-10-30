@@ -33,14 +33,11 @@ public class StudentController {
         return repository.findById(studentId)
                 .orElseThrow(() -> new StudentNotFoundException(studentId));
     }
-
-    /**
     @PutMapping("/students/{id}")
     Student updateStudent(@RequestBody Student newStudent, @PathVariable("id") Long studentId) {
         return repository.findById(studentId)
                 .map(student -> {
-                    student.setFirstName(newStudent.getFirstName());
-                    student.setLastName(newStudent.getLastName());
+                    student.setFullName(newStudent.getFullName());
                     return repository.save(student);
                 })
                 .orElseGet(() -> {
@@ -48,7 +45,6 @@ public class StudentController {
                     return repository.save(newStudent);
                 });
     }
-    **/
     @DeleteMapping("/students/{id}")
     void deleteStudent(@PathVariable("id") Long studentId) {
         repository.deleteById(studentId);
