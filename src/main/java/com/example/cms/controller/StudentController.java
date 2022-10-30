@@ -34,6 +34,7 @@ public class StudentController {
                 .orElseThrow(() -> new StudentNotFoundException(studentId));
     }
 
+    /**
     @PutMapping("/students/{id}")
     Student updateStudent(@RequestBody Student newStudent, @PathVariable("id") Long studentId) {
         return repository.findById(studentId)
@@ -47,7 +48,7 @@ public class StudentController {
                     return repository.save(newStudent);
                 });
     }
-
+    **/
     @DeleteMapping("/students/{id}")
     void deleteStudent(@PathVariable("id") Long studentId) {
         repository.deleteById(studentId);

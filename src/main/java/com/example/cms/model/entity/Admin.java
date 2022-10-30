@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -34,6 +35,11 @@ public class Admin extends Person {
 
     @OneToMany
     @JoinColumn(name = "id")
+    @Nullable
     private List<Report> reports = new ArrayList<>();
+
+    @OneToMany
+    @JoinColumn(name = "id")
+    private List<Student> students = new ArrayList<>();
 
 }

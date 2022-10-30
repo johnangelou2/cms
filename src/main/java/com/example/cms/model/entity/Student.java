@@ -11,6 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
+import javax.validation.constraints.Null;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,14 +26,12 @@ public class Student extends Person {
     private String probationStatus;
 
     @DateTimeFormat
-    private String stayEnd;
-
-    @DateTimeFormat
     private String stayStart;
 
-    @ManyToOne
-    @JoinColumn(name = "roomNum")
-    private Room room;
+    @DateTimeFormat
+    private String stayEnd;
+
+
 
     
 

@@ -35,8 +35,13 @@ public class Report {
     @NotEmpty
     private String status;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "fullName")
     private Admin author;
+
+    //Assumption, infractions (thus reports) can only happen in one room, hence ManyToOne
+    @ManyToOne
+    @JoinColumn(name="roomNum")
+    private Room location;
 
 }
