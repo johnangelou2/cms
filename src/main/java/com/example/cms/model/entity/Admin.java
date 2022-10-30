@@ -41,5 +41,4 @@ public class Admin extends Person {
     private List<Report> reports = new ArrayList<>();
 
 
-
 }
