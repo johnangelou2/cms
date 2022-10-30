@@ -1,6 +1,5 @@
 package com.example.cms.controller;
 
-//import com.example.cms.controller.exceptions.AdminNotFoundException;
 import com.example.cms.controller.exceptions.AdminNotFoundException;
 import com.example.cms.model.entity.Admin;
 import com.example.cms.model.repository.AdminRepository;
@@ -33,6 +32,18 @@ public class AdminController {
     Admin retrieveAdmin(@PathVariable("id") Long adminId) {
         return repository.findById(adminId)
                 .orElseThrow(() -> new AdminNotFoundException(adminId));
+    }
+    @PutMapping("/admins/{id}")
+    Admin updateAdmin(@RequestBody Admin newAdmin, @PathVariable("id") Long adminId) {
+        return repository.findById(adminId)
+                .map(admin -> {
+                    admin.setFullName(newAdmin.getFullName());
+                    return repository.save(admin);
+                })
+                .orElseGet(() -> {
+                    newAdmin.setId(adminId);
+                    return repository.save(newAdmin);
+                });
     }
     @DeleteMapping("/admins/{id}")
     void deleteAdmin(@PathVariable("id") Long adminId) {
