@@ -33,10 +33,9 @@ public class RoomController {
         return repository.save(newRoom);
     }
 
-    /**
-    @GetMapping("/students/{id}")
+    @GetMapping("/rooms/{id}")
     Room retrieveRoom(@PathVariable("id") Long roomID) {
         return repository.findById(roomID)
                 .orElseThrow(() -> new StudentNotFoundException(roomID));
-    }**/
+    }
 }
