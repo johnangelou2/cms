@@ -29,6 +29,7 @@ public class Admin extends Person {
     //1 2 3 or 4 level
     private int privilegeLevel;
 
+    /**
     @OneToOne
     @JoinColumn(name = "name")
     private Residence residence;
@@ -38,8 +39,9 @@ public class Admin extends Person {
     @Nullable
     private List<Report> reports = new ArrayList<>();
 
+
     @OneToMany
     @JoinColumn(name = "id")
-    private List<Student> students = new ArrayList<>();
+    private List<Student> students = new ArrayList<>(); **/
 
 }

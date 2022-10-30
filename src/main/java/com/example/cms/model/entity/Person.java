@@ -31,8 +31,10 @@ public abstract class Person {
 
     private long phoneNum;
 
+    /**
     @Nullable
-    private String password;
+    private String password; **/
+
 
     @OneToOne
     @JoinColumn(name = "name")
@@ -48,6 +50,7 @@ public abstract class Person {
     private String email;
 
     //Emergancy Contact Attributes
+
 
     @Nullable
     private long emgPhoneNum;
