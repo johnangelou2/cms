@@ -19,7 +19,7 @@ public class Room {
     private Residence residenceName;
 
     @Id
-    private int roomNum;
+    private long roomNum;
 
     @NotEmpty
     private String roomType;

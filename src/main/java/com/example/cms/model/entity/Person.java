@@ -9,6 +9,7 @@ import org.springframework.lang.Nullable;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @MappedSuperclass
@@ -17,6 +18,8 @@ import java.util.Date;
 @Setter
 public abstract class Person {
 
+    @NotNull
+    @Column(unique = true)
     @Id
     private long id;
 
