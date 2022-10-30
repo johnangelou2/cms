@@ -31,6 +31,7 @@ public abstract class Person {
 
     private long phoneNum;
 
+    @Nullable
     private String password;
 
     @OneToOne
