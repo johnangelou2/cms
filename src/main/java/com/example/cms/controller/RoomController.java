@@ -1,6 +1,6 @@
 package com.example.cms.controller;
 
-import com.example.cms.controller.exceptions.StudentNotFoundException;
+import com.example.cms.controller.exceptions.RoomNotFoundException;
 import com.example.cms.model.entity.Room;
 import com.example.cms.model.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
