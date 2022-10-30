@@ -45,7 +45,6 @@ public class AdminController {
                     return repository.save(newAdmin);
                 });
     }
-
     
     @DeleteMapping("/admins/{id}")
     void deleteAdmin(@PathVariable("id") Long adminId) {

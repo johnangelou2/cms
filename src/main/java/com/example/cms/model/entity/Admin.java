@@ -40,6 +40,4 @@ public class Admin extends Person {
     @Nullable
     private List<Report> reports = new ArrayList<>();
 
-
-
 }
