@@ -1,13 +1,12 @@
 package com.example.cms.controller;
 
-//import com.example.cms.controller.exceptions.RoomNotFoundException;
+//import com.example.cms.controller.exceptions.AdminNotFoundException;
 import com.example.cms.model.entity.Admin;
-import com.example.cms.model.entity.Student;
 import com.example.cms.model.repository.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -19,18 +18,18 @@ public class AdminController {
         this.repository = repository;
     }
    /* @GetMapping("/admins")
-    List<Student> retrieveAllAdmins() {
+    List<Report> retrieveAllAdmins() {
         return repository.findAll();
-    }
+    }*/
 
     @PostMapping("/admins")
-    Student createAdmin(@RequestBody Admin newAdmin) {
+    Admin createAdmin(@RequestBody Admin newAdmin) {
         return repository.save(newAdmin);
-    } */
+    }
 
     @GetMapping("/admins/{id}")
-    Student retrieveAdmin(@PathVariable("id") Long adminId) {
-        return repository.findById(adminId)
+    Optional<Admin> retrieveAdmin(@PathVariable("id") Long adminId) {
+        return repository.findById(adminId);
                // .orElseThrow(() -> new AdminNotFoundException(adminId));
     }
     @DeleteMapping("/admins/{id}")
@@ -39,7 +38,7 @@ public class AdminController {
     }
 
    /* @GetMapping("/admins/search/{searchstring}")
-    List<Student> searchStudent(@PathVariable("searchstring") String searchString) {
+    List<Admin> searchAdmin(@PathVariable("searchstring") String searchString) {
         return repository.search(searchString);
     } */
 }
