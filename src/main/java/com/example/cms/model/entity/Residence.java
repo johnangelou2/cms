@@ -19,7 +19,7 @@ import java.util.List;
 public class Residence {
 
     @Id
-    private Long id;
+    private long id;
 
     @NotEmpty
     private String address;
@@ -28,7 +28,7 @@ public class Residence {
     private String name;
 
     //Honestly I dont think this attribute needs to exist but for now its here
-    @OneToMany (mappedBy = "residenceName")
+    @OneToMany (mappedBy = "residence")
     @Nullable
     private List<Room> rooms = new ArrayList<>();
 
