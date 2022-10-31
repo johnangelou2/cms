@@ -15,27 +15,41 @@
 
 <div class = "Task Bar">
     <button class="tablink" onclick="openPage('StudentLogin', this, 'red')" id="defaultOpen">Student Login</button>
-    <button class="tablink" onclick="openPage('AdminLogin', this, 'green')">Admin Login</button>
+    <button class="tablink" onclick="openPage('AdminLogin', this, 'red')">Admin Login</button>
     
     <div id="StudentLogin" class="tabcontent">
-      <h1>Student Login</h1>
-      <p>Test this is for Student Login</p>
+      <h1>Student Login Information</h1>
+      <p>Input Student Login Details Below:</p>
+
+      <div class = "Student Login Form">
+        <form action="/student_login.php">
+            <label for="studentEmail">Email:</label><br>
+            <input type="text" id="studentEmail" name="studentEmail"><br>
+            <label for="studentPassword">Password:</label><br>
+            <input type="text" id="studentPassword" name="studentPassword"><br><br>
+            <input type="submit" value="Submit">
+          </form> 
+
+      </div>    
+    
+    </div>
     </div>
     
     <div id="AdminLogin" class="tabcontent">
-      <h1>Admin Login</h1>
-      <p>Admin Test Login</p>
+        <h1>Admin Login Information</h1>
+        <p>Input Admin Login Details Below:</p>
+  
+        <div class = "Admin Login Form">
+          <form action="/admin_login.php">
+              <label for="adminEmail">Email:</label><br>
+              <input type="text" id="adminEmail" name="adminEmail"><br>
+              <label for="adminPassword">Password:</label><br>
+              <input type="text" id="adminPassword" name="adminPassword"><br><br>
+              <input type="submit" value="Submit">
+            </form> 
+  
+        </div>    
     </div>
-</div>
-
-<div class = "Login Form">
-
-
-</div>
-
-<div class = "Login Button">
-
-
 </div>
 
 </body>
