@@ -3,7 +3,7 @@
     <head>
         <Title>Login Page</Title>
         <link rel="stylesheet" href="loginPage.css">
-        <script type="text/javascript" src="loginPage.js"></script>  
+        <script src="loginPage.js"></script>  
 
     </head>
 <body>
@@ -14,8 +14,8 @@
 </div>
 
 <div class = "Task Bar">
-    <button class="tablink" onclick="openPage('StudentLogin', this, 'red')" id="defaultOpen">Student Login</button>
-    <button class="tablink" onclick="openPage('AdminLogin', this, 'red')">Admin Login</button>
+    <button class="tablink" onclick="openPage('StudentLogin', this, 'grey')" id="defaultClick">Student Login</button>
+    <button class="tablink" onclick="openPage('AdminLogin', this, 'grey')">Admin Login</button>
     
     <div id="StudentLogin" class="tabcontent">
       <h1>Student Login Information</h1>
@@ -51,6 +51,10 @@
         </div>    
     </div>
 </div>
+
+<script>
+document.getElementById("defaultClick").click();
+</script>
 
 </body>
 </html>
