@@ -43,53 +43,63 @@
         <div class="row center">
           <a href="http://q.utoronto.ca" id="new-student" class="btn-large waves-effect waves-light green">New Student</a>
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
   
       </div>
     </div>
     
     <div class="container">
-      <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <i class="material-icons prefix">search</i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">Search Table</label>
-            </div>
-            <div class="input-field col s6">
-              <a class="waves-effect waves-light btn">Submit</a>
-            </div>
-          </div>
-        </form>
-      </div>
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
       <div class="section">
-        <table class="highlight">
-            <thead>
-              <tr>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Room Number</th>
-                  <th>Stay Status</th>
-                  <th>Probation Status</th>
-                  <th>Edit/Delete</th>
-              </tr>
-            </thead>
-              <script>
-                var code ='';
-                for (let i = 0; i<10; i++){
-                  code = code + '<tr>';
-                  for (let j = 0; j<6; i++){
-                    code = code +'<td> a </td>';
-                  }
-                  code = code + '</tr>';
-                }
-                document.getElementById('rows').innerHTML = code;
-              </script>
-            <tbody id = "rows"></tbody>
-              
-          </table>
-    
+        <table id="myTable" class="highlight centered" >
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Residence Status</th>
+              <th>Probation Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <script>
+          const items = [
+            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
+          ];
+            function loadTableData(items) {
+            const table = document.getElementById("rows");
+            items.forEach( item => {
+              let row = table.insertRow();
+              let fn = row.insertCell(0);
+              fn.innerHTML = item.fn;
+              let ln = row.insertCell(1);
+              ln.innerHTML = item.ln;
+              let rs = row.insertCell(2);
+              rs.innerHTML = item.rs;
+              let ps = row.insertCell(3);
+              ps.innerHTML = item.ps;
+              let ac = row.insertCell(4);
+              ac.innerHTML = item.ac;
+            });
+          }
+          loadTableData(items);
+          loadTableData([]);
+        </script>
       </div>
       <br><br>
     </div>
