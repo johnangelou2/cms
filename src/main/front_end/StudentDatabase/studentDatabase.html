@@ -37,25 +37,26 @@
       <div class="container">
         <br><br>
         <h1 class="header center green-text">Student Dashboard</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">View and edit student information</h5>
-        </div>
-        <div class="row center">
-          <a href="http://q.utoronto.ca" id="new-student" class="btn-large waves-effect waves-light green">New Student</a>
-        </div>
-        <br><br><br><br><br><br><br>
-  
+        <br><br>
       </div>
     </div>
     
     <div class="container">
-      <form>
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
+      <div class="row">
+        <div class="col s1">
+          <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">search</i></a>
         </div>
-      </form>
+        <form class="col s9">
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label for="search">Search Students</label>
+          </div>
+        </form>
+        <div class="col s2">
+          <a href="http://q.utoronto.ca" id="new-student" class="btn-large waves-effect waves-light green">New Student</a>
+        </div>
+      </div>
+      
       <div class="section">
         <table id="myTable" class="highlight centered" >
           <thead>
@@ -131,6 +132,18 @@
       </div>
     </footer>
   
+
+    <style>
+        body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+    </style>
   
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
