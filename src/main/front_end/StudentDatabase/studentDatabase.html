@@ -1,8 +1,10 @@
+  
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nodejs-mysql@0.1.3/index.min.js"></script>
           
   <!DOCTYPE html>
   <html lang="en">
@@ -41,13 +43,26 @@
         <div class="row center">
           <a href="http://q.utoronto.ca" id="new-student" class="btn-large waves-effect waves-light green">New Student</a>
         </div>
-        <br><br>
+        <br><br><br><br><br><br><br><br><br><br><br>
   
       </div>
     </div>
-  
-  
+    
     <div class="container">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">search</i>
+              <input id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">Search Table</label>
+            </div>
+            <div class="input-field col s6">
+              <a class="waves-effect waves-light btn">Submit</a>
+            </div>
+          </div>
+        </form>
+      </div>
       <div class="section">
         <table class="highlight">
             <thead>
@@ -60,33 +75,19 @@
                   <th>Edit/Delete</th>
               </tr>
             </thead>
-    
-            <tbody>
-              <tr>
-                  <td>Jeremie</td>
-                  <td>Collette</td>
-                  <td>45W341</td>
-                  <td>Active</td>
-                  <td>Good</td>
-                  <td> </td>
-              </tr>
-              <tr>
-                  <td>Minseok</td>
-                  <td>Song</td>
-                  <td>45W509</td>
-                  <td>Active</td>
-                  <td>1 Strike</td>
-                  <td> </td>
-              </tr>
-              <tr>
-                  <td>Mukund</td>
-                  <td>Hari</td>
-                  <td>WIL3091</td>
-                  <td>Expelled</td>
-                  <td>3 Strikes</td>
-                  <td> </td>
-              </tr>
-            </tbody>
+              <script>
+                var code ='';
+                for (let i = 0; i<10; i++){
+                  code = code + '<tr>';
+                  for (let j = 0; j<6; i++){
+                    code = code +'<td> a </td>';
+                  }
+                  code = code + '</tr>';
+                }
+                document.getElementById('rows').innerHTML = code;
+              </script>
+            <tbody id = "rows"></tbody>
+              
           </table>
     
       </div>
