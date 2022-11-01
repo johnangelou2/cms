@@ -1,0 +1,25 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.top-header {
+  font-size: 30px;
+  background-color: #a3999965;
+}
+
+.message {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 25px;
+  font-style: italic;
+}
+
+.University-College {
+  font-size: 20px;
+}
+
+.New-College {
+  font-size: 20px;
+}
