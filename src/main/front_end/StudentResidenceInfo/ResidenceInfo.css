@@ -1,0 +1,33 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#main-UC {
+  text-align: center;
+  font-size: 55px;
+}
+
+.top-header {
+  font-size: 30px;
+  background-color: #a3999965;
+}
+
+.message {
+  font-size: 25px;
+}
+
+#UC1,
+#UC2,
+#UC3 {
+  margin: auto;
+  display: block;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}

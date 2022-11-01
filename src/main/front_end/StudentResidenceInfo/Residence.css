@@ -14,6 +14,7 @@
 h2 {
   font-size: 25px;
   font-style: italic;
+  text-align: center;
 }
 
 .University-College {
@@ -23,3 +24,26 @@ h2 {
 .New-College {
   font-size: 20px;
 }
+
+.Trinity-College {
+  font-size: 20px;
+}
+
+#UC,
+#TC,
+#NC {
+  margin: auto;
+  display: block;
+}
+
+h3 {
+  font-style: italic;
+}
+
+div {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+}
+
+#a1 m;
