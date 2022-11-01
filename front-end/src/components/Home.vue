@@ -13,7 +13,7 @@
       <!-- Text slides with image -->
       <b-carousel-slide
         caption="First Slide"
-        img-src="https://picsum.photos/1024/480/?image=58"
+        img-src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Utoronto_coa.svg/1200px-Utoronto_coa.svg.png"
       ></b-carousel-slide>
 
       <!-- Slides with custom text -->
@@ -24,6 +24,10 @@
       <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=52"></b-carousel-slide>
 
     </b-carousel>
+
+    <div>
+  <b-button href="Professors.vue#/professors">Button</b-button>
+  </div>
   </div>
 </template>
 
