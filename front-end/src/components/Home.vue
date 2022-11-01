@@ -13,7 +13,7 @@
       <!-- Text slides with image -->
       <b-carousel-slide
         caption="First Slide"
-        img-src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Utoronto_coa.svg/1200px-Utoronto_coa.svg.png"
+        img-src="https://picsum.photos/1024/480/?image=53"
       ></b-carousel-slide>
 
       <!-- Slides with custom text -->
