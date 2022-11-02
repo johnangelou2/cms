@@ -68,7 +68,7 @@
 import axios from "axios";
 
 export default {
-  name: "HelloWorld",
+  name: "Students",
   data() {
     return {
       students: null,

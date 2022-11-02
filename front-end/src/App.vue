@@ -10,6 +10,9 @@
 
 <script>
 import StudentLogin from './components/StudentLogin.vue'
+import Professors from './components/Professors.vue'
+import AdminLogin from './components/AdminLogin.vue'
+import Students from './components/Students.vue'
 
 export default {
   name: 'App',
