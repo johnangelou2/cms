@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
+import StudentLogin from '@/components/StudentLogin'
+import AdminLogin from '@/components/AdminLogin'
 import Students from '@/components/Students'
 import Professors from '@/components/Professors'
 
@@ -11,8 +12,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      name: 'StudentLogin',
+      component: StudentLogin
+    },
+    {
+      path: '/',
+      name: 'AdminLogin',
+      component: AdminLogin
     },
     {
       path: '/students',
