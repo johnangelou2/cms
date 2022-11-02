@@ -1,11 +1,20 @@
 <template>
+  <div id="app">
+    <ul>
+        <li>
+          <student-login></student-login>
+        </li>
+    </ul>
+  </div>
+
+    <!--
     <div id="app">
       <NavBar :name="$route.name"/>
       <main>
         <router-view/>
       </main>
     </div>
-    
+  -->
     </template>
 
 <script>
