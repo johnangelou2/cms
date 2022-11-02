@@ -5,11 +5,19 @@
         <router-view/>
       </main>
     </div>
+    
     </template>
 
 <script>
+import StudentLogin from './components/StudentLogin.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+
+  components: {
+    StudentLogin
+  }
+
 }
 </script>
 
