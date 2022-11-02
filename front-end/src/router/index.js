@@ -11,12 +11,12 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/studentlogin',
       name: 'StudentLogin',
       component: StudentLogin
     },
     {
-      path: '/',
+      path: '/adminlogin',
       name: 'AdminLogin',
       component: AdminLogin
     },

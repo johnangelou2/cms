@@ -1,10 +1,10 @@
 <template>
-  <b-navbar toggleable type="dark" variant="dark">
+    <b-navbar toggleable type="dark" variant="dark">
     <b-navbar-brand href="#">RMS</b-navbar-brand>
 
     <b-navbar-nav class="ml-auto">
       <div>
-        <b-link href="AdminLogin.vue">Link</b-link>
+        <b-link to="/adminlogin">Admin Login</b-link>
       </div>
     </b-navbar-nav>
   </b-navbar>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'StudentLogin'
 }
 </script>
 
@@ -22,7 +22,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 20px;
+  margin-top: 0px;
   
 }
 </style>
