@@ -1,0 +1,55 @@
+<template>
+<div class = "Header Page">
+<h1>Residential Management Software</h1>
+</div>
+
+<div class = "Task Bar">
+    <button class="tablink" onclick="openPage('StudentLogin', this, 'grey')" id="defaultClick">Student Login</button>
+    <button class="tablink" onclick="openPage('AdminLogin', this, 'grey')">Admin Login</button>
+    
+    <div id="StudentLogin" class="tabcontent">
+      <h1>Student Login Information</h1>
+      <p>Input Student Login Details Below:</p>
+
+      <div class = "Student Login Form">
+        <form action="/student_login.php">
+            <label for="studentEmail">Email:</label><br>
+            <input type="text" id="studentEmail" name="studentEmail"><br>
+            <label for="studentPassword">Password:</label><br>
+            <input type="text" id="studentPassword" name="studentPassword"><br><br>
+            <input type="submit" value="Submit">
+          </form> 
+
+      </div>    
+    
+    </div>
+    </div>
+    
+    <div id="AdminLogin" class="tabcontent">
+        <h1>Admin Login Information</h1>
+        <p>Input Admin Login Details Below:</p>
+  
+        <div class = "Admin Login Form">
+          <form action="/admin_login.php">
+              <label for="adminEmail">Email:</label><br>
+              <input type="text" id="adminEmail" name="adminEmail"><br>
+              <label for="adminPassword">Password:</label><br>
+              <input type="text" id="adminPassword" name="adminPassword"><br><br>
+              <input type="submit" value="Submit">
+            </form> 
+  
+        </div>    
+    </div>
+
+
+</template>
+
+<script>
+    document.getElementById("defaultClick").click();
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+</script>
+
+<style>
+
+
+</style>

@@ -43,7 +43,7 @@
     
     <div class="container">
       <div class="row">
-        <div class="col s1">
+        <div class="col s1 right-align ">
           <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">search</i></a>
         </div>
         <form class="col s9">
@@ -63,6 +63,7 @@
             <tr>
               <th>First Name</th>
               <th>Last Name</th>
+              <th>Room Number</th>
               <th>Residence Status</th>
               <th>Probation Status</th>
               <th>Actions</th>
@@ -72,15 +73,17 @@
         </table>
         <script>
           const items = [
-            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
-            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
-            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
-            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
-            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
-            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
-            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
-            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
-            { fn: "Jeremie", ln: "Collette", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
+            { fn: "Jeremie", ln: "Collette", rn: "45W341", rs: "active", ps: "good", ac: "edit" },
           ];
             function loadTableData(items) {
             const table = document.getElementById("rows");
@@ -90,11 +93,13 @@
               fn.innerHTML = item.fn;
               let ln = row.insertCell(1);
               ln.innerHTML = item.ln;
-              let rs = row.insertCell(2);
+              let rn = row.insertCell(2);
+              rn.innerHTML = item.rn;
+              let rs = row.insertCell(3);
               rs.innerHTML = item.rs;
-              let ps = row.insertCell(3);
+              let ps = row.insertCell(4);
               ps.innerHTML = item.ps;
-              let ac = row.insertCell(4);
+              let ac = row.insertCell(5);
               ac.innerHTML = item.ac;
             });
           }
