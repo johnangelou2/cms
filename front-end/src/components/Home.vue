@@ -1,4 +1,5 @@
 <template>
+  <!-- Compiled and minified JavaScript -->
   <div>
     <b-carousel
       id="carousel-1"
