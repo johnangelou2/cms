@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import StudentLogin from '@/components/StudentLogin'
 import AdminLogin from '@/components/AdminLogin'
 import Students from '@/components/Students'
-import Professors from '@/components/Professors'
+import Residences from '@/components/Residences'
 
 
 Vue.use(Router)
@@ -24,11 +24,6 @@ export default new Router({
       path: '/students',
       name: 'Students',
       component: Students
-    },
-    {
-      path: '/professors',
-      name: 'Professors',
-      component: Professors
     },
   ]
 })

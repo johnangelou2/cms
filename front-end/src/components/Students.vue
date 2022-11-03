@@ -27,19 +27,19 @@
           readonly
         ></b-form-input>
 
-        <label class="sr-only" for="input-first-name">First Name</label>
+        <label class="sr-only" for="input-date-of-birth">Date of Birth</label>
         <b-form-input
-          id="input-first-name"
-          v-model="form.first_name"
-          placeholder="First Name"
+          id="input-date-of-birth"
+          v-model="form.dateOfBirth"
+          placeholder="Date of Birth"
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-last-name">Last Name</label>
+        <label class="sr-only" for="input-phone-num">Phone Number</label>
         <b-form-input
-          id="input-last-name"
+          id="input-phone-num"
           v-model="form.last_name"
-          placeholder="Last Name"
+          placeholder="xxx-xxx-xxxx"
           required
         ></b-form-input>
 
@@ -74,15 +74,15 @@ export default {
       students: null,
       fields: [
         { key: "id", label: "Student ID", sortable: true },
-        { key: "lastName", label: "Last Name", sortable: true },
-        { key: "firstName", label: "First Name", sortable: true },
+        { key: "phoneNum", label: "Phone Number", sortable: true },
+        { key: "dateOfBirth", label: "Date of Birth", sortable: true },
         { key: "email", label: "Email", sortable: true, sortable: true },
         { key: "actions", label: "Actions" }
       ],
       form: {
         email: "",
-        first_name: "",
-        last_name: "",
+        dateOfBirth: "",
+        phoneNum: "",
         id: ""
       }
     };
@@ -99,14 +99,14 @@ export default {
     edit(item, index, button) {
       this.form.id = item.id;
       this.form.email = item.email;
-      this.form.first_name = item.firstName;
-      this.form.last_name = item.lastName;
+      this.form.dateOfBirth = item.dateOfBirth;
+      this.form.phoneNum = item.phoneNum;
     },
     resetEditModal() {
       this.form.id = "";
       this.form.email = "";
-      this.form.first_name = "";
-      this.form.last_name = "";
+      this.form.dateOfBirth = "";
+      this.form.phoneNum = "";
     },
     onSave(event) {
       var numId;
@@ -114,8 +114,8 @@ export default {
       axios
         .put("http://localhost:8085/students/" + numId, {
           id: numId,
-          firstName: this.form.first_name,
-          lastName: this.form.last_name,
+          dateOfBirth: this.form.dateOfBirth,
+          lastName: this.form.phoneNum,
           email: this.form.email
         })
         .then(() => this.init())
