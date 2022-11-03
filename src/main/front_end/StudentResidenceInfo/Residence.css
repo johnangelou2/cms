@@ -9,6 +9,7 @@
 
 .message {
   font-size: 25px;
+  border-bottom: 5px solid #1098ad;
 }
 
 h2 {
@@ -46,4 +47,10 @@ div {
   border-bottom: 5px solid #1098ad;
 }
 
-#a1 m;
+#a1 {
+  border-top: 5px solid #1098ad;
+}
+
+aside {
+  border-top: 5px solid #1098ad;
+}
