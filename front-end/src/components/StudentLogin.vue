@@ -7,7 +7,11 @@
         <b-link to="/adminlogin">Admin Login</b-link>
       </div>
     </b-navbar-nav>
+    <b-button href="/front-end/Old_Files/StudentDatabase/studentDatabase.html">Student Database</b-button>
+
   </b-navbar>
+
+    
 </template>
 
 <script>
