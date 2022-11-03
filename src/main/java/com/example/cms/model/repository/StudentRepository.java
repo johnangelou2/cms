@@ -22,6 +22,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
             "where residence.name = residences.name", nativeQuery = true)
     List<Student> searchByRes(@Param("residence") Residence residence);
 
+
     /**
     @Query(value = "select * from students s " +
             "where lower(s.initials) like lower(concat('%', :searchIni, '%'))", nativeQuery = true)

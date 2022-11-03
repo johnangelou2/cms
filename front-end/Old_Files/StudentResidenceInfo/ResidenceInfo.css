@@ -31,3 +31,22 @@
   flex: 33.33%;
   padding: 5px;
 }
+
+.topbarnav {
+  background-color: #6b6a6a4c;
+  overflow: hidden;
+}
+
+.topbarnav a {
+  float: left;
+  color: #1098ad;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: overline;
+  font-size: 17px;
+}
+
+.topbarnav a:hover {
+  background-color: #ddd;
+  color: #1098ad;
+}
