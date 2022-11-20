@@ -28,12 +28,13 @@ public class Residence {
     private String name;
 
     //Honestly I dont think this attribute needs to exist but for now its here
-    @OneToMany (mappedBy = "residence")
+    @OneToMany
+    @JoinColumn(name = "roomNum")
     @Nullable
     private List<Room> rooms = new ArrayList<>();
 
     @OneToMany
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "reportId")
     @Nullable
     private List<Report> reports = new ArrayList<>();
 

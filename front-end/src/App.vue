@@ -22,17 +22,12 @@
           >
             <b-nav vertical align="center">
               <b-nav-item
-                to="/student-login"
+                to="/"
                 exact
                 exact-active-class="exact-active"
-                >Home</b-nav-item
+                >Login Page</b-nav-item
               >
-              <b-nav-item
-                to="/admin-login"
-                exact
-                exact-active-class="exact-active"
-                >Admin Login</b-nav-item
-              >
+        
               <b-nav-item to="/students" exact exact-active-class="exact-active"
                 >Students</b-nav-item
               >
@@ -40,14 +35,12 @@
                 to="/residences"
                 exact
                 exact-active-class="exact-active"
-                >Residences</b-nav-item
+                >Residence Info</b-nav-item
               >
-              <b-nav-item
-                to="/residences"
-                exact
-                exact-active-class="exact-active"
+              <b-nav-item to="/reports" exact exact-active-class="exact-active"
                 >Reports</b-nav-item
               >
+          
               <b-nav-item disabled>Admin</b-nav-item>
             </b-nav>
           </b-sidebar>
@@ -75,17 +68,16 @@
 </template>
 
 <script>
-import StudentLogin from "./components/StudentLogin.vue";
+import LoginPage from "./components/LoginPage.vue";
 import Residences from "./components/Residences.vue";
-import AdminLogin from "./components/AdminLogin.vue";
 import Students from "./components/Students.vue";
-import Reports from "./components/Reports.vue";
+import Reports from "./components/reports.vue";
 
 export default {
   name: "App",
 
   components: {
-    StudentLogin,
+    LoginPage,
     Residences,
     Reports,
     Students

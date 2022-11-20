@@ -27,11 +27,10 @@ public class Admin extends Person {
     @DateTimeFormat
     private Date contractEnd;
 
-    @ManyToOne
-    @JoinColumn(name = "resId")
-    private Residence residence;
 
-    
+    @OneToOne
+    @JoinColumn(name = "name")
+    private Residence residence;
 
 
 }

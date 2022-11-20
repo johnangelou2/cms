@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <h2>Students Information</h2>
-    <b-table striped hover responsive :items="students" :fields="fields">
+    <h2>Reports Information</h2>
+    <b-table striped hover responsive :items="reports" :fields="fields">
       <template #cell(actions)="row">
         <b-button
           size="sm"
@@ -14,20 +14,20 @@
     </b-table>
     <b-modal
       id="edit-modal"
-      title="Edit Student"
+      title="Edit Report"
       @hide="resetEditModal"
       hide-footer
     >
       <b-form>
-        <label class="sr-only" for="input-id">Student ID</label>
+        <label class="sr-only" for="input-id">Report ID</label>
         <b-form-input
           id="input-id"
           v-model="form.id"
-          placeholder="Student ID"
+          placeholder="Report ID"
           readonly
         ></b-form-input>
 
-        <label class="sr-only" for="input-date-of-birth">Date of Birth</label>
+        <label class="sr-only" for="input-date-of-birth">Report Date</label>
         <b-form-input
           id="input-date-of-birth"
           v-model="form.dateOfBirth"
@@ -35,7 +35,7 @@
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-phone-num">Phone Number</label>
+        <label class="sr-only" for="input-phone-num">Student Name</label>
         <b-form-input
           id="input-phone-num"
           v-model="form.last_name"
@@ -43,7 +43,7 @@
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-email">Email</label>
+        <label class="sr-only" for="input-email">Reporter Name</label>
         <b-input-group prepend="@">
           <b-form-input
             id="input-email"
@@ -68,15 +68,20 @@
 import axios from "axios";
 
 export default {
-  name: "Students",
+  name: "Reports",
   data() {
     return {
       students: null,
       fields: [
-        { key: "id", label: "Student ID", sortable: true },
-        { key: "phoneNum", label: "Phone Number", sortable: true },
-        { key: "dateOfBirth", label: "Date of Birth", sortable: true },
-        { key: "email", label: "Email", sortable: true, sortable: true },
+        { key: "id", label: "Report ID", sortable: true },
+        { key: "phoneNum", label: "Report Date", sortable: true },
+        { key: "dateOfBirth", label: "Student Name", sortable: true },
+        {
+          key: "email",
+          label: "Reporter Name",
+          sortable: true,
+          sortable: true
+        },
         { key: "actions", label: "Actions" }
       ],
       form: {
@@ -93,7 +98,7 @@ export default {
   methods: {
     init() {
       axios
-        .get("http://localhost:8085/students")
+        .get("http://localhost:8085/reports")
         .then(response => (this.students = response.data));
     },
     edit(item, index, button) {
@@ -112,7 +117,7 @@ export default {
       var numId;
       numId = parseInt(this.form.id);
       axios
-        .put("http://localhost:8085/students/" + numId, {
+        .put("http://localhost:8085/reports/" + numId, {
           id: numId,
           dateOfBirth: this.form.dateOfBirth,
           lastName: this.form.phoneNum,
