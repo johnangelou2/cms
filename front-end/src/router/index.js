@@ -4,6 +4,7 @@ import StudentLogin from "@/components/StudentLogin";
 import AdminLogin from "@/components/AdminLogin";
 import Students from "@/components/Students";
 import Residences from "@/components/Residences";
+import Reports from "@/components/Reports";
 
 Vue.use(Router);
 
