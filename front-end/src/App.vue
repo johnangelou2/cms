@@ -71,7 +71,7 @@
 import LoginPage from "./components/LoginPage.vue";
 import Residences from "./components/Residences.vue";
 import Students from "./components/Students.vue";
-import Reports from "./components/Reports.vue";
+import Reports from "./components/reports.vue";
 
 export default {
   name: "App",
