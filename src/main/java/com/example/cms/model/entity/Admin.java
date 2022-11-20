@@ -32,7 +32,7 @@ public class Admin extends Person {
     private int privilegeLevel;
 
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "name")
     private Residence residence;
 
@@ -40,7 +40,5 @@ public class Admin extends Person {
     @JoinColumn(name = "reportId")
     @Nullable
     private List<Report> reports = new ArrayList<>();
-
-
 
 }
