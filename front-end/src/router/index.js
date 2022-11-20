@@ -16,7 +16,7 @@ export default new Router({
       component: StudentLogin
     },
     {
-      path: '/adminlogin',
+      path: '/admin-login',
       name: 'AdminLogin',
       component: AdminLogin
     },
