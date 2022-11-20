@@ -8,3 +8,7 @@ INSERT INTO rooms (id, roomNum, roomType, capacity) VALUES (01, 101, 'single', 1
 INSERT INTO rooms (id, roomNum, roomType, capacity) VALUES (01, 102, 'single', 1);
 INSERT INTO rooms (id, roomNum, roomType, capacity) VALUES (01, 103, 'double', 2);
 INSERT INTO rooms (id, roomNum, roomType, capacity) VALUES (01, 104, 'double', 2);
+
+INSERT INTO admins (id, firstName, lastName, gender, dateOfBirth, phoneNum, email, role, privilegeLevel, contractStart, contractEnd) VALUES(11111111, 'David', 'Tong', 'M', '20020408', '2509840533', 'dav.tong@mail.utoronto.ca', 'Manager', '4', '20200101', '20221220');
+
+INSERT INTO reports (id, date, time, status, author, location) VALUES (01, '20221010', )
