@@ -36,11 +36,9 @@ public abstract class Person {
     private Date dateOfBirth;
 
     private long phoneNum;
-
-    /**
+    
     @Nullable
-    private String password; **/
-
+    private String password; 
 
     @OneToOne
     @JoinColumn(name = "name")
