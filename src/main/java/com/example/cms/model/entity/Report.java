@@ -18,7 +18,7 @@ import java.util.Date;
 @Table(name = "reports")
 public class Report {
     @Id
-    private long id;
+    private long reportId;
 
     @DateTimeFormat
     private Date date;
@@ -36,7 +36,7 @@ public class Report {
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "fullName")
+    @JoinColumn(name = "lastName")
     private Admin author;
 
     //Assumption, infractions (thus reports) can only happen in one room, hence ManyToOne

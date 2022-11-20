@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface ReportRepository extends JpaRepository<Report, Long> {
     @Query(value = "select * from reports r " +
-            "where lower(r.id) like lower(concat('%', :searchTerm, '%')) ", nativeQuery = true)
+            "where lower(r.reportId) like lower(concat('%', :searchTerm, '%')) ", nativeQuery = true)
     List<Report> search(@Param("searchTerm") String searchTerm);
 }

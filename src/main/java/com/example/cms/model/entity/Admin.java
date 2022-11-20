@@ -28,6 +28,7 @@ public class Admin extends Person {
     private Date contractEnd;
 
     //1 2 3 or 4 level
+    @Nullable
     private int privilegeLevel;
 
 
@@ -36,7 +37,7 @@ public class Admin extends Person {
     private Residence residence;
 
     @OneToMany
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "reportId")
     @Nullable
     private List<Report> reports = new ArrayList<>();
 
