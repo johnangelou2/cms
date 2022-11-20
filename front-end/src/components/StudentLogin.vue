@@ -1,4 +1,9 @@
 <template>
+
+  <div>
+    <p>hello</p>
+  </div>
+    <!--
     <b-navbar toggleable type="dark" variant="dark">
     <b-navbar-brand href="#">RMS</b-navbar-brand>
 
@@ -10,8 +15,7 @@
     <b-button href="/front-end/Old_Files/StudentDatabase/studentDatabase.html">Student Database</b-button>
 
   </b-navbar>
-
-    
+-->
 </template>
 
 <script>
