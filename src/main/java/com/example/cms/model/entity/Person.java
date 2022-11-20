@@ -58,9 +58,10 @@ public abstract class Person {
     //Emergancy Contact Attributes
 
 
-    // @Nullable
-    private long emgPhoneNum;
+    @Nullable
+    private Long emgPhoneNum;
 
+    @Nullable
     private String emgFullName;
 
     private String emgRelationship;
