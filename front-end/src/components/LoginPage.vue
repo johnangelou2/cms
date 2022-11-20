@@ -8,7 +8,7 @@
             class="form-control"
             type="text"
             name="id"
-            placeholder="student/professor id"
+            placeholder="student/admin id"
             required
           />
         </div>
@@ -20,9 +20,6 @@
             name="password"
             placeholder="password"
           />
-        </div>
-        <div class="alternative-option mt-4">
-          You don't have an account? <span @click="moveToRegister">Register</span>
         </div>
         <button type="submit" class="mt-4 btn-pers" id="login_button">
           Login
@@ -61,7 +58,7 @@
 
 import axios from 'axios';
   export default {
-    name: 'StudentLogin',
+    name: 'LoginPage',
     data() {
       return {
         id: "",
@@ -76,7 +73,7 @@ import axios from 'axios';
             axios.get('http://localhost:8085/students/'+submitEvent.target.elements.id.value)
             .catch(
                 function(e){console.log('Error', e);}), 
-            axios.post('http://localhost:8085/professors/'+submitEvent.target.elements.id.value)
+            axios.post('http://localhost:8085/admins/'+submitEvent.target.elements.id.value)
             .catch(
                 function(e){console.log('Error', e);})
             ])
@@ -101,9 +98,6 @@ import axios from 'axios';
             }
         }));
 
-      },
-      moveToRegister() {
-        this.$router.push("/register");
       },
     },
   };
