@@ -37,10 +37,7 @@
                 exact-active-class="exact-active"
                 >Residence Info</b-nav-item
               >
-              <b-nav-item
-                to="/residences"
-                exact
-                exact-active-class="exact-active"
+              <b-nav-item to="/reports" exact exact-active-class="exact-active"
                 >Reports</b-nav-item
               >
           
