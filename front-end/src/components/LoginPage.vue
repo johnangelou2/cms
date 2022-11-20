@@ -61,7 +61,7 @@
 
 import axios from 'axios';
   export default {
-    name: 'StudentLogin',
+    name: 'LoginPage',
     data() {
       return {
         id: "",
