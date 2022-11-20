@@ -37,7 +37,8 @@ public class StudentController {
     Student updateStudent(@RequestBody Student newStudent, @PathVariable("id") Long studentId) {
         return repository.findById(studentId)
                 .map(student -> {
-                    student.setFullName(newStudent.getFullName());
+                    student.setFirstName(newStudent.getFirstName());
+                    student.setLastName(newStudent.getLastName());
                     return repository.save(student);
                 })
                 .orElseGet(() -> {

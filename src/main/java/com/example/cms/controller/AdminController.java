@@ -37,7 +37,8 @@ public class AdminController {
     Admin updateAdmin(@RequestBody Admin newAdmin, @PathVariable("id") Long adminId) {
         return repository.findById(adminId)
                 .map(admin -> {
-                    admin.setFullName(newAdmin.getFullName());
+                    admin.setFirstName(newAdmin.getFirstName());
+                    admin.setLastName(newAdmin.getLastName());
                     return repository.save(admin);
                 })
                 .orElseGet(() -> {
