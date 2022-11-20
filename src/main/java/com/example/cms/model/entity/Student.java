@@ -31,9 +31,4 @@ public class Student extends Person {
     @DateTimeFormat
     private String stayEnd;
 
-
-
-    
-
-
 }
