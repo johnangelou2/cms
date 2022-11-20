@@ -62,6 +62,7 @@ public abstract class Person {
     @Nullable
     private String emgFullName;
 
+    @Nullable
     private String emgRelationship;
 
 }
