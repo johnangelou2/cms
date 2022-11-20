@@ -69,7 +69,7 @@
 
 <script>
 import LoginPage from "./components/LoginPage.vue";
-import Residences from "./components/Residences.vue";
+import Residences from "./components/residences.vue";
 import Students from "./components/Students.vue";
 import Reports from "./components/reports.vue";
 
