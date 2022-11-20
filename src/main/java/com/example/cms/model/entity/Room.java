@@ -15,7 +15,7 @@ import javax.validation.constraints.NotEmpty;
 public class Room {
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "resId")
     private Residence residence;
 
     @Id

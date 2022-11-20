@@ -27,20 +27,11 @@ public class Admin extends Person {
     @DateTimeFormat
     private Date contractEnd;
 
-    //1 2 3 or 4 level
-    @Nullable
-    private int privilegeLevel;
-
-
-    @OneToOne
-    @JoinColumn(name = "name")
+    @ManyToOne
+    @JoinColumn(name = "resId")
     private Residence residence;
 
-    @OneToMany
-    @JoinColumn(name = "reportId")
-    @Nullable
-    private List<Report> reports = new ArrayList<>();
-
+    
 
 
 }

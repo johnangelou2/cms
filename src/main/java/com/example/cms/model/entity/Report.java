@@ -36,7 +36,7 @@ public class Report {
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "lastName")
+    @JoinColumn(name = "id")
     private Admin author;
 
     //Assumption, infractions (thus reports) can only happen in one room, hence ManyToOne

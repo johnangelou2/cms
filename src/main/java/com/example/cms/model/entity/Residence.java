@@ -19,7 +19,7 @@ import java.util.List;
 public class Residence {
 
     @Id
-    private long id;
+    private long resId;
 
     @NotEmpty
     private String address;

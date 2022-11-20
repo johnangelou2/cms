@@ -47,7 +47,7 @@ public class ResidenceController {
                     return repository.save(residence);
                 })
                 .orElseGet(() -> {
-                    newResidence.setId(residenceID);
+                    newResidence.setResId(residenceID);
                     return repository.save(newResidence);
                 });
     }
