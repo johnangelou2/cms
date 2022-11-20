@@ -1,29 +1,34 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import StudentLogin from '@/components/StudentLogin'
-import AdminLogin from '@/components/AdminLogin'
-import Students from '@/components/Students'
-import Residences from '@/components/Residences'
+import Vue from "vue";
+import Router from "vue-router";
+import StudentLogin from "@/components/StudentLogin";
+import AdminLogin from "@/components/AdminLogin";
+import Students from "@/components/Students";
+import Residences from "@/components/Residences";
 
-
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/student-login',
-      name: 'StudentLogin',
+      path: "/student-login",
+      name: "StudentLogin",
       component: StudentLogin
     },
     {
-      path: '/admin-login',
-      name: 'AdminLogin',
+      path: "/admin-login",
+      name: "AdminLogin",
       component: AdminLogin
     },
     {
-      path: '/students',
-      name: 'Students',
+      path: "/students",
+      name: "Students",
       component: Students
     },
+
+    {
+      path: "/reports",
+      name: "Reports",
+      component: Reports
+    }
   ]
-})
+});
