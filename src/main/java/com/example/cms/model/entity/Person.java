@@ -42,7 +42,7 @@ public abstract class Person {
     private String password; 
 
     @OneToOne
-    @JoinColumn(name = "name")
+    @JoinColumn(name = "resId")
     @Nullable
     private Residence residence;
 
