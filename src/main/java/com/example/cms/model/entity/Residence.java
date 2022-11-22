@@ -27,19 +27,20 @@ public class Residence {
     @NotEmpty
     private String name;
 
+    /**
     //Honestly I dont think this attribute needs to exist but for now its here
     @OneToMany(mappedBy = "roomNum")
-    @Nullable
+    @NotEmpty
     private List<Room> rooms = new ArrayList<>();
 
     @OneToMany (mappedBy = "reportId")
+    @Column(name = "reportId")
     @Nullable
-    private List<Report> reports = new ArrayList<>();
+    private List<Report> reports = new ArrayList<>(); **/
 
     public Residence(long resId, String name, List<Room> rooms, List<Report> reports){
         this.resId = resId;
         this.name = name;
-        this.rooms = rooms;
-        this.reports = reports;
     }
+
 }

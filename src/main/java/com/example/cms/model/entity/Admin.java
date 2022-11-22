@@ -31,6 +31,7 @@ public class Admin extends Person {
     @JoinColumn(name = "name")
     private Residence residence;
 
+    /**
     @OneToMany(mappedBy = "reportId")
-    private List<Report> reports = new ArrayList<>();
+    private List<Report> reports = new ArrayList<>(); **/
 }
