@@ -19,12 +19,14 @@ public class Room {
     private RoomKey roomKey;
 
     @ManyToOne
-    @MapsId("roomRes")
+    @MapsId("resId")
     @JoinColumn(name = "resId")
     @JsonIgnoreProperties({"residence"})
     private Residence residence;
 
+    //@OneToOne(targetEntity = RoomKey.class)
     @MapsId("roomNumber")
+    @JoinColumn(name = "roomNumber")
     private Long roomN;
 
     @NotEmpty

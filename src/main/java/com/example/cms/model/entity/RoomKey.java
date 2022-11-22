@@ -15,7 +15,7 @@ public class RoomKey implements Serializable {
     @Column(name = "roomNumber")
     Long roomNum;
 
-    @Column(name = "roomRes")
+    @Column(name = "resId")
     Long roomResId;
 
     @Override

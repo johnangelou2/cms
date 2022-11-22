@@ -45,11 +45,14 @@ public abstract class Person {
     @Nullable
     private Residence residence;
 
-    /**
+
     @ManyToOne
-    @JoinColumn(name = "residence",referencedColumnName = "roomNumber")
+    @JoinColumns({
+            @JoinColumn(name = "residence"),
+            @JoinColumn(name = "roomN")
+    })
     @Nullable
-    private Room room; **/
+    private Room room;
 
     @Email
     private String email;
