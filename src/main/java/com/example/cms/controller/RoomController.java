@@ -48,7 +48,7 @@ public class RoomController {
                     return repository.save(room);
                 })
                 .orElseGet(() -> {
-                    newRoom.setRoomNum(roomId);
+                    newRoom.setRoomN(roomId);
                     return repository.save(newRoom);
                 });
     }

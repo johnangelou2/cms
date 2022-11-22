@@ -28,7 +28,7 @@ public class Admin extends Person {
     private Date contractEnd;
 
     @ManyToOne
-    @JoinColumn(name = "name")
+    @JoinColumn(name = "resId")
     private Residence residence;
 
     /**

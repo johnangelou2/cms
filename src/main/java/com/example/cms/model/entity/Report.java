@@ -39,9 +39,10 @@ public class Report {
     @JoinColumn(name = "id")
     private Admin author;
 
+    /**
     //Assumption, infractions (thus reports) can only happen in one room, hence ManyToOne
     @ManyToOne
-    @JoinColumn(name="roomNum")
-    private Room location;
+    @JoinColumn(name="roomNum", referencedColumnName = "roomNum")
+    private Room location; **/
 
 }
