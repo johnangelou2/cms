@@ -1,5 +1,6 @@
 package com.example.cms.model.entity;
 
+import jdk.jfr.Name;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -48,8 +49,8 @@ public abstract class Person {
 
     @ManyToOne
     @JoinColumns({
-            @JoinColumn(name = "residence"),
-            @JoinColumn(name = "roomN")
+            @JoinColumn(name = "residence", referencedColumnName = "resId"),
+            @JoinColumn(name = "roomN", referencedColumnName = "roomNumber")
     })
     @Nullable
     private Room room;
