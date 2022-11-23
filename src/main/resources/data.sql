@@ -36,5 +36,5 @@ INSERT INTO students (id, firstName, lastName, gender, dateOfBirth, phoneNum, pa
 
 INSERT INTO admins (id, firstName, lastName, gender, dateOfBirth, phoneNum, password, residence, roomN, resId, email, role, contractStart, contractEnd) VALUES (11111111, 'David', 'Tong', 'M', '20020408', '7783207533', 'adminPassword', 01, 102, 01, 'dav.tong@mail.utoronto.ca', 'Floor 13 Don', '20200101', '20221220');
 
-INSERT INTO reports (reportId, date, time, status, lastName, roomNum, id) VALUES (001, '20221010', '040812', 'resolved', 'Tong', 101, 11111111);
+--INSERT INTO reports (reportId, date, time, status, lastName, roomNum, id) VALUES (001, '20221010', '040812', 'resolved', 'Tong', 101, 11111111);
 
