@@ -1,8 +1,10 @@
 package com.example.cms.controller;
 
+import com.example.cms.controller.dto.RoomDto;
 import com.example.cms.controller.exceptions.RoomNotFoundException;
 import com.example.cms.model.entity.Residence;
 import com.example.cms.model.entity.Room;
+import com.example.cms.model.entity.RoomKey;
 import com.example.cms.model.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,9 +31,17 @@ public class RoomController {
         return repository.findAll();
     }
 
+    /**
     @PostMapping("/rooms")
     Room createRoom(@RequestBody Room newRoom) {
         return repository.save(newRoom);
+    } **/
+
+    @PostMapping("/rooms")
+    Room createRoom(@RequestBody RoomDto roomDto){
+        Room newRoom = new Room();
+        //newRoom.setRoomKey(new RoomKey(roomD));
+        return newRoom;
     }
 
     @GetMapping("/rooms/{id}")
