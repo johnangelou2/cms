@@ -1,5 +1,6 @@
 package com.example.cms.model.entity;
 
+import jdk.jfr.Name;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -41,12 +42,16 @@ public abstract class Person {
     private String password; 
 
     @OneToOne
-    @JoinColumn(name = "name")
+    @JoinColumn(name = "resId")
     @Nullable
     private Residence residence;
 
+
     @ManyToOne
-    @JoinColumn(name = "roomNum")
+    @JoinColumns({
+            @JoinColumn(name = "residence", referencedColumnName = "resId"),
+            @JoinColumn(name = "roomN", referencedColumnName = "roomNumber")
+    })
     @Nullable
     private Room room;
 
