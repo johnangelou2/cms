@@ -34,7 +34,7 @@ INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (04, 303
 INSERT INTO students (id, firstName, lastName, gender, dateOfBirth, phoneNum, password, residence, roomN, resId, email, emgPhoneNum, emgFullName, emgRelationship, probationStatus, stayStart, stayEnd) VALUES (1006722520, 'John', 'Angelou', 'M', '20020401', '6476203772', 'password123', 01, 101, 01, 'johnangelou@uoft.ca', '6471111111', 'Mukund Hari', 'Father', 'Safe', '20220901', '20230501');
 INSERT INTO students (id, firstName, lastName, gender, dateOfBirth, phoneNum, password, residence, roomN, resId, email, emgPhoneNum, emgFullName, emgRelationship, probationStatus, stayStart, stayEnd) VALUES (1008982734, 'Jun', 'Kang', 'M', '20001009', '6476202839', 'password456', 01, 101, 01, 'junkang@uoft.ca', '674819283', 'Martha Steward', 'Mother', 'Safe', '19982039', '19982737');
 
---INSERT INTO admins (id, firstName, lastName, gender, dateOfBirth, phoneNum, email, role, contractStart, contractEnd, name, reportId) VALUES (11111111, 'David', 'Tong', 'M', '20020408', '7783207533', 'dav.tong@mail.utoronto.ca', 'Floor 13 Don', '20200101', '20221220', 'Chestnut', {001})
+INSERT INTO admins (id, firstName, lastName, gender, dateOfBirth, phoneNum, password, residence, roomN, resId, email, role, contractStart, contractEnd) VALUES (11111111, 'David', 'Tong', 'M', '20020408', '7783207533', 'adminPassword', 01, 102, 01, 'dav.tong@mail.utoronto.ca', 'Floor 13 Don', '20200101', '20221220');
 
---INSERT INTO reports (id, date, time, status, lastName, roomNum) VALUES (001, '20221010', '040812', 'resolved', 'Tong', 101);
+INSERT INTO reports (reportId, date, time, status, lastName, roomNum, id) VALUES (001, '20221010', '040812', 'resolved', 'Tong', 101, 11111111);
 
