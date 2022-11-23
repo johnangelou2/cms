@@ -41,7 +41,13 @@ public class Report {
 
     //Assumption, infractions (thus reports) can only happen in one room, hence ManyToOne
     @ManyToOne
+    @Nullable
     @JoinColumn(name="roomNum")
     private Room location;
+
+    @ManyToOne
+    @Nullable
+    @JoinColumn(name="resId")
+    private Residence resReport;
 
 }

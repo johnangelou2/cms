@@ -28,9 +28,9 @@ public class Admin extends Person {
     private Date contractEnd;
 
     @ManyToOne
-    @JoinColumn(name = "name")
-    private Residence residence;
+    @JoinColumn(name = "resId")
+    private Residence Employee;
 
-    @OneToMany(mappedBy = "reportId")
+    @OneToMany(mappedBy = "author")
     private List<Report> reports = new ArrayList<>();
 }
