@@ -74,7 +74,6 @@ import axios from 'axios';
                 this.$emit('User',data1.data);
                 this.$router.push("/");
 
-                this.$loginStatus = true;
                 window.alert("Logged in as Student");
                 window.location.href = 'http://localhost:3000/#/residences';
 
@@ -86,7 +85,6 @@ import axios from 'axios';
                 this.$emit('User',data2.data);
                 this.$router.push("/");
 
-                this.$loginStatus = true;
                 window.alert("Logged in as Administrator");
                 window.location.href = 'http://localhost:3000/#/residences';
 

@@ -41,7 +41,7 @@
                 >Reports</b-nav-item
               >
           
-              <b-nav-item v-if=$loginStatus>Admin</b-nav-item>
+              <b-nav-item>Admin</b-nav-item>
             </b-nav>
           </b-sidebar>
         </b-navbar>
