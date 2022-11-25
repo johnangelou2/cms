@@ -12,15 +12,6 @@
             required
           />
         </div>
-        <div class="input">
-          <label for="password">Password</label>
-          <input
-            class="form-control"
-            type="password"
-            name="password"
-            placeholder="password"
-          />
-        </div>
         <button type="submit" class="mt-4 btn-pers" id="login_button">
           Login
         </button>
@@ -62,18 +53,16 @@ import axios from 'axios';
     data() {
       return {
         id: "",
-        password: "",
       };
     },
     methods: {
       login(submitEvent) {
         this.id = submitEvent.target.elements.id.value;
-        this.password = submitEvent.target.elements.password.value;
         axios.all([
             axios.get('http://localhost:8085/students/'+submitEvent.target.elements.id.value)
             .catch(
                 function(e){console.log('Error', e);}), 
-            axios.post('http://localhost:8085/admins/'+submitEvent.target.elements.id.value)
+            axios.get('http://localhost:8085/admins/'+submitEvent.target.elements.id.value)
             .catch(
                 function(e){console.log('Error', e);})
             ])
@@ -84,12 +73,21 @@ import axios from 'axios';
                 this.$emit("authorized", false);
                 this.$emit('User',data1.data);
                 this.$router.push("/");
+
+                alert_1.innerHTML = 'Logged in as Student.';
+                window.location.href = 'http://localhost:3000/#/residences';
+
+
             }
             else if(typeof data2 !== 'undefined'){
                 this.$emit("authenticated", true);
                 this.$emit("authorized", true);
                 this.$emit('User',data2.data);
                 this.$router.push("/");
+
+                alert_1.innerHTML = 'Logged in as Administrator.';
+                window.location.href = 'http://localhost:3000/#/residences';
+
             }
             else{
                 let alert_1 = document.querySelector("#alert_1");
@@ -110,6 +108,6 @@ import axios from 'axios';
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 0px;
-  
+ 
 }
 </style>

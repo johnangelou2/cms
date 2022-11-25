@@ -91,6 +91,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 20px;
+
+  margin-top: 0px;
+  background: #a8c2b2;
+  width:100%;
+  height:100%;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 </style>
