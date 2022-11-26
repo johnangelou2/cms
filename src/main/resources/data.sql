@@ -5,7 +5,6 @@ INSERT Into residences (resId, address, name) VALUES (03, '6 Hoskin Avenue', 'Tr
 INSERT Into residences (resId, address, name) VALUES (04, '150 Charles St W', 'Victoria College');
 
 --ROOMS
-
 --Chestnut Rooms
 INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 101, 101, 'single', 1);
 INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 102, 102, 'single', 1);
@@ -37,9 +36,10 @@ INSERT INTO students (id, firstName, lastName, gender, dateOfBirth, phoneNum, pa
 INSERT INTO students (id, firstName, lastName, gender, dateOfBirth, phoneNum, password, residence, roomN, resId, email, emgPhoneNum, emgFullName, emgRelationship, probationStatus, stayStart, stayEnd) VALUES (1002938475, 'Luke', 'Skywalker', 'M', '19980323', '9074839283', 'password111', 01, 101, 01, 'skywalker@uoft.ca', '6471111111', 'Darth Vader', 'Father', 'Safe', '20220901', '20230501');
 INSERT INTO students (id, firstName, lastName, gender, dateOfBirth, phoneNum, password, residence, roomN, resId, email, emgPhoneNum, emgFullName, emgRelationship, probationStatus, stayStart, stayEnd) VALUES (1002938456, 'Emma', 'Watson', 'F', '19990423', '2893284233', 'password', 01, 101, 01, 'emmawatson@uoft.ca', '2891827364', 'Jeremie Collette', 'Father', 'Safe', '20220901', '20230501');
 
-
+--ADMINS
 INSERT INTO admins (id, firstName, lastName, gender, dateOfBirth, phoneNum, password, residence, roomN, resId, email, role, contractStart, contractEnd) VALUES (11111111, 'David', 'Tong', 'M', '20020408', '7783207533', 'adminPassword1', 01, 102, 01, 'dav.tong@mail.utoronto.ca', 'Floor 13 Don', '20200101', '20221220');
 INSERT INTO admins (id, firstName, lastName, gender, dateOfBirth, phoneNum, password, residence, roomN, resId, email, role, contractStart, contractEnd) VALUES (22222222, 'Cole', 'Stotland', 'M', '20020328', '777283712', 'adminPassword2', 01, 102, 01, 'cole.stotland@mail.utoronto.ca', 'Floor 14 Don', '20200101', '20221220');
 
---INSERT INTO reports (reportId, date, time, status, lastName, roomNum, id) VALUES (001, '20221010', '040812', 'resolved', 'Tong', 101, 11111111);
+--REPORTS
+INSERT INTO reports (reportId, date, time, status, residence, roomN,  id) VALUES (001, '20221010', '040812', 'resolved', 03, 200, 11111111);
 
