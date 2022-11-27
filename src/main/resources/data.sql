@@ -2,7 +2,10 @@
 INSERT INTO residences (resId, address, name) VALUES (01, '78 Chestnut Road', 'Chestnut');
 INSERT INTO residences (resId, address, name) VALUES (02, '27 Kings College Cir', 'University College');
 INSERT Into residences (resId, address, name) VALUES (03, '6 Hoskin Avenue', 'Trinity College');
-INSERT Into residences (resId, address, name) VALUES (04, '150 Charles St W', 'Victoria College');
+INSERT Into residences (resId, address, name) VALUES (04, '111 Bloor St W', 'Victoria College');
+INSERT Into residences (resId, address, name) VALUES (05, '2 Sussex Ave', 'Innis College');
+INSERT Into residences (resId, address, name) VALUES (06, '81 St Mary St', 'St. Michaels College');
+INSERT Into residences (resId, address, name) VALUES (07, '40 Willcocks St', 'New College');
 
 --ROOMS
 --Chestnut Rooms
@@ -10,6 +13,9 @@ INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 101
 INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 102, 102, 'single', 1);
 INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 103, 103, 'double', 2);
 INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 104, 104, 'double', 2);
+
+
+
 
 --University College Rooms
 INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (02, 101, 101, 'double', 2);

@@ -35,10 +35,16 @@ public class StudentController {
     }
     @PutMapping("/students/{id}")
     Student updateStudent(@RequestBody Student newStudent, @PathVariable("id") Long studentId) {
+        Student temp = repository.findById(studentId).orElseThrow();
+
+
         return repository.findById(studentId)
                 .map(student -> {
                     student.setFirstName(newStudent.getFirstName());
-                    student.setLastName(newStudent.getLastName());
+                    if(newStudent.getLastName() == null)
+                        student.setLastName(temp.getLastName());
+                    else
+                        student.setLastName(newStudent.getLastName());
                     return repository.save(student);
                 })
                 .orElseGet(() -> {
