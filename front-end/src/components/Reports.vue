@@ -100,7 +100,7 @@ export default {
         { key: "time", label: "Report Time", sortable: true },
         { key: "description", label: "Description", sortable: true },
         { key: "type", label: "Report Type", sortable: true },
-        { key: "status", label: "Reportstatus", sortable: true },
+        { key: "status", label: "Report Status", sortable: true },
         {
           key: "author",
           label: "Report Author",
