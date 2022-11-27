@@ -46,7 +46,6 @@ public abstract class Person {
     @Nullable
     private Residence residence;
 
-
     @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "residence", referencedColumnName = "resId"),
@@ -59,7 +58,6 @@ public abstract class Person {
     private String email;
 
     //Emergancy Contact Attributes
-
 
     @Nullable
     private Long emgPhoneNum;

@@ -14,10 +14,10 @@ INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 102
 INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 103, 103, 'double', 2);
 INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 104, 104, 'double', 2);
 
-INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 104, 104, 'double', 2);
-INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 104, 104, 'double', 2);
-INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 104, 104, 'double', 2);
-INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 104, 104, 'double', 2);
+INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 105, 104, 'double', 2);
+INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 106, 104, 'double', 2);
+INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 107, 104, 'double', 2);
+INSERT INTO rooms (resId, roomNumber, roomN, roomType, capacity) VALUES (01, 108, 104, 'double', 2);
 
 
 
