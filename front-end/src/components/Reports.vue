@@ -124,7 +124,7 @@ export default {
     init() {
       axios
         .get("http://localhost:8085/reports")
-        .then(response => (this.students = response.data));
+        .then(response => (this.reports = response.data));
     },
     edit(item, index, button) {
       this.form.id = item.id;
