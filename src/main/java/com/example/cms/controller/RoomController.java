@@ -1,10 +1,12 @@
 package com.example.cms.controller;
 
 import com.example.cms.controller.dto.RoomDto;
+import com.example.cms.controller.exceptions.ResidenceNotFoundException;
 import com.example.cms.controller.exceptions.RoomNotFoundException;
 import com.example.cms.model.entity.Residence;
 import com.example.cms.model.entity.Room;
 import com.example.cms.model.entity.RoomKey;
+import com.example.cms.model.repository.ResidenceRepository;
 import com.example.cms.model.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,9 @@ import java.util.List;
 public class RoomController {
     @Autowired
     private final RoomRepository repository;
+
+    @Autowired
+    private ResidenceRepository residenceRepository;
 
     public RoomController(RoomRepository repository) {
         this.repository = repository;
@@ -40,8 +45,12 @@ public class RoomController {
     @PostMapping("/rooms")
     Room createRoom(@RequestBody RoomDto roomDto){
         Room newRoom = new Room();
-        //newRoom.setRoomKey(new RoomKey(roomD));
-        return newRoom;
+        newRoom.setRoomKey(new RoomKey(roomDto.getRoomNum(), roomDto.getResidenceId()));
+        newRoom.setRoomType(roomDto.getRoomType());
+        newRoom.setCapacity(roomDto.getRoomCap());
+        newRoom.setResidence(residenceRepository.findById(roomDto.getResidenceId()).orElseThrow(() -> new ResidenceNotFoundException(roomDto.getResidenceId())));
+        newRoom.setRoomN(roomDto.getRoomNum());
+        return repository.save(newRoom);
     }
 
     @GetMapping("/rooms/{id}")
