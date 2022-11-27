@@ -41,7 +41,13 @@
                 >Reports</b-nav-item
               >
           
-              <b-nav-item disabled>Admin</b-nav-item>
+              <b-nav-item to="/Rooms" exact exact-active-class="exact-active"
+                >Rooms</b-nav-item
+              >
+
+              <b-nav-item to="/FurtherInformation" exact exact-active-class="exact-active"
+                >Info</b-nav-item
+              >
             </b-nav>
           </b-sidebar>
         </b-navbar>
@@ -72,6 +78,8 @@ import LoginPage from "./components/LoginPage.vue";
 import Residences from "./components/residences.vue";
 import Students from "./components/Students.vue";
 import Reports from "./components/reports.vue";
+import FurtherInformation from "./components/FurtherInformation.vue";
+import Rooms from "./components/Rooms.vue";
 
 export default {
   name: "App",
@@ -80,7 +88,9 @@ export default {
     LoginPage,
     Residences,
     Reports,
-    Students
+    Students,
+    FurtherInformation,
+    Rooms
   }
 };
 </script>
@@ -90,7 +100,14 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 20px;
+  color: #334250;
+
+  margin-top: 0px;
+  background: #a8c2b2;
+  width:100%;
+  height:100%;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 </style>
