@@ -45,11 +45,11 @@ public class RoomController {
     @PostMapping("/rooms")
     Room createRoom(@RequestBody RoomDto roomDto){
         Room newRoom = new Room();
-        newRoom.setRoomId(new RoomKey(roomDto.getRoomNum(), roomDto.getResidenceId()));
+        newRoom.setRoomKey(new RoomKey(roomDto.getRoomNum(), roomDto.getResidenceId()));
         newRoom.setRoomType(roomDto.getRoomType());
         newRoom.setCapacity(roomDto.getRoomCap());
         newRoom.setResidence(residenceRepository.findById(roomDto.getResidenceId()).orElseThrow(() -> new ResidenceNotFoundException(roomDto.getResidenceId())));
-        newRoom.setRoomNum(roomDto.getRoomNum());
+        newRoom.setRoomN(roomDto.getRoomNum());
         return repository.save(newRoom);
     }
 
