@@ -26,9 +26,9 @@ public class RoomController {
     }
 
 
-    @DeleteMapping("/rooms/{id}")
-    void deleteRoom(@PathVariable("id") Long roomNum) {
-        repository.deleteById(roomNum);
+    @DeleteMapping("/rooms/{roomId}/{resId}")
+    void deleteRoom(@PathVariable("roomId") Long roomNum, @PathVariable("resId") Long resId) {
+        repository.deleteById(new RoomKey(roomNum, resId));
     }
 
     @GetMapping("/rooms")
@@ -53,12 +53,13 @@ public class RoomController {
         return repository.save(newRoom);
     }
 
-    @GetMapping("/rooms/{id}")
-    Room retrieveRoom(@PathVariable("id") Long roomID) {
-        return repository.findById(roomID)
+    @GetMapping("/rooms/{roomId}/{resId}")
+    Room retrieveRoom(@PathVariable("roomId") Long roomID, @PathVariable("resId") Long resId) {
+        return repository.findById(new RoomKey(roomID, resId))
                 .orElseThrow(() -> new RoomNotFoundException(roomID));
     }
 
+    /**
     @PutMapping("/rooms/{id}")
     Room updateRooms(@RequestBody Room newRoom, @PathVariable("id") Long roomId) {
         return repository.findById(roomId)
@@ -70,5 +71,18 @@ public class RoomController {
                     newRoom.setRoomN(roomId);
                     return repository.save(newRoom);
                 });
+    } **/
+
+    @PutMapping("/rooms/{roomId}/{resId}")
+    Room updateRooms(@RequestBody RoomDto roomDto, @PathVariable("roomId") Long roomId, @PathVariable("resId") Long resId){
+        RoomKey roomKey = new RoomKey(roomId, resId);
+        return repository.findById(roomKey).map(room -> {
+            room.setCapacity(roomDto.getRoomCap());
+            room.setRoomType(roomDto.getRoomType());
+            return repository.save(room);
+        }).orElseGet(() -> {
+            return this.createRoom(roomDto);
+        });
     }
+
 }
