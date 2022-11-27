@@ -33,4 +33,7 @@ public class Room {
 
     private int capacity;
 
+    @EmbeddedId
+    RoomKey roomId;
+
 }
