@@ -27,7 +27,7 @@
           readonly
         ></b-form-input>
 
-        <label class="sr-only" for="input-date-of-birth">Report Date</label>
+        <label class="sr-only" for="input-date">Report Date</label>
         <b-form-input
           id="input-date-of-birth"
           v-model="form.dateOfBirth"
@@ -35,23 +35,45 @@
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-phone-num">Student Name</label>
+        <label class="sr-only" for="input-time">Report Time</label>
         <b-form-input
-          id="input-phone-num"
-          v-model="form.last_name"
-          placeholder="xxx-xxx-xxxx"
+          id="input-time"
+          v-model="form.time"
+          placeholder="Time of Report"
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-email">Reporter Name</label>
-        <b-input-group prepend="@">
-          <b-form-input
-            id="input-email"
-            v-model="form.email"
-            placeholder="Email"
-            required
-          ></b-form-input>
-        </b-input-group>
+        <label class="sr-only" for="input-description">Description</label>
+        <b-form-input
+          id="input-description"
+          v-model="form.description"
+          placeholder="Lorem Ipsum"
+          required
+        ></b-form-input>
+
+        <label class="sr-only" for="input-type">Report Type</label>
+        <b-form-input
+          id="input-type"
+          v-model="form.type"
+          placeholder="Type"
+          required
+        ></b-form-input>
+
+        <label class="sr-only" for="input-status">Report Status</label>
+        <b-form-input
+          id="input-status"
+          v-model="form.status"
+          placeholder="Status"
+          required
+        ></b-form-input>
+
+        <label class="sr-only" for="input-author">Author</label>
+        <b-form-input
+          id="input-author"
+          v-model="form.author"
+          placeholder="Author"
+          required
+        ></b-form-input>
 
         <br />
         <b-button type="button" @click="onSave" variant="primary"
@@ -74,11 +96,14 @@ export default {
       students: null,
       fields: [
         { key: "id", label: "Report ID", sortable: true },
-        { key: "phoneNum", label: "Report Date", sortable: true },
-        { key: "dateOfBirth", label: "Student Name", sortable: true },
+        { key: "date", label: "Report Date", sortable: true },
+        { key: "time", label: "Report Time", sortable: true },
+        { key: "description", label: "Description", sortable: true },
+        { key: "type", label: "Report Type", sortable: true },
+        { key: "status", label: "Reportstatus", sortable: true },
         {
-          key: "email",
-          label: "Reporter Name",
+          key: "author",
+          label: "Report Author",
           sortable: true,
           sortable: true
         },
