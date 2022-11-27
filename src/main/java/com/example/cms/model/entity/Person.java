@@ -24,10 +24,10 @@ public abstract class Person {
     @Id
     private long id;
 
-    @NotEmpty
+    //@NotEmpty
     private String firstName;
 
-    @NotEmpty
+    //@NotEmpty
     private String lastName;
 
     //M = man W = woman, N = Non Binary / Choose not to say
