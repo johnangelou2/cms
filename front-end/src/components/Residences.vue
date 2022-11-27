@@ -14,35 +14,61 @@
   <div class="slider-wrapper">
     <div class=inner>
       <article>
+        <div class="element">
         <div class="info top-left">
-          <h3>Malacca</h3></div>
-        <a href="https://stoty61.github.io"><img src="https://farm9.staticflickr.com/8059/28286750501_dcc27b1332_h_d.jpg" /></a>
-
-      </article>
-
-      <article>
-        <div class="info bottom-right">
-          <h3>Cameron Highland</h3></div>
-        <img src="https://farm6.staticflickr.com/5812/23394215774_b76cd33a87_h_d.jpg" />
-      </article>
-
-      <article>
+          <h3>University College</h3></div>
         <div class="info bottom-left">
-          <h3>New Delhi</h3></div>
-        <img src="https://farm8.staticflickr.com/7455/27879053992_ef3f41c4a0_h_d.jpg" />
+          <h3>A beautiful building that offers mostly single rooms in both modern and historic residence halls</h3></div>
+        </div>
+          <a href="https://starportal.utoronto.ca/StarRezPortalX/6F477B7F/13/139/The_Residences-University_College"><img src="https://www.uc.utoronto.ca/sites/default/files/styles/scale_width_768/public/assets/images/UofT708_20080610_UniversityCollege_025%284x3%29.jpg?itok=J7E0rpPj"/></a>
       </article>
 
       <article>
-        <div class="info top-right">
-          <h3>Ladakh</h3></div>
-        <img src="https://farm8.staticflickr.com/7367/27980898905_72d106e501_h_d.jpg" />
-      </article>
-
-      <article>
+        <div class="element">
+        <div class="info top-left">
+          <h3>Chestnut Residence</h3></div>
         <div class="info bottom-left">
-          <h3>Nubra Valley</h3></div>
-        <img src="https://farm8.staticflickr.com/7356/27980899895_9b6c394fec_h_d.jpg" />
+          <h3>A residence comprised of themed communitites to suit many interests, such as Engineering, Architecture, and more!</h3></div>
+          </div>
+          <a href="https://starportal.utoronto.ca/StarRezPortalX/6F477B7F/13/139/The_Residences-University_College"><img src="http://www.torontohotelsincanada.com/data/Photos/OriginalPhoto/8309/830953/830953823.JPEG"
+            height=720/></a>
       </article>
+
+
+      <article>
+        <div class="element">
+        <div class="info top-left">
+          <h3>Innis College</h3></div>
+        <div class="info bottom-left">
+          <h3>A gender-inclusive, shared-apartment-style residence, and just a few steps from Robarts Library!</h3></div>
+          </div>
+          <a href="http://starportal.utoronto.ca/StarRezPortalX/56DB73DE/13/134/The_Residences-Innis_College"><img src="https://innis.utoronto.ca/wp-content/uploads/About-Innis-College-Feature-1.jpg"
+            height=720/></a>
+      </article>
+
+      <article>
+        <div class="element">
+        <div class="info top-left">
+          <h3>New College</h3></div>
+        <div class="info bottom-left">
+          <h3>New College is one of the youngest and most vibrant colleges at U of T. It is also the largest and boasts the highest number of international students of any college.  </h3></div>
+          </div>
+          <a href="https://starportal.utoronto.ca/StarRezPortalX/493A1C6B/13/135/The_Residences-New_College"><img src="https://www.newcollege.utoronto.ca/wp-content/uploads/2022/03/wilson.jpg?x38551"
+            height=720/></a>
+      </article>
+
+      <article>
+        <div class="element">
+        <div class="info top-left">
+          <h3>St. Michael's College</h3></div>
+        <div class="info bottom-left">
+          <h3>Located on the east side of the University of Toronto’s downtown campus and spanning almost 10 acres, the St. Michael’s College grounds provide a charming neighbourhood to the 525 students who live in our dorms each year</h3></div>
+          </div>
+          <a href="https://starportal.utoronto.ca/StarRezPortalX/08D6E1EC/13/138/The_Residences-Trinity_College"><img src="https://stmikes.utoronto.ca/wp-content/uploads/2018/08/Brennan-Hall-Official-800x600.jpg"
+            height=720/></a>
+      </article>
+
+
     </div>
     <!-- .inner -->
   </div>
@@ -72,6 +98,8 @@
 </template>
 
 <script>
+
+
 
 </script>
 
@@ -213,6 +241,18 @@ article img {
   -moz-transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
   transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
 }
+
+
+.element {
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+
+}
+
+
 
 /*---- SET POSITION FOR SLIDE ----*/
 #slide1:checked ~ .slider-prev-next-control label:nth-child(5)::after, #slide5:checked ~ .slider-prev-next-control label:nth-child(4)::after, #slide4:checked ~ .slider-prev-next-control label:nth-child(3)::after, #slide3:checked ~ .slider-prev-next-control label:nth-child(2)::after, #slide2:checked ~ .slider-prev-next-control label:nth-child(1)::after, #slide5:checked ~ .slider-prev-next-control label:nth-child(1)::after, #slide4:checked ~ .slider-prev-next-control label:nth-child(5)::after, #slide3:checked ~ .slider-prev-next-control label:nth-child(4)::after, #slide2:checked ~ .slider-prev-next-control label:nth-child(3)::after, #slide1:checked ~ .slider-prev-next-control label:nth-child(2)::after {
