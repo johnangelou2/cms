@@ -17,23 +17,22 @@ import java.util.List;
 @Table(name = "rooms")
 public class Room {
 
+    @EmbeddedId
+    private RoomKey roomKey;
+
     @ManyToOne
+    @MapsId("resId")
     @JoinColumn(name = "resId")
     private Residence residence;
 
-    @OneToMany(mappedBy = "location")
-    @Nullable
-    private List<Report> locations = new ArrayList<>();
-
-    @Id
-    private long roomNum;
+    //@OneToOne(targetEntity = RoomKey.class)
+    @MapsId("roomNumber")
+    @JoinColumn(name = "roomNumber")
+    private Long roomN;
 
     @NotEmpty
     private String roomType;
 
     private int capacity;
-
-    @EmbeddedId
-    RoomKey roomId;
 
 }
