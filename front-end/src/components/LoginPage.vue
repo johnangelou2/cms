@@ -12,6 +12,15 @@
             required
           />
         </div>
+        <div class="input">
+          <label for="password">Password</label>
+          <input
+            class="form-control"
+            type="password"
+            name="password"
+            placeholder="password"
+          />
+        </div>
         <button type="submit" class="mt-4 btn-pers" id="login_button">
           Login
         </button>
@@ -53,11 +62,14 @@ import axios from 'axios';
     data() {
       return {
         id: "",
+        password: "",
       };
     },
     methods: {
       login(submitEvent) {
         this.id = submitEvent.target.elements.id.value;
+        this.password = submitEvent.target.elements.password.value;
+
         axios.all([
             axios.get('http://localhost:8085/students/'+submitEvent.target.elements.id.value)
             .catch(
