@@ -1,0 +1,436 @@
+[
+    {
+        "roomKey": {
+            "roomN": 101,
+            "residenceId": 1
+        },
+        "residenceId": {
+            "resId": 1,
+            "address": "78 Chestnut Road",
+            "name": "Chestnut"
+        },
+        "roomN": null,
+        "roomType": "single",
+        "capacity": 1
+    },
+    {
+        "roomKey": {
+            "roomN": 102,
+            "residenceId": 1
+        },
+        "residenceId": {
+            "resId": 1,
+            "address": "78 Chestnut Road",
+            "name": "Chestnut"
+        },
+        "roomN": null,
+        "roomType": "single",
+        "capacity": 1
+    },
+    {
+        "roomKey": {
+            "roomN": 103,
+            "residenceId": 1
+        },
+        "residenceId": {
+            "resId": 1,
+            "address": "78 Chestnut Road",
+            "name": "Chestnut"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 104,
+            "residenceId": 1
+        },
+        "residenceId": {
+            "resId": 1,
+            "address": "78 Chestnut Road",
+            "name": "Chestnut"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 105,
+            "residenceId": 1
+        },
+        "residenceId": {
+            "resId": 1,
+            "address": "78 Chestnut Road",
+            "name": "Chestnut"
+        },
+        "roomN": null,
+        "roomType": "single",
+        "capacity": 1
+    },
+    {
+        "roomKey": {
+            "roomN": 106,
+            "residenceId": 1
+        },
+        "residenceId": {
+            "resId": 1,
+            "address": "78 Chestnut Road",
+            "name": "Chestnut"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 107,
+            "residenceId": 1
+        },
+        "residenceId": {
+            "resId": 1,
+            "address": "78 Chestnut Road",
+            "name": "Chestnut"
+        },
+        "roomN": null,
+        "roomType": "single",
+        "capacity": 1
+    },
+    {
+        "roomKey": {
+            "roomN": 101,
+            "residenceId": 2
+        },
+        "residenceId": {
+            "resId": 2,
+            "address": "27 Kings College Cir",
+            "name": "University College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 102,
+            "residenceId": 2
+        },
+        "residenceId": {
+            "resId": 2,
+            "address": "27 Kings College Cir",
+            "name": "University College"
+        },
+        "roomN": null,
+        "roomType": "single",
+        "capacity": 1
+    },
+    {
+        "roomKey": {
+            "roomN": 103,
+            "residenceId": 2
+        },
+        "residenceId": {
+            "resId": 2,
+            "address": "27 Kings College Cir",
+            "name": "University College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 104,
+            "residenceId": 2
+        },
+        "residenceId": {
+            "resId": 2,
+            "address": "27 Kings College Cir",
+            "name": "University College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 105,
+            "residenceId": 2
+        },
+        "residenceId": {
+            "resId": 2,
+            "address": "27 Kings College Cir",
+            "name": "University College"
+        },
+        "roomN": null,
+        "roomType": "single",
+        "capacity": 1
+    },
+    {
+        "roomKey": {
+            "roomN": 106,
+            "residenceId": 2
+        },
+        "residenceId": {
+            "resId": 2,
+            "address": "27 Kings College Cir",
+            "name": "University College"
+        },
+        "roomN": null,
+        "roomType": "single",
+        "capacity": 1
+    },
+    {
+        "roomKey": {
+            "roomN": 107,
+            "residenceId": 2
+        },
+        "residenceId": {
+            "resId": 2,
+            "address": "27 Kings College Cir",
+            "name": "University College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 200,
+            "residenceId": 3
+        },
+        "residenceId": {
+            "resId": 3,
+            "address": "6 Hoskin Avenue",
+            "name": "Trinity College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 201,
+            "residenceId": 3
+        },
+        "residenceId": {
+            "resId": 3,
+            "address": "6 Hoskin Avenue",
+            "name": "Trinity College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 202,
+            "residenceId": 3
+        },
+        "residenceId": {
+            "resId": 3,
+            "address": "6 Hoskin Avenue",
+            "name": "Trinity College"
+        },
+        "roomN": null,
+        "roomType": "single",
+        "capacity": 1
+    },
+    {
+        "roomKey": {
+            "roomN": 203,
+            "residenceId": 3
+        },
+        "residenceId": {
+            "resId": 3,
+            "address": "6 Hoskin Avenue",
+            "name": "Trinity College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 204,
+            "residenceId": 3
+        },
+        "residenceId": {
+            "resId": 3,
+            "address": "6 Hoskin Avenue",
+            "name": "Trinity College"
+        },
+        "roomN": null,
+        "roomType": "single",
+        "capacity": 1
+    },
+    {
+        "roomKey": {
+            "roomN": 205,
+            "residenceId": 3
+        },
+        "residenceId": {
+            "resId": 3,
+            "address": "6 Hoskin Avenue",
+            "name": "Trinity College"
+        },
+        "roomN": null,
+        "roomType": "single",
+        "capacity": 1
+    },
+    {
+        "roomKey": {
+            "roomN": 206,
+            "residenceId": 3
+        },
+        "residenceId": {
+            "resId": 3,
+            "address": "6 Hoskin Avenue",
+            "name": "Trinity College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 207,
+            "residenceId": 3
+        },
+        "residenceId": {
+            "resId": 3,
+            "address": "6 Hoskin Avenue",
+            "name": "Trinity College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 300,
+            "residenceId": 4
+        },
+        "residenceId": {
+            "resId": 4,
+            "address": "111 Bloor St W",
+            "name": "Victoria College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 301,
+            "residenceId": 4
+        },
+        "residenceId": {
+            "resId": 4,
+            "address": "111 Bloor St W",
+            "name": "Victoria College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 302,
+            "residenceId": 4
+        },
+        "residenceId": {
+            "resId": 4,
+            "address": "111 Bloor St W",
+            "name": "Victoria College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 303,
+            "residenceId": 4
+        },
+        "residenceId": {
+            "resId": 4,
+            "address": "111 Bloor St W",
+            "name": "Victoria College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 304,
+            "residenceId": 4
+        },
+        "residenceId": {
+            "resId": 4,
+            "address": "111 Bloor St W",
+            "name": "Victoria College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 305,
+            "residenceId": 4
+        },
+        "residenceId": {
+            "resId": 4,
+            "address": "111 Bloor St W",
+            "name": "Victoria College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 306,
+            "residenceId": 4
+        },
+        "residenceId": {
+            "resId": 4,
+            "address": "111 Bloor St W",
+            "name": "Victoria College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 307,
+            "residenceId": 4
+        },
+        "residenceId": {
+            "resId": 4,
+            "address": "111 Bloor St W",
+            "name": "Victoria College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    },
+    {
+        "roomKey": {
+            "roomN": 308,
+            "residenceId": 4
+        },
+        "residenceId": {
+            "resId": 4,
+            "address": "111 Bloor St W",
+            "name": "Victoria College"
+        },
+        "roomN": null,
+        "roomType": "double",
+        "capacity": 2
+    }
+]

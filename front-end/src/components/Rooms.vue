@@ -64,6 +64,7 @@
 
 <script>
 import axios from "axios";
+import _ from "lodash";
 
 export default {
   name: "rooms",
@@ -71,8 +72,8 @@ export default {
     return {
       rooms: null,
       fields: [
-        { key: "roomKey", label: "Residence ID", sortable: true },
-        { key: "roomKey", label: "Room ID", sortable: true },
+        { key: "residenceId", label: "Residence ID", sortable: true },
+        { key: "roomN", label: "Room ID", sortable: true },
         { key: "roomType", label: "Room Type", sortable: true },
         { key: "capacity", label: "Capacity", sortable: true, sortable: true },
         { key: "actions", label: "Actions" }
@@ -92,7 +93,8 @@ export default {
     init() {
       axios
         .get("http://localhost:8085/rooms/")
-        .then(response => (this.rooms = response.data));
+        .then(response => {this.rooms = _.flatMapDeep(response.data);console.log(this.rooms)});
+        
     },
     edit(item, index, button) {
       this.form.residenceId = item.residenceId;
