@@ -6,8 +6,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
-import org.apache.coyote.http11.upgrade.InternalHttpUpgradeHandler;
-import org.hibernate.annotations.DynamicInsert;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
