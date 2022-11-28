@@ -108,9 +108,9 @@ export default {
     },
     onSave(event) {
       var resienceId;
-      var roomId
+      var roomN
       residenceId = parseInt(this.form.residenceId);
-      roomId = parseInt(this.form.roomN);
+      roomN = parseInt(this.form.roomN);
       axios
         .put("http://localhost:8085/students/" + roomN + "/" + residenceId, {
           residenceId: residenceId,

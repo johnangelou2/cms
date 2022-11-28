@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class RoomKey implements Serializable {
 
     @Column(name = "roomN")
-    Long roomN;
+    Integer roomN;
 
     @Column(name = "residenceId")
     Long residenceId;
@@ -25,7 +25,7 @@ public class RoomKey implements Serializable {
     }
     public RoomKey(){}
 
-    public RoomKey(Long Num, Long Res){
+    public RoomKey(Integer Num, Long Res){
         this.setRoomN(Num);
         this.setResidenceId(Res);
     }

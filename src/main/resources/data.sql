@@ -9,43 +9,43 @@ INSERT Into residenceIdences (residenceId, address, name) VALUES (07, '40 Willco
 
 --ROOMS
 --Chestnut Rooms
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 101, 101, 'single', 1);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 102, 102, 'single', 1);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 103, 103, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 104, 104, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 105, 105, 'single', 1);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 106, 106, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 107, 107, 'single', 1);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 101, 'single', 1);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 102, 'single', 1);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 103, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 104, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 105, 'single', 1);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 106, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (1, 107, 'single', 1);
 
 --University College Rooms
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 101, 101, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 102, 102, 'single', 1);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 103, 103, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 104, 104, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 105, 105, 'single', 1);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 106, 106, 'single', 1);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 107, 107, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 101, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 102, 'single', 1);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 103, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 104, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 105, 'single', 1);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 106, 'single', 1);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (2, 107, 'double', 2);
 
 --Trinity Rooms
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 200, 200, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 201, 201, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 202, 202, 'single', 1);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 203, 203, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 204, 204, 'single', 1);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 205, 205, 'single', 1);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 206, 206, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 207, 207, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 200, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 201, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 202, 'single', 1);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 203, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 204, 'single', 1);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 205, 'single', 1);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 206, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (3, 207, 'double', 2);
 
 --Victoria Rooms
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 300, 300, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 301, 301, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 302, 302, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 303, 303, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 304, 304, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 305, 305, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 306, 306, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 307, 307, 'double', 2);
-INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 308, 308, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 300, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 301, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 302, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 303, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 304, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 305, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 306, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 307, 'double', 2);
+INSERT INTO rooms (residenceId, roomN, roomType, capacity) VALUES (4, 308, 'double', 2);
 
 --STUDENTS
 INSERT INTO students (id, firstName, lastName, gender, dateOfBirth, phoneNum, password, residenceIdence, roomN, residenceId, email, emgPhoneNum, emgFullName, emgRelationship, probationStatus, stayStart, stayEnd) VALUES (1006722520, 'John', 'Angelou', 'M', '20020401', '6476203772', 'password123', 01, 101, 01, 'johnangelou@uoft.ca', '6471111111', 'Mukund Hari', 'Father', 'Safe', '20220901', '20230501');

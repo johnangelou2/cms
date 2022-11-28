@@ -6,6 +6,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
+import org.apache.coyote.http11.upgrade.InternalHttpUpgradeHandler;
+import org.hibernate.annotations.DynamicInsert;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -24,15 +27,14 @@ public class Room {
     @JsonIgnoreProperties({"rooms"})
     private Residence residenceId;
 
-    //@ManyToOne
+    //@OneToOne(targetEntity = RoomKey.class)
     @MapsId("roomN")
     @JoinColumn(name = "roomN")
-    @JsonIgnoreProperties({"rooms"})
-    private Long roomN;
+    private Integer roomN;
 
     @NotEmpty
     private String roomType;
 
-    private int capacity;
+    private Integer capacity;
 
 }

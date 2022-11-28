@@ -25,8 +25,8 @@ public class RoomController {
     }
 
 
-    @DeleteMapping("/rooms/{roomId}/{residenceId}")
-    void deleteRoom(@PathVariable("roomId") Long roomN, @PathVariable("residenceId") Long residenceId) {
+    @DeleteMapping("/rooms/{roomN}/{residenceId}")
+    void deleteRoom(@PathVariable("roomN") Integer roomN, @PathVariable("residenceId") Long residenceId) {
         repository.deleteById(new RoomKey(roomN, residenceId));
     }
 
@@ -52,29 +52,29 @@ public class RoomController {
         return repository.save(newRoom);
     }
 
-    @GetMapping("/rooms/{roomId}/{residenceId}")
-    Room retrieveRoom(@PathVariable("roomId") Long roomId, @PathVariable("residenceId") Long residenceId) {
-        return repository.findById(new RoomKey(roomId, residenceId))
-                .orElseThrow(() -> new RoomNotFoundException(roomId));
+    @GetMapping("/rooms/{roomN}/{residenceId}")
+    Room retrieveRoom(@PathVariable("roomN") Integer roomN, @PathVariable("residenceId") Long residenceId) {
+        return repository.findById(new RoomKey(roomN, residenceId))
+                .orElseThrow(() -> new RoomNotFoundException(roomN));
     }
 
     /**
     @PutMapping("/rooms/{id}")
-    Room updateRooms(@RequestBody Room newRoom, @PathVariable("id") Long roomId) {
-        return repository.findById(roomId)
+    Room updateRooms(@RequestBody Room newRoom, @PathVariable("id") Long roomN) {
+        return repository.findById(roomN)
                 .map(room -> {
                     room.setRoomType(newRoom.getRoomType());
                     return repository.save(room);
                 })
                 .orElseGet(() -> {
-                    newRoom.setRoomN(roomId);
+                    newRoom.setRoomN(roomN);
                     return repository.save(newRoom);
                 });
     } **/
 
-    @PutMapping("/rooms/{roomId}/{residenceId}")
-    Room updateRooms(@RequestBody RoomDto roomDto, @PathVariable("roomId") Long roomId, @PathVariable("residenceId") Long residenceId){
-        RoomKey roomKey = new RoomKey(roomId, residenceId);
+    @PutMapping("/rooms/{roomN}/{residenceId}")
+    Room updateRooms(@RequestBody RoomDto roomDto, @PathVariable("roomN") Integer roomN, @PathVariable("residenceId") Long residenceId){
+        RoomKey roomKey = new RoomKey(roomN, residenceId);
         return repository.findById(roomKey).map(room -> {
             room.setCapacity(roomDto.getRoomCap());
             room.setRoomType(roomDto.getRoomType());
