@@ -28,8 +28,8 @@ public class Room {
     private Residence residenceId;
 
     //@OneToOne(targetEntity = RoomKey.class)
-    @MapsId("roomN")
-    @JoinColumn(name = "roomN")
+    @MapsId("roomNumber")
+    @JoinColumn(name = "roomNumber")
     private Integer roomN;
 
     @NotEmpty

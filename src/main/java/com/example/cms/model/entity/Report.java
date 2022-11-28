@@ -42,7 +42,7 @@ public class Report {
     @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "residence", referencedColumnName = "residenceId"),
-            @JoinColumn(name = "roomN", referencedColumnName = "roomN")
+            @JoinColumn(name = "roomN", referencedColumnName = "roomNumber")
     })
     @Nullable
     private Room room;

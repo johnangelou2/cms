@@ -51,7 +51,7 @@ public abstract class Person {
             @JoinColumn(name = "roomN", referencedColumnName = "roomN")
     })
     @Nullable
-    private Room room;
+    private Room roomN;
 
     @Email
     private String email;

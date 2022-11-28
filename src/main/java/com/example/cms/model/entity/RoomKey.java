@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Setter
 public class RoomKey implements Serializable {
 
-    @Column(name = "roomN")
+    @Column(name = "roomNumber")
     Integer roomN;
 
     @Column(name = "residenceId")

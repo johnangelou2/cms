@@ -79,7 +79,7 @@ export default {
       ],
       form: {
         residenceId: "",
-        roomN: "",
+        roomNumber: "",
         roomType: "",
         capacity: ""
       }
@@ -96,13 +96,13 @@ export default {
     },
     edit(item, index, button) {
       this.form.residenceId = item.residenceId;
-      this.form.roomN = item.roomN;
+      this.form.roomNumber = item.roomNumber;
       this.form.roomType = item.roomType;
       this.form.capacity = item.capacity;
     },
     resetEditModal() {
       this.form.residenceId = "";
-      this.form.roomN = "";
+      this.form.roomNumber = "";
       this.form.roomType = "";
       this.form.capacity = "";
     },
@@ -114,7 +114,7 @@ export default {
       axios
         .put("http://localhost:8085/students/" + roomN + "/" + residenceId, {
           residenceId: residenceId,
-          roomN: roomN,
+          roomNumber: roomN,
           roomType: this.form.roomType,
           capacity: this.form.capacity
         })
