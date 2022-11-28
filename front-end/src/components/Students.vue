@@ -97,13 +97,11 @@ export default {
         .then(response => (this.students = response.data));
     },
     edit(item, index, button) {
-      this.form.id = item.id;
       this.form.email = item.email;
       this.form.dateOfBirth = item.dateOfBirth;
       this.form.phoneNum = item.phoneNum;
     },
     resetEditModal() {
-      this.form.id = "";
       this.form.email = "";
       this.form.dateOfBirth = "";
       this.form.phoneNum = "";
@@ -122,6 +120,8 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
+        window.alert("Changes Saved!");
+        this.init();
     }
   }
 };

@@ -31,11 +31,11 @@
         <b-form-input
           id="input-date-of-birth"
           v-model="form.dateOfBirth"
-          placeholder="Date of Birth"
+          placeholder="Room Number"
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-phone-num">Phone Number</label>
+        <label class="sr-only" for="input-phone-num">Room Type</label>
         <b-form-input
           id="input-phone-num"
           v-model="form.last_name"
@@ -43,12 +43,12 @@
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-email">Email</label>
+        <label class="sr-only" for="input-email">Capacity</label>
         <b-input-group prepend="@">
           <b-form-input
             id="input-email"
             v-model="form.email"
-            placeholder="Email"
+            placeholder="Capacity"
             required
           ></b-form-input>
         </b-input-group>
@@ -68,22 +68,20 @@
 import axios from "axios";
 
 export default {
-  name: "Students",
+  name: "rooms",
   data() {
     return {
-      students: null,
+      rooms: null,
       fields: [
-        { key: "id", label: "Student ID", sortable: true },
-        { key: "phoneNum", label: "Phone Number", sortable: true },
-        { key: "dateOfBirth", label: "Date of Birth", sortable: true },
-        { key: "email", label: "Email", sortable: true, sortable: true },
+        { key: "roomN", label: "Residence ID", sortable: true },
+        { key: "roomType", label: "Room Type", sortable: true },
+        { key: "capacity", label: "Capacity", sortable: true, sortable: true },
         { key: "actions", label: "Actions" }
       ],
       form: {
-        email: "",
-        dateOfBirth: "",
-        phoneNum: "",
-        id: ""
+        roomN: "",
+        roomType: "",
+        capacity: ""
       }
     };
   },
@@ -93,20 +91,20 @@ export default {
   methods: {
     init() {
       axios
-        .get("http://localhost:8085/students")
-        .then(response => (this.students = response.data));
+        .get("http://localhost:8085/rooms")
+        .then(response => (this.rooms = response.data));
     },
     edit(item, index, button) {
-      this.form.id = item.id;
-      this.form.email = item.email;
-      this.form.dateOfBirth = item.dateOfBirth;
-      this.form.phoneNum = item.phoneNum;
+      this.form.resId = item.resId;
+      this.form.roomNumber = item.roomNumber;
+      this.form.roomType = item.roomType;
+      this.form.capacity = item.capacity;
     },
     resetEditModal() {
-      this.form.id = "";
-      this.form.email = "";
-      this.form.dateOfBirth = "";
-      this.form.phoneNum = "";
+      this.form.resId = "";
+      this.form.roomNumber = "";
+      this.form.roomType = "";
+      this.form.capacity = "";
     },
     onSave(event) {
       var numId;
