@@ -38,7 +38,7 @@
         <label class="sr-only" for="input-room-type">Room Type</label>
         <b-form-input
           id="room-type"
-          v-model="roomType"
+          v-model="form.roomType"
           placeholder="Room Type"
           required
         ></b-form-input>
@@ -72,8 +72,8 @@ export default {
     return {
       rooms: null,
       fields: [
-        { key: "residenceId", label: "Residence ID", sortable: true },
-        { key: "roomN", label: "Room ID", sortable: true },
+        { key: "roomKey.residenceId", label: "Residence ID", sortable: true },
+        { key: "roomKey.roomN", label: "Room ID", sortable: true },
         { key: "roomType", label: "Room Type", sortable: true },
         { key: "capacity", label: "Capacity", sortable: true, sortable: true },
         { key: "actions", label: "Actions" }
