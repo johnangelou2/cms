@@ -23,7 +23,7 @@ public class Room {
     @ManyToOne
     @MapsId("resId")
     @JoinColumn(name = "resId")
-    private Residence residence;
+    private Residence residenceId;
 
     //@OneToOne(targetEntity = RoomKey.class)
     @MapsId("roomNumber")
