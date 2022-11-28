@@ -13,11 +13,11 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "residenceIndences")
+@Table(name = "residenceIdences")
 public class Residence {
 
     @Id
-    private long residenceId;
+    private long resId;
 
     @NotEmpty
     private String address;

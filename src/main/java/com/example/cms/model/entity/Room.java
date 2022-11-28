@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.lang.Nullable;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -20,12 +21,13 @@ public class Room {
     private RoomKey roomKey;
 
     @ManyToOne
-    @MapsId("residenceId")
-    @JoinColumn(name = "residenceId")
+    @MapsId("resId")
+    @JoinColumn(name = "resId")
     @JsonIgnoreProperties({"rooms"})
     private Residence residenceId;
 
     //@OneToOne(targetEntity = RoomKey.class)
+    @Nullable
     @MapsId("roomNumber")
     @JoinColumn(name = "roomNumber")
     private Integer roomN;

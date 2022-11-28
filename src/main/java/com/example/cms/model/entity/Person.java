@@ -40,15 +40,15 @@ public abstract class Person {
     private String password; 
 
     @OneToOne
-    @JoinColumn(name = "residenceId")
+    @JoinColumn(name = "residenceIdence")
     @Nullable
     private Residence residence;
 
 
     @ManyToOne
     @JoinColumns({
-            @JoinColumn(name = "residence", referencedColumnName = "residenceId"),
-            @JoinColumn(name = "roomN", referencedColumnName = "roomN")
+            @JoinColumn(name = "resId", referencedColumnName = "resId"),
+            @JoinColumn(name = "roomNumber", referencedColumnName = "roomNumber")
     })
     @Nullable
     private Room roomN;
