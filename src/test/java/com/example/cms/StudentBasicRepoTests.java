@@ -1,5 +1,6 @@
 package com.example.cms;
 
+import com.example.cms.model.entity.Student;
 import com.example.cms.model.repository.StudentRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -13,8 +14,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 
 @ExtendWith(SpringExtension.class)
@@ -55,8 +56,49 @@ public class StudentBasicRepoTests {
         studentJson.put("lastName", "ORourke");
         studentJson.put("email", "sean@sean.org");
 
-        MockHttpServletResponse response = mockMvc.perform(post("/students")).andReturn().getResponse();
+        MockHttpServletResponse response = mockMvc.perform(post("/students").
+                        contentType("application/json").
+                        content(studentJson.toString()))
+                .andReturn().getResponse();
         assertEquals(200, response.getStatus());
+
+        assertTrue(studentRepository.findById(1006722567L).isPresent());
+        Student testStu = studentRepository.findById(1006722567L).get();
+        assertEquals("Sean", testStu.getFirstName());
+        assertEquals("ORourke", testStu.getLastName());
+        assertEquals("sean@sean.org", testStu.getEmail());
+    }
+
+    @Test
+    public void testDeleteFunctionality() throws Exception {
+        //Create New Student to be Deleted
+        Student s = new Student();
+        s.setId(123456L);
+        s.setFirstName("first");
+        s.setLastName("last");
+        s.setEmail("first@last.com");
+        studentRepository.save(s);
+
+        MockHttpServletResponse response = mockMvc.perform(
+                        delete("/students/123456").
+                                contentType("application/json"))
+                .andReturn().getResponse();
+
+        assertEquals(200, response.getStatus());
+        assertTrue(studentRepository.findById(123456L).isEmpty());
+    }
+
+    @Test
+    public void testPasswordFunction() throws Exception{
+        Student s = studentRepository.findById(1006722520L).get();
+
+        MockHttpServletResponse response = mockMvc.perform(get("/students/1006722520"))
+                .andReturn().getResponse();
+
+        assertEquals(200, response.getStatus());
+        ObjectNode receivedJson = objectMapper.readValue(response.getContentAsString(), ObjectNode.class);
+
+        assertEquals("password123", receivedJson.get("password").textValue());
 
     }
 
