@@ -3,7 +3,6 @@ package com.example.cms.controller;
 import com.example.cms.controller.dto.RoomDto;
 import com.example.cms.controller.exceptions.ResidenceNotFoundException;
 import com.example.cms.controller.exceptions.RoomNotFoundException;
-import com.example.cms.model.entity.Residence;
 import com.example.cms.model.entity.Room;
 import com.example.cms.model.entity.RoomKey;
 import com.example.cms.model.repository.ResidenceRepository;
@@ -54,9 +53,9 @@ public class RoomController {
     }
 
     @GetMapping("/rooms/{roomId}/{resId}")
-    Room retrieveRoom(@PathVariable("roomId") Long roomID, @PathVariable("resId") Long resId) {
-        return repository.findById(new RoomKey(roomID, resId))
-                .orElseThrow(() -> new RoomNotFoundException(roomID));
+    Room retrieveRoom(@PathVariable("roomId") Long roomId, @PathVariable("resId") Long resId) {
+        return repository.findById(new RoomKey(roomId, resId))
+                .orElseThrow(() -> new RoomNotFoundException(roomId));
     }
 
     /**

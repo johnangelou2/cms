@@ -19,39 +19,37 @@
       hide-footer
     >
       <b-form>
-        <label class="sr-only" for="input-id">Room ID</label>
+        <label class="sr-only" for="input-res-id">Res ID</label>
         <b-form-input
           id="input-id"
-          v-model="form.id"
+          v-model="form.resId"
           placeholder="Room ID"
           readonly
         ></b-form-input>
 
-        <label class="sr-only" for="input-date-of-birth"></label>
+        <label class="sr-only" for="input-room-id">Room ID</label>
         <b-form-input
-          id="input-date-of-birth"
-          v-model="form.dateOfBirth"
-          placeholder="Room Number"
+          id="input-id"
+          v-model="form.roomN"
+          placeholder="Room ID"
+          readonly
+        ></b-form-input>
+
+        <label class="sr-only" for="input-room-type">Room Type</label>
+        <b-form-input
+          id="room-type"
+          v-model="roomType"
+          placeholder="Room Type"
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-phone-num">Room Type</label>
+        <label class="sr-only" for="input-capacity">Capacity</label>
         <b-form-input
-          id="input-phone-num"
-          v-model="form.last_name"
-          placeholder="xxx-xxx-xxxx"
-          required
-        ></b-form-input>
-
-        <label class="sr-only" for="input-email">Capacity</label>
-        <b-input-group prepend="@">
-          <b-form-input
-            id="input-email"
-            v-model="form.email"
+            id="input-capacity"
+            v-model="form.capacity"
             placeholder="Capacity"
             required
-          ></b-form-input>
-        </b-input-group>
+        ></b-form-input>
 
         <br />
         <b-button type="button" @click="onSave" variant="primary"
@@ -68,17 +66,19 @@
 import axios from "axios";
 
 export default {
-  name: "rooms",
+  name: "Rooms",
   data() {
     return {
       rooms: null,
       fields: [
-        { key: "roomN", label: "Residence ID", sortable: true },
+        { key: "resId", label: "Residence ID", sortable: true },
+        { key: "roomN", label: "Room ID", sortable: true },
         { key: "roomType", label: "Room Type", sortable: true },
         { key: "capacity", label: "Capacity", sortable: true, sortable: true },
         { key: "actions", label: "Actions" }
       ],
       form: {
+        resId: "",
         roomN: "",
         roomType: "",
         capacity: ""
@@ -91,7 +91,7 @@ export default {
   methods: {
     init() {
       axios
-        .get("http://localhost:8085/rooms")
+        .get("http://localhost:8085/rooms/")
         .then(response => (this.rooms = response.data));
     },
     edit(item, index, button) {
@@ -107,19 +107,23 @@ export default {
       this.form.capacity = "";
     },
     onSave(event) {
-      var numId;
-      numId = parseInt(this.form.id);
+      var resId;
+      var roomId
+      resId = parseInt(this.form.resId);
+      roomId = parseInt(this.form.roomNumber);
       axios
-        .put("http://localhost:8085/students/" + numId, {
-          id: numId,
-          dateOfBirth: this.form.dateOfBirth,
-          lastName: this.form.phoneNum,
-          email: this.form.email
+        .put("http://localhost:8085/students/" + roomId + "/" + resId, {
+          resId: resId,
+          roomNumber: roomId,
+          roomType: this.form.roomType,
+          capacity: this.form.capacity
         })
         .then(() => this.init())
         .catch(function(error) {
           console.log(error);
         });
+        window.alert("Changes Saved!");
+        this.init();
     }
   }
 };
