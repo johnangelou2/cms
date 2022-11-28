@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class RoomDto {
     Long residenceId;
-    Long roomNum;
+    Long roomN;
     String roomType;
     int roomCap;
 }

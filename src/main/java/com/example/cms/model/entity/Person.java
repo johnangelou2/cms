@@ -1,6 +1,5 @@
 package com.example.cms.model.entity;
 
-import jdk.jfr.Name;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +8,6 @@ import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -42,15 +40,15 @@ public abstract class Person {
     private String password; 
 
     @OneToOne
-    @JoinColumn(name = "resId")
+    @JoinColumn(name = "residenceId")
     @Nullable
     private Residence residence;
 
 
     @ManyToOne
     @JoinColumns({
-            @JoinColumn(name = "residence", referencedColumnName = "resId"),
-            @JoinColumn(name = "roomN", referencedColumnName = "roomNumber")
+            @JoinColumn(name = "residence", referencedColumnName = "residenceId"),
+            @JoinColumn(name = "roomN", referencedColumnName = "roomN")
     })
     @Nullable
     private Room room;

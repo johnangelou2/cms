@@ -7,7 +7,6 @@ import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +18,7 @@ import java.util.List;
 public class Residence {
 
     @Id
-    private long resId;
+    private long residenceId;
 
     @NotEmpty
     private String address;
@@ -27,7 +26,7 @@ public class Residence {
     @NotEmpty
     private String name;
 
-    /**
+    
     @OneToMany(mappedBy = "residence")
     private List<Room> rooms = new ArrayList<>();
 
@@ -36,5 +35,5 @@ public class Residence {
     private List<Report> resReports = new ArrayList<>();
 
     @OneToMany(mappedBy = "Employee")
-    private List<Admin> employees = new ArrayList<>(); **/
+    private List<Admin> employees = new ArrayList<>();
 }

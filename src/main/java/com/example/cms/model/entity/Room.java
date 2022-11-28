@@ -3,12 +3,10 @@ package com.example.cms.model.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.lang.Nullable;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
-import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @NoArgsConstructor
@@ -21,13 +19,15 @@ public class Room {
     private RoomKey roomKey;
 
     @ManyToOne
-    @MapsId("resId")
-    @JoinColumn(name = "resId")
+    @MapsId("residenceId")
+    @JoinColumn(name = "residenceId")
+    @JsonIgnoreProperties({"rooms"})
     private Residence residenceId;
 
-    //@OneToOne(targetEntity = RoomKey.class)
-    @MapsId("roomNumber")
-    @JoinColumn(name = "roomNumber")
+    //@ManyToOne
+    @MapsId("roomN")
+    @JoinColumn(name = "roomN")
+    @JsonIgnoreProperties({"rooms"})
     private Long roomN;
 
     @NotEmpty

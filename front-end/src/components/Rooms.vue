@@ -22,8 +22,8 @@
         <label class="sr-only" for="input-res-id">Res ID</label>
         <b-form-input
           id="input-id"
-          v-model="form.resId"
-          placeholder="Room ID"
+          v-model="form.residenceId"
+          placeholder="Residence ID"
           readonly
         ></b-form-input>
 
@@ -56,7 +56,7 @@
           >Save</b-button
         >
         <b-button type="reset" variant="warning">Reset</b-button>
-        <b-button type="button" variant="danger">Remove Student</b-button>
+        <b-button type="button" variant="danger">Remove Room</b-button>
       </b-form>
     </b-modal>
   </div>
@@ -71,14 +71,14 @@ export default {
     return {
       rooms: null,
       fields: [
-        { key: "resId", label: "Residence ID", sortable: true },
+        { key: "residenceId", label: "Residence ID", sortable: true },
         { key: "roomN", label: "Room ID", sortable: true },
         { key: "roomType", label: "Room Type", sortable: true },
         { key: "capacity", label: "Capacity", sortable: true, sortable: true },
         { key: "actions", label: "Actions" }
       ],
       form: {
-        resId: "",
+        residenceId: "",
         roomN: "",
         roomType: "",
         capacity: ""
@@ -95,26 +95,26 @@ export default {
         .then(response => (this.rooms = response.data));
     },
     edit(item, index, button) {
-      this.form.resId = item.resId;
-      this.form.roomNumber = item.roomNumber;
+      this.form.residenceId = item.residenceId;
+      this.form.roomN = item.roomN;
       this.form.roomType = item.roomType;
       this.form.capacity = item.capacity;
     },
     resetEditModal() {
-      this.form.resId = "";
-      this.form.roomNumber = "";
+      this.form.residenceId = "";
+      this.form.roomN = "";
       this.form.roomType = "";
       this.form.capacity = "";
     },
     onSave(event) {
-      var resId;
+      var resienceId;
       var roomId
-      resId = parseInt(this.form.resId);
-      roomId = parseInt(this.form.roomNumber);
+      residenceId = parseInt(this.form.residenceId);
+      roomId = parseInt(this.form.roomN);
       axios
-        .put("http://localhost:8085/students/" + roomId + "/" + resId, {
-          resId: resId,
-          roomNumber: roomId,
+        .put("http://localhost:8085/students/" + roomN + "/" + residenceId, {
+          residenceId: residenceId,
+          roomN: roomN,
           roomType: this.form.roomType,
           capacity: this.form.capacity
         })

@@ -1,7 +1,5 @@
 package com.example.cms;
 
-import com.example.cms.controller.exceptions.StudentNotFoundException;
-import com.example.cms.model.entity.Student;
 import com.example.cms.model.repository.StudentRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -13,14 +11,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -61,6 +56,7 @@ public class StudentBasicRepoTests {
         studentJson.put("email", "sean@sean.org");
 
         MockHttpServletResponse response = mockMvc.perform(post("/students")).andReturn().getResponse();
+        assertEquals(200, response.getStatus());
 
     }
 

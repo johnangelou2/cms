@@ -1,6 +1,6 @@
 package com.example.cms.model.repository;
 
-import com.example.cms.model.entity.Admin;
+
 import com.example.cms.model.entity.Report;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
