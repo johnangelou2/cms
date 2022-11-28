@@ -41,7 +41,7 @@
                 >Reports</b-nav-item
               >
           
-              <b-nav-item to="/Rooms" exact exact-active-class="exact-active"
+              <b-nav-item to="/rooms" exact exact-active-class="exact-active"
                 >Rooms</b-nav-item
               >
 
@@ -79,7 +79,7 @@ import Residences from "./components/residences.vue";
 import Students from "./components/Students.vue";
 import Reports from "./components/reports.vue";
 import FurtherInformation from "./components/FurtherInformation.vue";
-import Rooms from "./components/Rooms.vue";
+import Rooms from "./components/rooms.vue";
 
 export default {
   name: "App",

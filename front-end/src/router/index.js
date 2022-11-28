@@ -4,7 +4,7 @@ import LoginPage from "@/components/LoginPage";
 import Students from "@/components/Students";
 import Residences from "@/components/residences";
 import Reports from "@/components/reports";
-import Rooms from "@/components/Rooms";
+import Rooms from "@/components/rooms";
 import FurtherInformation from "@/components/FurtherInformation";
 
 Vue.use(Router);
@@ -37,7 +37,7 @@ export default new Router({
       component: FurtherInformation
     },
     {
-      path: "/Rooms",
+      path: "/rooms",
       name: "Rooms",
       component: Rooms
     }
