@@ -66,7 +66,7 @@
 import axios from "axios";
 
 export default {
-  name: "rooms",
+  name: "Rooms",
   data() {
     return {
       rooms: null,

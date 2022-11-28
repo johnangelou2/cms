@@ -72,9 +72,9 @@ public class RoomController {
                 });
     } **/
 
-    @PutMapping("/rooms/{roomN}/{residenceId}")
-    Room updateRooms(@RequestBody RoomDto roomDto, @PathVariable("roomN") Integer roomN, @PathVariable("residenceId") Long residenceId){
-        RoomKey roomKey = new RoomKey(roomN, residenceId);
+    @PutMapping("/rooms/{roomNumber}/{resId}")
+    Room updateRooms(@RequestBody RoomDto roomDto, @PathVariable("roomNumber") Integer roomNumber, @PathVariable("resId") Long resId){
+        RoomKey roomKey = new RoomKey(roomNumber, resId);
         return repository.findById(roomKey).map(room -> {
             room.setCapacity(roomDto.getRoomCap());
             room.setRoomType(roomDto.getRoomType());
