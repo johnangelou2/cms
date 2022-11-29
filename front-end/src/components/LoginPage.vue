@@ -1,5 +1,6 @@
 <template>
 <div class="login-container">
+<b-container>
       <form @submit.prevent="login">
         <h2 class="mb-3">Login</h2>
         <div class="input">
@@ -38,6 +39,7 @@
           ></button>
         </div>
       </form>
+    </b-container>
     </div>
     <!--
     <b-navbar toggleable type="dark" variant="dark">
