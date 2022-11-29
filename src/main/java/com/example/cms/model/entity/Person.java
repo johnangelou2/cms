@@ -31,8 +31,7 @@ public abstract class Person {
     //M = man W = woman, N = Non Binary / Choose not to say
     private char gender;
 
-    @DateTimeFormat
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     private long phoneNum;
     

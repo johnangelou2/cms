@@ -102,9 +102,8 @@ export default {
         { key: "type", label: "Report Type", sortable: true },
         { key: "status", label: "Report Status", sortable: true },
         {
-          key: "author",
-          label: "Report Author",
-          sortable: true,
+          key: "author.id",
+          label: "Report Admin",
           sortable: true
         },
         { key: "actions", label: "Actions" }

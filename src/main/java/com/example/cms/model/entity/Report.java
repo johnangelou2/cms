@@ -20,8 +20,7 @@ public class Report {
     @Id
     private long reportId;
 
-    @DateTimeFormat
-    private Date date;
+    private String date;
 
     @DateTimeFormat
     private Time time;
