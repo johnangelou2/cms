@@ -1,7 +1,7 @@
 <template>
   <div class="Information Page">
     <h1>
-      Ajskdajdka
+      A
     </h1>
     <p>
       One of the most celebrated events in many people's lives is the transition
