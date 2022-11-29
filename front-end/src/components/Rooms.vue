@@ -67,7 +67,7 @@ import axios from "axios";
 import _ from "lodash";
 
 export default {
-  name: "rooms",
+  name: "Rooms",
   data() {
     return {
       rooms: null,
@@ -111,10 +111,10 @@ export default {
     onSave(event) {
       var residenceId;
       var roomN;
-      residenceId = parseInt(this.form.residenceId);
+      residenceId = parseFloat(this.form.residenceId);
       roomN = parseInt(this.form.roomN);
       axios
-        .put("http://localhost:8085/students/" + roomN + "/" + residenceId, {
+        .put("http://localhost:8085/rooms/" + roomN + "/" + residenceId, {
           residenceId: residenceId,
           roomN: roomN,
           roomType: this.form.roomType,
