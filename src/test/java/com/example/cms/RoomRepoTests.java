@@ -1,5 +1,6 @@
 package com.example.cms;
 
+import com.example.cms.model.entity.Room;
 import com.example.cms.model.entity.RoomKey;
 import com.example.cms.model.repository.RoomRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -38,8 +39,12 @@ public class RoomRepoTests {
         assertEquals(200, response.getStatus());
 
         ObjectNode receivedJson = objectMapper.readValue(response.getContentAsString(), ObjectNode.class);
-        assertEquals(1L, receivedJson.get("resId").longValue());
-        assertEquals(101L, receivedJson.get("roomNumber").longValue());
+        RoomKey key = new RoomKey(101, 1L);
+        assertEquals(key.getRoomN(), receivedJson.get("roomKey").get("roomN").intValue());
+    }
+
+    @Test
+    void addRoom() throws Exception{
 
     }
 }
