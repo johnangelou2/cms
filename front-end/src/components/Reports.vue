@@ -93,9 +93,9 @@ export default {
   name: "Reports",
   data() {
     return {
-      students: null,
+      reports: null,
       fields: [
-        { key: "id", label: "Report ID", sortable: true },
+        { key: "reportId", label: "Report ID", sortable: true },
         { key: "date", label: "Report Date", sortable: true },
         { key: "time", label: "Report Time", sortable: true },
         { key: "description", label: "Description", sortable: true },
