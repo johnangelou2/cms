@@ -17,11 +17,9 @@ public class Admin extends Person {
 
     private String role;
 
-    @DateTimeFormat
-    private Date contractStart;
+    private String contractStart;
 
-    @DateTimeFormat
-    private Date contractEnd;
+    private String contractEnd;
 
     /**
     @OneToMany(mappedBy = "reportId")
