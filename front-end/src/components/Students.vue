@@ -74,12 +74,17 @@ export default {
       students: null,
       fields: [
         { key: "id", label: "Student ID", sortable: true },
+        { key: "lastName", label: "Last Name", sortable: true},
+        { key: "firstName", label: "First Name", sortable: true},
+        { key: "dateOfBirth", label: "Date of Birth", sortable: false },
         { key: "phoneNum", label: "Phone Number", sortable: true },
-        { key: "dateOfBirth", label: "Date of Birth", sortable: true },
         { key: "email", label: "Email", sortable: true, sortable: true },
-        { key: "actions", label: "Actions" }
+        { key: "actions", label: "Actions", sortable: false }
       ],
       form: {
+        firstName: "",
+        lastName: "",
+        
         email: "",
         dateOfBirth: "",
         phoneNum: "",
