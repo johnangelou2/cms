@@ -3,7 +3,6 @@ package com.example.cms.controller;
 import com.example.cms.controller.dto.RoomDto;
 import com.example.cms.controller.exceptions.ResidenceNotFoundException;
 import com.example.cms.controller.exceptions.RoomNotFoundException;
-import com.example.cms.model.entity.Residence;
 import com.example.cms.model.entity.Room;
 import com.example.cms.model.entity.RoomKey;
 import com.example.cms.model.repository.ResidenceRepository;
@@ -26,9 +25,9 @@ public class RoomController {
     }
 
 
-    @DeleteMapping("/rooms/{roomId}/{resId}")
-    void deleteRoom(@PathVariable("roomId") Long roomNum, @PathVariable("resId") Long resId) {
-        repository.deleteById(new RoomKey(roomNum, resId));
+    @DeleteMapping("/rooms/{roomN}/{residenceId}")
+    void deleteRoom(@PathVariable("roomN") Integer roomN, @PathVariable("residenceId") Long residenceId) {
+        repository.deleteById(new RoomKey(roomN, residenceId));
     }
 
     @GetMapping("/rooms")
@@ -45,37 +44,37 @@ public class RoomController {
     @PostMapping("/rooms")
     Room createRoom(@RequestBody RoomDto roomDto){
         Room newRoom = new Room();
-        newRoom.setRoomKey(new RoomKey(roomDto.getRoomNum(), roomDto.getResidenceId()));
+        newRoom.setRoomKey(new RoomKey(roomDto.getRoomN(), roomDto.getResidenceId()));
         newRoom.setRoomType(roomDto.getRoomType());
         newRoom.setCapacity(roomDto.getRoomCap());
-        newRoom.setResidence(residenceRepository.findById(roomDto.getResidenceId()).orElseThrow(() -> new ResidenceNotFoundException(roomDto.getResidenceId())));
-        newRoom.setRoomN(roomDto.getRoomNum());
+        newRoom.setResidenceId(residenceRepository.findById(roomDto.getResidenceId()).orElseThrow(() -> new ResidenceNotFoundException(roomDto.getResidenceId())));
+        newRoom.setRoomN(roomDto.getRoomN());
         return repository.save(newRoom);
     }
 
-    @GetMapping("/rooms/{roomId}/{resId}")
-    Room retrieveRoom(@PathVariable("roomId") Long roomID, @PathVariable("resId") Long resId) {
-        return repository.findById(new RoomKey(roomID, resId))
-                .orElseThrow(() -> new RoomNotFoundException(roomID));
+    @GetMapping("/rooms/{roomN}/{residenceId}")
+    Room retrieveRoom(@PathVariable("roomN") Integer roomN, @PathVariable("residenceId") Long residenceId) {
+        return repository.findById(new RoomKey(roomN, residenceId))
+                .orElseThrow(() -> new RoomNotFoundException(roomN));
     }
 
     /**
     @PutMapping("/rooms/{id}")
-    Room updateRooms(@RequestBody Room newRoom, @PathVariable("id") Long roomId) {
-        return repository.findById(roomId)
+    Room updateRooms(@RequestBody Room newRoom, @PathVariable("id") Long roomN) {
+        return repository.findById(roomN)
                 .map(room -> {
                     room.setRoomType(newRoom.getRoomType());
                     return repository.save(room);
                 })
                 .orElseGet(() -> {
-                    newRoom.setRoomN(roomId);
+                    newRoom.setRoomN(roomN);
                     return repository.save(newRoom);
                 });
     } **/
 
-    @PutMapping("/rooms/{roomId}/{resId}")
-    Room updateRooms(@RequestBody RoomDto roomDto, @PathVariable("roomId") Long roomId, @PathVariable("resId") Long resId){
-        RoomKey roomKey = new RoomKey(roomId, resId);
+    @PutMapping("/rooms/{roomNumber}/{resId}")
+    Room updateRooms(@RequestBody RoomDto roomDto, @PathVariable("roomNumber") Integer roomNumber, @PathVariable("resId") Long resId){
+        RoomKey roomKey = new RoomKey(roomNumber, resId);
         return repository.findById(roomKey).map(room -> {
             room.setCapacity(roomDto.getRoomCap());
             room.setRoomType(roomDto.getRoomType());

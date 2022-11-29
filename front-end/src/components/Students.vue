@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+  <b-container>
     <h2>Students Information</h2>
     <b-table striped hover responsive :items="students" :fields="fields">
       <template #cell(actions)="row">
@@ -61,6 +62,7 @@
         <b-button type="button" variant="danger">Remove Student</b-button>
       </b-form>
     </b-modal>
+  </b-container>
   </div>
 </template>
 
@@ -74,12 +76,17 @@ export default {
       students: null,
       fields: [
         { key: "id", label: "Student ID", sortable: true },
+        { key: "lastName", label: "Last Name", sortable: true},
+        { key: "firstName", label: "First Name", sortable: true},
+        { key: "dateOfBirth", label: "Date of Birth", sortable: false },
         { key: "phoneNum", label: "Phone Number", sortable: true },
-        { key: "dateOfBirth", label: "Date of Birth", sortable: true },
         { key: "email", label: "Email", sortable: true, sortable: true },
-        { key: "actions", label: "Actions" }
+        { key: "actions", label: "Actions", sortable: false }
       ],
       form: {
+        firstName: "",
+        lastName: "",
+        
         email: "",
         dateOfBirth: "",
         phoneNum: "",
@@ -97,13 +104,11 @@ export default {
         .then(response => (this.students = response.data));
     },
     edit(item, index, button) {
-      this.form.id = item.id;
       this.form.email = item.email;
       this.form.dateOfBirth = item.dateOfBirth;
       this.form.phoneNum = item.phoneNum;
     },
     resetEditModal() {
-      this.form.id = "";
       this.form.email = "";
       this.form.dateOfBirth = "";
       this.form.phoneNum = "";
@@ -122,6 +127,8 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
+        window.alert("Changes Saved!");
+        this.init();
     }
   }
 };

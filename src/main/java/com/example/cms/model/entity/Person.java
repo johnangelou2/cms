@@ -1,6 +1,5 @@
 package com.example.cms.model.entity;
 
-import jdk.jfr.Name;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +8,6 @@ import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -33,8 +31,7 @@ public abstract class Person {
     //M = man W = woman, N = Non Binary / Choose not to say
     private char gender;
 
-    @DateTimeFormat
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     private long phoneNum;
     
@@ -42,17 +39,17 @@ public abstract class Person {
     private String password; 
 
     @OneToOne
-    @JoinColumn(name = "resId")
+    @JoinColumn(name = "residenceIdence")
     @Nullable
     private Residence residence;
 
     @ManyToOne
     @JoinColumns({
-            @JoinColumn(name = "residence", referencedColumnName = "resId"),
-            @JoinColumn(name = "roomN", referencedColumnName = "roomNumber")
+            @JoinColumn(name = "resId", referencedColumnName = "resId"),
+            @JoinColumn(name = "roomNumber", referencedColumnName = "roomNumber")
     })
     @Nullable
-    private Room room;
+    private Room roomN;
 
     @Email
     private String email;

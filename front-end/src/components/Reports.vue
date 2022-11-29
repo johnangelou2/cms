@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+  <b-container>
     <h2>Reports Information</h2>
     <b-table striped hover responsive :items="reports" :fields="fields">
       <template #cell(actions)="row">
@@ -83,6 +84,7 @@
         <b-button type="button" variant="danger">Remove Student</b-button>
       </b-form>
     </b-modal>
+  </b-container>
   </div>
 </template>
 
@@ -93,18 +95,17 @@ export default {
   name: "Reports",
   data() {
     return {
-      students: null,
+      reports: null,
       fields: [
-        { key: "id", label: "Report ID", sortable: true },
+        { key: "reportId", label: "Report ID", sortable: true },
         { key: "date", label: "Report Date", sortable: true },
         { key: "time", label: "Report Time", sortable: true },
         { key: "description", label: "Description", sortable: true },
         { key: "type", label: "Report Type", sortable: true },
         { key: "status", label: "Report Status", sortable: true },
         {
-          key: "author",
-          label: "Report Author",
-          sortable: true,
+          key: "author.id",
+          label: "Report Admin",
           sortable: true
         },
         { key: "actions", label: "Actions" }

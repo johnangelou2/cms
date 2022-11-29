@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+  <b-container>
     <h2>Rooms Information</h2>
     <b-table striped hover responsive :items="rooms" :fields="fields">
       <template #cell(actions)="row">
@@ -19,71 +20,71 @@
       hide-footer
     >
       <b-form>
-        <label class="sr-only" for="input-id">Room ID</label>
+        <label class="sr-only" for="input-res-id">Res ID</label>
         <b-form-input
-          id="input-id"
-          v-model="form.id"
+          id="res-id"
+          v-model="form.residenceId"
+          placeholder="Residence ID"
+          readonly
+        ></b-form-input>
+
+        <label class="sr-only" for="input-room-id">Room ID</label>
+        <b-form-input
+          id="room-number"
+          v-model="form.roomN"
           placeholder="Room ID"
           readonly
         ></b-form-input>
 
-        <label class="sr-only" for="input-date-of-birth"></label>
+        <label class="sr-only" for="input-room-type">Room Type</label>
         <b-form-input
-          id="input-date-of-birth"
-          v-model="form.dateOfBirth"
-          placeholder="Date of Birth"
+          id="room-type"
+          v-model="form.roomType"
+          placeholder="Room Type"
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-phone-num">Phone Number</label>
+        <label class="sr-only" for="input-capacity">Capacity</label>
         <b-form-input
-          id="input-phone-num"
-          v-model="form.last_name"
-          placeholder="xxx-xxx-xxxx"
-          required
-        ></b-form-input>
-
-        <label class="sr-only" for="input-email">Email</label>
-        <b-input-group prepend="@">
-          <b-form-input
-            id="input-email"
-            v-model="form.email"
-            placeholder="Email"
+            id="input-capacity"
+            v-model="form.capacity"
+            placeholder="Capacity"
             required
-          ></b-form-input>
-        </b-input-group>
+        ></b-form-input>
 
         <br />
         <b-button type="button" @click="onSave" variant="primary"
           >Save</b-button
         >
         <b-button type="reset" variant="warning">Reset</b-button>
-        <b-button type="button" variant="danger">Remove Student</b-button>
+        <b-button type="button" variant="danger">Remove Room</b-button>
       </b-form>
     </b-modal>
+  </b-container>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import _ from "lodash";
 
 export default {
-  name: "Students",
+  name: "Rooms",
   data() {
     return {
-      students: null,
+      rooms: null,
       fields: [
-        { key: "id", label: "Student ID", sortable: true },
-        { key: "phoneNum", label: "Phone Number", sortable: true },
-        { key: "dateOfBirth", label: "Date of Birth", sortable: true },
-        { key: "email", label: "Email", sortable: true, sortable: true },
+        { key: "residenceId.name", label: "Residence ID", sortable: true },
+        { key: "roomKey.roomN", label: "Room ID", sortable: true },
+        { key: "roomType", label: "Room Type", sortable: true },
+        { key: "capacity", label: "Capacity", sortable: true, sortable: true },
         { key: "actions", label: "Actions" }
       ],
       form: {
-        email: "",
-        dateOfBirth: "",
-        phoneNum: "",
-        id: ""
+        residenceId: "",
+        roomN: "",
+        roomType: "",
+        capacity: ""
       }
     };
   },
@@ -93,35 +94,40 @@ export default {
   methods: {
     init() {
       axios
-        .get("http://localhost:8085/students")
-        .then(response => (this.students = response.data));
+        .get("http://localhost:8085/rooms/")
+        .then(response => {this.rooms = _.flatMapDeep(response.data);console.log(this.rooms)});
+        
     },
     edit(item, index, button) {
-      this.form.id = item.id;
-      this.form.email = item.email;
-      this.form.dateOfBirth = item.dateOfBirth;
-      this.form.phoneNum = item.phoneNum;
+      this.form.residenceId = item.residenceId;
+      this.form.roomN = item.roomN;
+      this.form.roomType = item.roomType;
+      this.form.capacity = item.capacity;
     },
     resetEditModal() {
-      this.form.id = "";
-      this.form.email = "";
-      this.form.dateOfBirth = "";
-      this.form.phoneNum = "";
+      this.form.residenceId = "";
+      this.form.roomN = "";
+      this.form.roomType = "";
+      this.form.capacity = "";
     },
     onSave(event) {
-      var numId;
-      numId = parseInt(this.form.id);
+      var residenceId;
+      var roomN;
+      residenceId = parseFloat(this.form.residenceId);
+      roomN = parseInt(this.form.roomN);
       axios
-        .put("http://localhost:8085/students/" + numId, {
-          id: numId,
-          dateOfBirth: this.form.dateOfBirth,
-          lastName: this.form.phoneNum,
-          email: this.form.email
+        .put("http://localhost:8085/rooms/" + roomN + "/" + residenceId, {
+          residenceId: residenceId,
+          roomN: roomN,
+          roomType: this.form.roomType,
+          capacity: this.form.capacity
         })
         .then(() => this.init())
         .catch(function(error) {
           console.log(error);
         });
+        window.alert("Changes Saved!");
+        this.init();
     }
   }
 };

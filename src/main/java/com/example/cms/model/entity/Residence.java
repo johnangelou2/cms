@@ -3,11 +3,9 @@ package com.example.cms.model.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "residences")
+@Table(name = "residenceIdences")
 public class Residence {
 
     @Id
@@ -27,14 +25,14 @@ public class Residence {
     @NotEmpty
     private String name;
 
-    /**
-    @OneToMany(mappedBy = "residence")
+    
+    @OneToMany(mappedBy = "residenceId")
     private List<Room> rooms = new ArrayList<>();
 
-    @OneToMany(mappedBy = "resReport")
-    @Nullable
-    private List<Report> resReports = new ArrayList<>();
+    //@OneToMany(mappedBy = "reports")
+    //@Nullable
+    //private List<Report> resReports = new ArrayList<>();
 
-    @OneToMany(mappedBy = "Employee")
-    private List<Admin> employees = new ArrayList<>(); **/
+    //@OneToMany(mappedBy = "Employee")
+    //private List<Admin> employees = new ArrayList<>();
 }

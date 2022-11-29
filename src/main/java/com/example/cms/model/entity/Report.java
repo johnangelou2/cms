@@ -20,8 +20,7 @@ public class Report {
     @Id
     private long reportId;
 
-    @DateTimeFormat
-    private Date date;
+    private String date;
 
     @DateTimeFormat
     private Time time;
@@ -41,8 +40,8 @@ public class Report {
 
     @ManyToOne
     @JoinColumns({
-            @JoinColumn(name = "residence", referencedColumnName = "resId"),
-            @JoinColumn(name = "roomN", referencedColumnName = "roomNumber")
+            @JoinColumn(name = "resId", referencedColumnName = "resId"),
+            @JoinColumn(name = "roomNumber", referencedColumnName = "roomNumber")
     })
     @Nullable
     private Room room;

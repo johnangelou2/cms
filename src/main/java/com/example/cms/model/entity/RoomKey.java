@@ -13,21 +13,21 @@ import java.io.Serializable;
 public class RoomKey implements Serializable {
 
     @Column(name = "roomNumber")
-    Long roomNum;
+    Integer roomN;
 
     @Column(name = "resId")
-    Long roomResId;
+    Long residenceId;
 
     @Override
     public int hashCode() {
-        String concatString = String.valueOf(roomNum.hashCode()) + String.valueOf(roomResId.hashCode());
+        String concatString = String.valueOf(roomN.hashCode()) + String.valueOf(residenceId.hashCode());
         return concatString.hashCode();
     }
     public RoomKey(){}
 
-    public RoomKey(Long Num, Long Res){
-        this.setRoomNum(Num);
-        this.setRoomResId(Res);
+    public RoomKey(Integer Num, Long Res){
+        this.setRoomN(Num);
+        this.setResidenceId(Res);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class RoomKey implements Serializable {
         if (!(o instanceof RoomKey))
             return false;
         RoomKey other = (RoomKey) o;
-        return roomNum.equals(other.roomNum) && roomResId.equals(other.roomResId);
+        return roomN.equals(other.roomN) && residenceId.equals(other.residenceId);
     }
 
     private static final long serialVersionUID = 1354271798359243697L;
