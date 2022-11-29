@@ -17,10 +17,8 @@ public class Student extends Person {
 
     private String probationStatus;
 
-    @DateTimeFormat
     private String stayStart;
 
-    @DateTimeFormat
     private String stayEnd;
 
 }
