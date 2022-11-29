@@ -72,7 +72,7 @@ export default {
     return {
       rooms: null,
       fields: [
-        { key: "roomKey.residenceId", label: "Residence ID", sortable: true },
+        { key: "residenceId.name", label: "Residence ID", sortable: true },
         { key: "roomKey.roomN", label: "Room ID", sortable: true },
         { key: "roomType", label: "Room Type", sortable: true },
         { key: "capacity", label: "Capacity", sortable: true, sortable: true },
