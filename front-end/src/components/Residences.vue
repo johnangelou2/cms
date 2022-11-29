@@ -2,7 +2,7 @@
 
 
 
-
+<b-container>
 <!-- partial:index.partial.html -->
 <div class="wrapper">
   <input checked type=radio name="slider" id="slide1" />
@@ -92,6 +92,7 @@
   </div>
   <!-- .slider-dot-control -->
 </div>
+</b-container>
 
 
 

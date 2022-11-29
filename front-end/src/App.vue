@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <b-container>
       <div>
         <b-navbar toggleable type="dark" variant="dark">
           <b-navbar-brand href="#"
@@ -54,7 +53,6 @@
       </div>
       <br />
       <router-view />
-    </b-container>
   </div>
 
   <!--

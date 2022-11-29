@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+  <b-container>
     <h2>Reports Information</h2>
     <b-table striped hover responsive :items="reports" :fields="fields">
       <template #cell(actions)="row">
@@ -83,6 +84,7 @@
         <b-button type="button" variant="danger">Remove Student</b-button>
       </b-form>
     </b-modal>
+  </b-container>
   </div>
 </template>
 

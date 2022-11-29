@@ -1,5 +1,6 @@
 <template>
   <div class="Information Page">
+  <b-container>
     <h1>
       A
     </h1>
@@ -18,6 +19,7 @@
     <!--
         For writing text, use loginpage as an example***
     -->
+  </b-container>
   </div>
 </template>
 
