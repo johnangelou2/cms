@@ -38,6 +38,23 @@
           readonly
         ></b-form-input>
 
+        <label class="sr-only" for="input-first-name">First Name</label>
+        <b-form-input
+          id="input-first-name"
+          v-model="form.firstName"
+          placeholder="Jane"
+          required
+          
+        ></b-form-input>
+
+        <label class="sr-only" for="input-last-name">Last Name</label>
+        <b-form-input
+          id="input-last-name"
+          v-model="form.lastName"
+          placeholder="Doe"
+          required
+        ></b-form-input>
+
         <label class="sr-only" for="input-date-of-birth">Date of Birth</label>
         <b-form-input
           id="input-date-of-birth"
@@ -50,7 +67,7 @@
         <b-form-input
           id="input-phone-num"
           v-model="form.last_name"
-          placeholder="xxx-xxx-xxxx"
+          placeholder=""
           required
         ></b-form-input>
 
@@ -65,7 +82,7 @@
         </b-input-group>
 
         <br />
-        <b-button type="button" @click="onSave" variant="primary"
+        <b-button type="button" @click="onSave()" variant="primary"
           >Save</b-button
         >
         <b-button type="reset" variant="warning">Reset</b-button>
@@ -97,7 +114,6 @@ export default {
       form: {
         firstName: "",
         lastName: "",
-        
         email: "",
         dateOfBirth: "",
         phoneNum: "",
