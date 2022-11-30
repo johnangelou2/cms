@@ -1,7 +1,7 @@
 <template>
   <div id="app">
       <div>
-        <b-navbar toggleable type="dark" variant="dark">
+        <b-navbar v-if="!$route.meta.hideNavbar" toggleable type="dark" variant="dark">
           <b-navbar-brand href="#"
             ><b-icon
               icon="book"

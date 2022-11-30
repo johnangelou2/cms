@@ -14,7 +14,10 @@ export default new Router({
     {
       path: "/",
       name: "LoginPage",
-      component: LoginPage
+      component: LoginPage,
+      meta: {
+        hideNavbar: true
+      }
     },
     {
       path: "/students",
