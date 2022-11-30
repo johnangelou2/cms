@@ -1,15 +1,5 @@
 <template>
   <div class="hello">
-    <div class="search-container">
-      <b-input-group>
-        <b-form-input type="text" placeholder="Search Students' Name" v-model="studentnum"/>
-          <template #append>
-            <b-button class="search-button" @click="searchbyId(studentnum)">
-              <b-icon-search></b-icon-search>
-            </b-button>
-          </template>
-      </b-input-group>
-    </div>  
     <b-container>
     <h2>Students Information</h2>
     <b-table striped hover responsive :items="students" :fields="fields">
