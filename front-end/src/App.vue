@@ -1,74 +1,59 @@
 <template>
   <div id="app">
-      <div>
-        <b-navbar v-if="!$route.meta.hideNavbar" toggleable type="dark" variant="dark">
-          <b-navbar-brand href="#"
-            ><b-icon
-              icon="book"
-              variant="warning"
-              style="margin-left: 20px;"
-            ></b-icon>
-            Opal Residence: Residential Management Services
-          </b-navbar-brand>
+    <div>
+      <b-navbar
+        v-if="!$route.meta.hideNavbar"
+        toggleable
+        type="dark"
+        variant="dark"
+      >
+        <b-navbar-brand href="#"
+          ><b-icon
+            icon="book"
+            variant="warning"
+            style="margin-left: 20px;"
+          ></b-icon>
+          Opal Residence: Residential Management Services
+        </b-navbar-brand>
 
-          <b-navbar-toggle target="sidebar-menu"> </b-navbar-toggle>
-          <b-sidebar
-            id="sidebar-menu"
-            title="Opal Residence"
-            backdrop-variant="dark"
-            backdrop
-            shadow
-          >
-            <b-nav vertical align="center">
-              <b-nav-item
-                to="/"
-                exact
-                exact-active-class="exact-active"
-                >Login Page</b-nav-item
-              >
-        
-              <b-nav-item to="/students" exact exact-active-class="exact-active"
-                >Students</b-nav-item
-              >
-              <b-nav-item
-                to="/residences"
-                exact
-                exact-active-class="exact-active"
-                >Residence Info</b-nav-item
-              >
-              <b-nav-item to="/reports" exact exact-active-class="exact-active"
-                >Reports</b-nav-item
-              >
-          
-              <b-nav-item to="/rooms" exact exact-active-class="exact-active"
-                >Rooms</b-nav-item
-              >
+        <b-navbar-toggle target="sidebar-menu"> </b-navbar-toggle>
+        <b-sidebar
+          id="sidebar-menu"
+          title="Opal Residence"
+          backdrop-variant="dark"
+          backdrop
+          shadow
+        >
+          <b-nav vertical align="center">
+            <b-nav-item to="/students" exact exact-active-class="exact-active"
+              >Students</b-nav-item
+            >
+            <b-nav-item to="/residences" exact exact-active-class="exact-active"
+              >Residence Info</b-nav-item
+            >
+            <b-nav-item to="/reports" exact exact-active-class="exact-active"
+              >Reports</b-nav-item
+            >
 
-              <b-nav-item to="/FurtherInformation" exact exact-active-class="exact-active"
-                >Info</b-nav-item
-              >
-            </b-nav>
-          </b-sidebar>
-        </b-navbar>
-      </div>
-      <br />
-      <router-view />
-  </div>
-
-  <!--
-<ul>
-        <li>
-          <student-login></student-login>
-        </li>
-    </ul>
-
-    <div id="app">
-      <NavBar :name="$route.name"/>
-      <main>
-        <router-view/>
-      </main>
+            <b-nav-item to="/rooms" exact exact-active-class="exact-active"
+              >Rooms</b-nav-item
+            >
+            <b-nav-item
+              to="/FurtherInformation"
+              exact
+              exact-active-class="exact-active"
+              >Further Info</b-nav-item
+            >
+            <b-nav-item to="/" exact exact-active-class="exact-active"
+              >Logout</b-nav-item
+            >
+          </b-nav>
+        </b-sidebar>
+      </b-navbar>
     </div>
-  -->
+    <br />
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -102,8 +87,8 @@ export default {
 
   margin-top: 0px;
   background: #a6b1ca;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   position: fixed;
   left: 0;
   top: 0;
