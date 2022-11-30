@@ -81,7 +81,7 @@
           >Save</b-button
         >
         <b-button type="reset" variant="warning">Reset</b-button>
-        <b-button type="button" variant="danger">Remove Student</b-button>
+        <b-button type="button" variant="danger">Remove Report</b-button>
       </b-form>
     </b-modal>
   </b-container>
