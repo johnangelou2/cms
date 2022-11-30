@@ -8,7 +8,7 @@
               variant="warning"
               style="margin-left: 20px;"
             ></b-icon>
-            Residential Management Services
+            Opal Residence: Residential Management Services
           </b-navbar-brand>
 
           <b-navbar-toggle target="sidebar-menu"> </b-navbar-toggle>

@@ -3,7 +3,7 @@
 
 <b-container>
       <form @submit.prevent="login">
-        <h2 class="mb-3">Login to Opal Residence</h2>
+        <h2 class="mb-3">Login to Opal Residences</h2>
         <div class="input">
           <label for="id">Login ID</label>
           <input
@@ -20,7 +20,7 @@
             class="form-control"
             type="password"
             name="password"
-            placeholder="password"
+            placeholder="Password"
           />
         </div>
         <button type="submit" class="mt-4 btn-pers" id="login_button">
