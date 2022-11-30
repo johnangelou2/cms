@@ -1,15 +1,16 @@
 <template>
 <div class="login-container">
+
 <b-container>
       <form @submit.prevent="login">
-        <h2 class="mb-3">Login</h2>
+        <h2 class="mb-3">Login to Opal Residence</h2>
         <div class="input">
-          <label for="id">School ID</label>
+          <label for="id">Login ID</label>
           <input
             class="form-control"
             type="text"
             name="id"
-            placeholder="student/admin id"
+            placeholder="Login ID"
             required
           />
         </div>
@@ -40,6 +41,8 @@
         </div>
       </form>
     </b-container>
+
+    <img src="https://iili.io/HffFylf.png" alt="W3Schools.com">
     </div>
     <!--
     <b-navbar toggleable type="dark" variant="dark">
@@ -124,4 +127,8 @@ import axios from 'axios';
   margin-top: 0px;
  
 }
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;}
 </style>
