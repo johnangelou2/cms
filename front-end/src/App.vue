@@ -14,7 +14,7 @@
           <b-navbar-toggle target="sidebar-menu"> </b-navbar-toggle>
           <b-sidebar
             id="sidebar-menu"
-            title="RMS"
+            title="Opal Residence"
             backdrop-variant="dark"
             backdrop
             shadow
