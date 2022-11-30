@@ -1,6 +1,5 @@
 <template>
 <div class="login-container">
-
 <b-container>
       <form @submit.prevent="login">
         <h2 class="mb-3">Login to Opal Residences</h2>
@@ -119,4 +118,5 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;}
+
 </style>

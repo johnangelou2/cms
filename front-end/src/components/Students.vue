@@ -1,6 +1,16 @@
 <template>
   <div class="hello">
-  <b-container>
+    <div class="search-container">
+      <b-input-group>
+        <b-form-input type="text" placeholder="Search Students' Name" v-model="studentnum"/>
+          <template #append>
+            <b-button class="search-button" @click="searchbyId(studentnum)">
+              <b-icon-search></b-icon-search>
+            </b-button>
+          </template>
+      </b-input-group>
+    </div>  
+    <b-container>
     <h2>Students Information</h2>
     <b-table striped hover responsive :items="students" :fields="fields">
       <template #cell(actions)="row">
@@ -74,6 +84,7 @@ export default {
   data() {
     return {
       students: null,
+      studentnum: "",
       fields: [
         { key: "id", label: "Student ID", sortable: true },
         { key: "lastName", label: "Last Name", sortable: true},
@@ -102,6 +113,18 @@ export default {
       axios
         .get("http://localhost:8085/students")
         .then(response => (this.students = response.data));
+    },
+    searchbyId(studentnum) {
+      if (studentnum) {
+        axios
+        .get("http://localhost:8085/students/" + studentnum)
+        .then(response => (this.students= response.data))
+        .catch(function (error) {
+          if (error.response) {
+            console.log(error.response.data);
+          }
+        })
+      }
     },
     edit(item, index, button) {
       this.form.email = item.email;
@@ -150,5 +173,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.search-container {
+  padding:2%
 }
 </style>

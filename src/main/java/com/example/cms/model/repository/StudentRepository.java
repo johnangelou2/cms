@@ -14,13 +14,14 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     //Find Students through name
     @Query(value = "select * from students s " +
-            "where lower(s.fullName) like lower(concat('%', :searchTerm, '%')) ", nativeQuery = true)
+            "where lower(s.firstName) like lower(concat('%', :searchTerm, '%')) or like lower(s.lastName) like lowerw(concat('%', :searchTerm, '%'))", nativeQuery = true)
     List<Student> search(@Param("searchTerm") String searchTerm);
 
     //Find Students through Residence
     @Query(value = "select * from students s " +
             "where residence.name = residences.name", nativeQuery = true)
     List<Student> searchByRes(@Param("residence") Residence residence);
+
 
 
     /**

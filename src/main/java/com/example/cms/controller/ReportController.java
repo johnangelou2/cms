@@ -31,6 +31,8 @@ public class ReportController {
         newReport.setReportId(reportDto.getReportId());
         newReport.setDate(reportDto.getDate());
         newReport.setTime(reportDto.getTime());
+        newReport.setDescription(reportDto.getDescription());
+        newReport.setType(reportDto.getType());
         newReport.setStatus(reportDto.getStatus());
         return repository.save(newReport);
     }
@@ -63,15 +65,15 @@ public class ReportController {
                         report.setTime(temp.getTime());
                     else
                         report.setTime(reportDto.getTime());
-                    if(reportDto.getDesc() == null)
-                        report.setDescription(temp.getDescription());
+                    if(reportDto.getDescription() == null)
+                        report.setDescription(reportDto.getDescription());
                     else
-                        report.setDescription(reportDto.getDesc());
+                        report.setDescription(temp.getDescription());
                     if(reportDto.getType() == null)
                         report.setType(temp.getType());
                     else
                         report.setType(reportDto.getType());
-                    if(reportDto.getDesc() == null)
+                    if(reportDto.getStatus() == null)
                         report.setStatus(temp.getStatus());
                     else {
                         report.setStatus(reportDto.getStatus());}

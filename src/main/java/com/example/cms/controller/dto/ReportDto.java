@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.example.cms.model.entity.Admin;
+
 import java.sql.Time;
 
 @Getter
@@ -14,9 +16,9 @@ public class ReportDto {
     long reportId;
     @DateTimeFormat
     Time time;
-    String desc;
+    String description;
     String type;
     String status;
-    long author;
+    Admin author;
 
 }
