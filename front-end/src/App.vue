@@ -73,7 +73,7 @@ export default {
   color: #334250;
 
   margin-top: 0px;
-  background: #a6b1ca;
+  background: #ffffff;
   width: 100%;
   height: 100%;
   position: fixed;
