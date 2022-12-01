@@ -71,12 +71,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #334250;
-
   margin-top: 0px;
   background: #ffffff;
   width: 100%;
   height: 100%;
-  position: fixed;
   left: 0;
   top: 0;
 }
