@@ -4,7 +4,7 @@
     <br>
     <b-row>
       <b-col><h2 style="text-center">Reports Information</h2></b-col>
-      <b-col><b-button v-b-modal.add-modal block variant="success" type="button" @click="addReport">New Report</b-button></b-col>
+      <b-col><b-button v-b-modal.add-modal block variant="success" type="button" @click="addReport" style="float: right;">New Report</b-button></b-col>
     </b-row>
     <br>
     <b-table striped hover responsive :items="reports" :fields="fields"
