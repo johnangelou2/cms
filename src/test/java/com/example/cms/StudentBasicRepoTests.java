@@ -46,6 +46,27 @@ public class StudentBasicRepoTests {
         assertEquals("Angelou", receivedJson.get("lastName").textValue());
 
     }
+@Test
+    void testPutStudent() throws Exception{
+        MockHttpServletResponse response = mockMvc.perform(put("/students/1006722520"))
+                .andReturn().getResponse();
+
+        assertEquals(200, response.getStatus());
+    ObjectNode receivedJson = objectMapper.readValue(response.getContentAsString(), ObjectNode.class);
+    assertEquals(1006722520L, receivedJson.get("id").longValue());
+    assertEquals("John", receivedJson.get("firstName").textValue());
+    assertEquals("Angelou", receivedJson.get("lastName").textValue());
+
+        receivedJson.put("firstName", "Sean");
+        receivedJson.put("lastName", "ORourke");
+        receivedJson.put("email", "sean@sean.org");
+
+        assertTrue(studentRepository.findById(1006722520L).isPresent());
+        Student testStu = studentRepository.findById(1006722520L).get();
+        assertEquals("Sean", testStu.getFirstName());
+        assertEquals("ORourke", testStu.getLastName());
+        assertEquals("sean@sean.org", testStu.getEmail());
+    }
 
     //Test creating a student
     @Test

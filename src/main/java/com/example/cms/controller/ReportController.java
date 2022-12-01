@@ -28,6 +28,13 @@ public class ReportController {
     Report createReport(@RequestBody ReportDto reportDto) {
         Report newReport = new Report();
         //date, time, status, admin
+        reportDto.setReportId(newReport.getReportId());
+        reportDto.setTime(newReport.getTime());
+        reportDto.setType(newReport.getType());
+        reportDto.setDate(newReport.getDate());
+        reportDto.setDescription(newReport.getDescription());
+        reportDto.setStatus(newReport.getStatus());
+        reportDto.setAuthor(newReport.getAuthor());
         return repository.save(newReport);
     }
 
