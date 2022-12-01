@@ -100,7 +100,7 @@ export default {
   methods: {
     init() {
       axios
-        .get("http://localhost:8085/rooms/")
+        .get("http://localhost:8085/rooms")
         .then(response => {this.rooms = _.flatMapDeep(response.data);console.log(this.rooms)});
         
     },

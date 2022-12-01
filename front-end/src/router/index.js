@@ -8,9 +8,7 @@ import Rooms from "@/components/rooms";
 import FurtherInformation from "@/components/FurtherInformation";
 
 Vue.use(Router);
-var cors = require('cors')
 
-app.use(cors()) 
 export default new Router({
   routes: [
     {
