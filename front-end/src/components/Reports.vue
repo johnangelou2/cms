@@ -1,7 +1,13 @@
 <template>
   <div class="hello">
   <b-container>
-    <h2>Reports Information</h2>
+    <br>
+    <b-row>
+      <b-col><h2>Reports Information</h2></b-col>
+      <b-col><b-button id="addButton" type="button" @click="addReport" variant="success">New Report</b-button></b-col> 
+    </b-row>
+    
+    <br>
     <b-table striped hover responsive :items="reports" :fields="fields"
     label-sort-asc=""
     label-sort-desc=""
@@ -17,9 +23,6 @@
         </b-button>
       </template>
     </b-table>
-    <div class = "add-button">
-      <button type="submit" v-b-modal.add-modal>New Report</button>
-    </div>
     <b-modal
       id="edit-modal"
       title="Edit Report"
@@ -153,8 +156,6 @@
           required
         ></b-form-input>
         <br />
-        <b-button type="button" @click="addReport" variant="primary"
-          >Add</b-button>
       </b-form>
     </b-modal>
   </b-container>
@@ -281,5 +282,8 @@ li {
 }
 a {
   color: #42b983;
+}
+#addButton{
+  text-align: right;
 }
 </style>

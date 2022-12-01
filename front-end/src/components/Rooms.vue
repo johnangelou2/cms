@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
   <b-container>
+    <br>
     <h2>Rooms Information</h2>
+    <br>
     <b-table striped hover responsive :items="rooms" :fields="fields"
     label-sort-asc=""
     label-sort-desc=""
