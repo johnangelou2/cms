@@ -2,11 +2,9 @@
   <div class="hello">
   <b-container>
     <br>
-    <b-row>
-      <b-col><h2>Reports Information</h2></b-col>
-      <b-col><b-button id="addButton" type="button" @click="addReport" variant="success">New Report</b-button></b-col> 
-    </b-row>
-    
+    <h2>Reports Information</h2>
+     <br>
+     <b-button class="float-right" variant="success" type="button" @click="addReport" >New Report</b-button>
     <br>
     <b-table striped hover responsive :items="reports" :fields="fields"
     label-sort-asc=""
@@ -282,8 +280,5 @@ li {
 }
 a {
   color: #42b983;
-}
-#addButton{
-  text-align: right;
 }
 </style>
