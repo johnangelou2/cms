@@ -13,6 +13,9 @@
         </b-button>
       </template>
     </b-table>
+    <div class = "add-button">
+      <button type="submit" v-b-modal.add-modal>New Student</button>
+    </div>
     <b-modal
       id="edit-modal"
       title="Edit Student"
@@ -76,7 +79,71 @@
           >Save</b-button
         >
         <b-button type="reset" variant="warning">Reset</b-button>
-        <b-button type="button" variant="danger">Remove Student</b-button>
+        <b-button type="button" @click="removeStudent" variant="danger">Remove Student</b-button>
+      </b-form>
+    </b-modal>
+    <b-modal
+      id="add-modal"
+      title="Add Student"
+      @hide="resetEditModal"
+      hide-footer
+    >
+      <b-form>
+        <label class="sr-only" for="input-id">Student ID</label>
+        <b-form-input
+          id="input-id"
+          v-model="form.id"
+          placeholder="Student ID"
+          required
+        ></b-form-input>
+
+        <label class="sr-only" for="input-first-name">First Name</label>
+        <b-form-input
+          id="input-first-name"
+          v-model="form.firstName"
+          placeholder="Jane"
+          required
+          
+        ></b-form-input>
+
+        <label class="sr-only" for="input-last-name">Last Name</label>
+        <b-form-input
+          id="input-last-name"
+          v-model="form.lastName"
+          placeholder="Doe"
+          required
+        ></b-form-input>
+
+        <label class="sr-only" for="input-date-of-birth">Date of Birth</label>
+        <b-form-input
+          id="input-date-of-birth"
+          v-model="form.dateOfBirth"
+          placeholder="Date of Birth"
+          required
+        ></b-form-input>
+
+        <label class="sr-only" for="input-phone-num">Phone Number</label>
+        <b-form-input
+          id="input-phone-num"
+          v-model="form.phoneNum"
+          placeholder=""
+          required
+        ></b-form-input>
+
+        <label class="sr-only" for="input-email">Email</label>
+        <b-input-group prepend="@">
+          <b-form-input
+            id="input-email"
+            v-model="form.email"
+            placeholder="Email"
+            required
+          ></b-form-input>
+        </b-input-group>
+
+        <br />
+        <b-button type="button" @click="addStudent" variant="primary"
+          >Add</b-button
+        >
       </b-form>
     </b-modal>
   </b-container>
@@ -120,17 +187,28 @@ export default {
         .get("http://localhost:8085/students")
         .then(response => (this.students = response.data));
     },
-    searchbyId(studentnum) {
-      if (studentnum) {
-        axios
-        .get("http://localhost:8085/students/" + studentnum)
-        .then(response => (this.students= response.data))
-        .catch(function (error) {
-          if (error.response) {
-            console.log(error.response.data);
-          }
-        })
-      }
+    addStudent() {
+      axios 
+      .post("http://localhost:8085/students", {
+        "id": this.form.id,
+        "firstName": this.form.firstName,
+        "lastName": this.form.lastName,
+        "dateOfBirth": this.form.dateOfBirth,
+        "phoneNum": this.form.phoneNum,
+        "email": this.form.email
+      })
+      .then(() => {this.init();this.$refs['add-modal'].hide()})
+      .catch(function (error) {
+        console.log(error);
+      }); 
+    },
+    removeStudent() {
+      axios
+      .delete("http://localhost:8085/students/" + this.form.id)
+      .then(() => {this.init();this.$refs['edit-modal'].hide()})
+      .catch(function (error) {
+        console.log(error);
+      });
     },
     edit(item, index, button) {
       this.form.id = item.id;
