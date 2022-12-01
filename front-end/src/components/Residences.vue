@@ -5,14 +5,14 @@
     <h1 class="Head">Welcome to Opal Residential Managment Services!</h1>
     <p>&nbsp;&nbsp;</p>
     <div class="wrapper">
-      <input checked type="radio" name="slider" id="slide1" />
-      <input type="radio" name="slider" id="slide2" />
-      <input type="radio" name="slider" id="slide3" />
-      <input type="radio" name="slider" id="slide4" />
-      <input type="radio" name="slider" id="slide5" />
+      <input checked type="radio" name="mover" id="spot1" />
+      <input type="radio" name="mover" id="spot2" />
+      <input type="radio" name="mover" id="spot3" />
+      <input type="radio" name="mover" id="spot4" />
+      <input type="radio" name="mover" id="spot5" />
 
-      <div class="slider-wrapper">
-        <div class="inner">
+      <div class="mover-wrapper">
+        <div class="inside">
           <article>
             <div class="element">
               <div class="info top-left">
@@ -116,9 +116,9 @@
             /></a>
           </article>
         </div>
-        <!-- .inner -->
+        <!-- .inside -->
       </div>
-      <!-- .slider-wrapper -->
+      <!-- .mover-wrapper -->
 
       <!-- <div class = "arrowLeft">
   <img src = "https://static.vecteezy.com/system/resources/previews/008/844/878/original/arrow-icon-design-free-png.png"
@@ -136,23 +136,23 @@
 </div>
  -->
 
-      <div class="slider-prev-next-control">
-        <label for="slide1"></label>
-        <label for="slide2"></label>
-        <label for="slide3"></label>
-        <label for="slide4"></label>
-        <label for="slide5"></label>
+      <div class="mover-prev-next-control">
+        <label for="spot1"></label>
+        <label for="spot2"></label>
+        <label for="spot3"></label>
+        <label for="spot4"></label>
+        <label for="spot5"></label>
       </div>
-      <!-- .slider-prev-next-control -->
+      <!-- .mover-prev-next-control -->
 
-      <div class="slider-dot-control">
-        <label for="slide1"></label>
-        <label for="slide2"></label>
-        <label for="slide3"></label>
-        <label for="slide4"></label>
-        <label for="slide5"></label>
+      <div class="mover-dot-control">
+        <label for="spot1"></label>
+        <label for="spot2"></label>
+        <label for="spot3"></label>
+        <label for="spot4"></label>
+        <label for="spot5"></label>
       </div>
-      <!-- .slider-dot-control -->
+      <!-- .mover-dot-control -->
     </div>
   </b-container>
 </template>
@@ -196,7 +196,7 @@ input {
   display: none;
 }
 
-.inner {
+.inside {
   width: 500%;
   line-height: 0;
 }
@@ -211,7 +211,7 @@ article img {
 }
 
 /*---- SET UP CONTROL ----*/
-.slider-prev-next-control {
+.mover-prev-next-control {
   height: 50px;
   position: absolute;
   top: 50%;
@@ -222,7 +222,7 @@ article img {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.slider-prev-next-control label {
+.mover-prev-next-control label {
   display: none;
   width: 40px;
   height: 40px;
@@ -230,17 +230,17 @@ article img {
   background: rgba(255, 255, 255, 0.67);
   opacity: 0.7;
 }
-.slider-prev-next-control label:hover {
+.mover-prev-next-control label:hover {
   opacity: 1;
 }
 
-.slider-dot-control {
+.mover-dot-control {
   position: absolute;
   width: 100%;
   bottom: 0;
   text-align: center;
 }
-.slider-dot-control label {
+.mover-dot-control label {
   cursor: pointer;
   border-radius: 5px;
   display: inline-block;
@@ -251,7 +251,7 @@ article img {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-.slider-dot-control label:hover {
+.mover-dot-control label:hover {
   background: #ccc;
   border-color: #777;
 }
@@ -292,8 +292,8 @@ article img {
   right: 30px;
 }
 
-/* Slider Styling */
-.slider-wrapper {
+/* mover Styling */
+.mover-wrapper {
   width: 100%;
   overflow: hidden;
   border-radius: 5px;
@@ -309,7 +309,7 @@ article img {
   -moz-transition: all 500ms ease-out;
   transition: all 500ms ease-out;
 }
-.slider-wrapper .inner {
+.mover-wrapper .inside {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -326,16 +326,16 @@ article img {
 }
 
 /*---- SET POSITION FOR SLIDE ----*/
-#slide1:checked ~ .slider-prev-next-control label:nth-child(5)::after,
-#slide5:checked ~ .slider-prev-next-control label:nth-child(4)::after,
-#slide4:checked ~ .slider-prev-next-control label:nth-child(3)::after,
-#slide3:checked ~ .slider-prev-next-control label:nth-child(2)::after,
-#slide2:checked ~ .slider-prev-next-control label:nth-child(1)::after,
-#slide5:checked ~ .slider-prev-next-control label:nth-child(1)::after,
-#slide4:checked ~ .slider-prev-next-control label:nth-child(5)::after,
-#slide3:checked ~ .slider-prev-next-control label:nth-child(4)::after,
-#slide2:checked ~ .slider-prev-next-control label:nth-child(3)::after,
-#slide1:checked ~ .slider-prev-next-control label:nth-child(2)::after {
+#spot1:checked ~ .mover-prev-next-control label:nth-child(5)::after,
+#spot5:checked ~ .mover-prev-next-control label:nth-child(4)::after,
+#spot4:checked ~ .mover-prev-next-control label:nth-child(3)::after,
+#spot3:checked ~ .mover-prev-next-control label:nth-child(2)::after,
+#spot2:checked ~ .mover-prev-next-control label:nth-child(1)::after,
+#spot5:checked ~ .mover-prev-next-control label:nth-child(1)::after,
+#spot4:checked ~ .mover-prev-next-control label:nth-child(5)::after,
+#spot3:checked ~ .mover-prev-next-control label:nth-child(4)::after,
+#spot2:checked ~ .mover-prev-next-control label:nth-child(3)::after,
+#spot1:checked ~ .mover-prev-next-control label:nth-child(2)::after {
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
@@ -346,88 +346,88 @@ article img {
   color: rgba(119, 119, 119, 0);
 }
 
-#slide5:checked ~ .slider-prev-next-control label:nth-child(1)::after,
-#slide4:checked ~ .slider-prev-next-control label:nth-child(5)::after,
-#slide3:checked ~ .slider-prev-next-control label:nth-child(4)::after,
-#slide2:checked ~ .slider-prev-next-control label:nth-child(3)::after,
-#slide1:checked ~ .slider-prev-next-control label:nth-child(2)::after {
+#spot5:checked ~ .mover-prev-next-control label:nth-child(1)::after,
+#spot4:checked ~ .mover-prev-next-control label:nth-child(5)::after,
+#spot3:checked ~ .mover-prev-next-control label:nth-child(4)::after,
+#spot2:checked ~ .mover-prev-next-control label:nth-child(3)::after,
+#spot1:checked ~ .mover-prev-next-control label:nth-child(2)::after {
   content: "";
   padding-left: 15px;
 }
 
-#slide5:checked ~ .slider-prev-next-control label:nth-child(1),
-#slide4:checked ~ .slider-prev-next-control label:nth-child(5),
-#slide3:checked ~ .slider-prev-next-control label:nth-child(4),
-#slide2:checked ~ .slider-prev-next-control label:nth-child(3),
-#slide1:checked ~ .slider-prev-next-control label:nth-child(2) {
+#spot5:checked ~ .mover-prev-next-control label:nth-child(1),
+#spot4:checked ~ .mover-prev-next-control label:nth-child(5),
+#spot3:checked ~ .mover-prev-next-control label:nth-child(4),
+#spot2:checked ~ .mover-prev-next-control label:nth-child(3),
+#spot1:checked ~ .mover-prev-next-control label:nth-child(2) {
   display: block;
   float: right;
   margin-right: 5px;
 }
 
-#slide1:checked ~ .slider-prev-next-control label:nth-child(5),
-#slide5:checked ~ .slider-prev-next-control label:nth-child(4),
-#slide4:checked ~ .slider-prev-next-control label:nth-child(3),
-#slide3:checked ~ .slider-prev-next-control label:nth-child(2),
-#slide2:checked ~ .slider-prev-next-control label:nth-child(1) {
+#spot1:checked ~ .mover-prev-next-control label:nth-child(5),
+#spot5:checked ~ .mover-prev-next-control label:nth-child(4),
+#spot4:checked ~ .mover-prev-next-control label:nth-child(3),
+#spot3:checked ~ .mover-prev-next-control label:nth-child(2),
+#spot2:checked ~ .mover-prev-next-control label:nth-child(1) {
   display: block;
   float: left;
   margin-left: 5px;
 }
 
-#slide1:checked ~ .slider-prev-next-control label:nth-child(5)::after,
-#slide5:checked ~ .slider-prev-next-control label:nth-child(4)::after,
-#slide4:checked ~ .slider-prev-next-control label:nth-child(3)::after,
-#slide3:checked ~ .slider-prev-next-control label:nth-child(2)::after,
-#slide2:checked ~ .slider-prev-next-control label:nth-child(1)::after {
+#spot1:checked ~ .mover-prev-next-control label:nth-child(5)::after,
+#spot5:checked ~ .mover-prev-next-control label:nth-child(4)::after,
+#spot4:checked ~ .mover-prev-next-control label:nth-child(3)::after,
+#spot3:checked ~ .mover-prev-next-control label:nth-child(2)::after,
+#spot2:checked ~ .mover-prev-next-control label:nth-child(1)::after {
   content: "";
   padding-left: 8px;
 }
 
-#slide5:checked ~ .slider-dot-control label:nth-child(5),
-#slide4:checked ~ .slider-dot-control label:nth-child(4),
-#slide3:checked ~ .slider-dot-control label:nth-child(3),
-#slide2:checked ~ .slider-dot-control label:nth-child(2),
-#slide1:checked ~ .slider-dot-control label:nth-child(1) {
+#spot5:checked ~ .mover-dot-control label:nth-child(5),
+#spot4:checked ~ .mover-dot-control label:nth-child(4),
+#spot3:checked ~ .mover-dot-control label:nth-child(3),
+#spot2:checked ~ .mover-dot-control label:nth-child(2),
+#spot1:checked ~ .mover-dot-control label:nth-child(1) {
   background: #333;
 }
 
-#slide5:checked ~ .slider-wrapper article:nth-child(5) .info,
-#slide4:checked ~ .slider-wrapper article:nth-child(4) .info,
-#slide3:checked ~ .slider-wrapper article:nth-child(3) .info,
-#slide2:checked ~ .slider-wrapper article:nth-child(2) .info,
-#slide1:checked ~ .slider-wrapper article:nth-child(1) .info {
+#spot5:checked ~ .mover-wrapper article:nth-child(5) .info,
+#spot4:checked ~ .mover-wrapper article:nth-child(4) .info,
+#spot3:checked ~ .mover-wrapper article:nth-child(3) .info,
+#spot2:checked ~ .mover-wrapper article:nth-child(2) .info,
+#spot1:checked ~ .mover-wrapper article:nth-child(1) .info {
   opacity: 1;
 }
 
-#slide1:checked ~ .slider-wrapper .inner {
+#spot1:checked ~ .mover-wrapper .inside {
   margin-left: 0%;
 }
-#slide2:checked ~ .slider-wrapper .inner {
+#spot2:checked ~ .mover-wrapper .inside {
   margin-left: -100%;
 }
-#slide3:checked ~ .slider-wrapper .inner {
+#spot3:checked ~ .mover-wrapper .inside {
   margin-left: -200%;
 }
-#slide4:checked ~ .slider-wrapper .inner {
+#spot4:checked ~ .mover-wrapper .inside {
   margin-left: -300%;
 }
-#slide5:checked ~ .slider-wrapper .inner {
+#spot5:checked ~ .mover-wrapper .inside {
   margin-left: -400%;
 }
 /*---- TABLET ----*/
 @media only screen and (max-width: 850px) and (min-width: 450px) {
-  .slider-wrapper {
+  .mover-wrapper {
     border-radius: 0;
   }
 }
 /*---- MOBILE----*/
 @media only screen and (max-width: 450px) {
-  .slider-wrapper {
+  .mover-wrapper {
     border-radius: 0;
   }
 
-  .slider-wrapper .info {
+  .mover-wrapper .info {
     opacity: 0;
   }
 }
