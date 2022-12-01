@@ -2,7 +2,11 @@
   <div class="hello">
   <b-container>
     <h2>Reports Information</h2>
-    <b-table striped hover responsive :items="reports" :fields="fields">
+    <b-table striped hover responsive :items="reports" :fields="fields"
+    label-sort-asc=""
+    label-sort-desc=""
+    label-sort-clear=""
+    >
       <template #cell(actions)="row">
         <b-button
           size="sm"
