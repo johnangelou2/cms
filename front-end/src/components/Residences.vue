@@ -98,7 +98,7 @@
   </div>
   <!-- .slider-wrapper -->
 
-  <div class = "arrowLeft">
+  <!-- <div class = "arrowLeft">
   <img src = "https://static.vecteezy.com/system/resources/previews/008/844/878/original/arrow-icon-design-free-png.png"
   width=3.2%
   height=3.2%/>
@@ -112,7 +112,7 @@
   height=3.2%/>
 </div>
 </div>
-
+ -->
 
 
 
@@ -223,7 +223,7 @@ article img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.469);
+  background: rgba(255, 255, 255, 0.67);
   opacity: 0.7;
 }
 .slider-prev-next-control label:hover {
