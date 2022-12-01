@@ -1,25 +1,18 @@
 <template>
   <div class="Information Page">
-  <b-container>
-    <h1>
-      A
-    </h1>
-    <p>
-      One of the most celebrated events in many people's lives is the transition
-      towards higher education and moving away as one puruses their higher
-      education. This web application aims to help this transition process by
-      providing a feature suite in which those maintaining and living in
-      residences can help manage their information. ADD more info on prpose and
-      features Decritiopn of the development templatecontext of task (ie. part
-      of undergraduate term project disclaimer on the website textual providing
-      overview of topic area, references and proper citation collection of lnks,
-      organized and identified to help visitors find other sites that are
-      relevant
-    </p>
-    <!--
+    <b-container>
+      <h1 id="furtherinformation">
+        Further Information
+      </h1>
+      <h2 class="Purpose" id="purpose">Purpose</h2>
+      <p class="description" id="purpose description">
+        The purpose of this website is to provide administrtors with a resource
+        to keep track of any and all disputes which may be
+      </p>
+      <!--
         For writing text, use loginpage as an example***
     -->
-  </b-container>
+    </b-container>
   </div>
 </template>
 
