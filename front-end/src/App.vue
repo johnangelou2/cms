@@ -1,30 +1,54 @@
 <template>
   <div id="app">
     <div>
-        <b-navbar
-          v-if="!$route.meta.hideNavbar"     
-          type="dark"
-          variant="primary"
-        >
+      <b-navbar v-if="!$route.meta.hideNavbar" type="dark" variant="primary">
         <b-container>
           <b-navbar-brand href="#">
-              <img src="https://iili.io/HffFylf.png" fluid class="d-inline-block align-top" height="35px" alt="Opal Residence Icon">
+            <img
+              src="https://iili.io/HffFylf.png"
+              fluid
+              class="d-inline-block align-top"
+              height="35px"
+              alt="Opal Residence Icon"
+            />
             Opal: Residential Management Services
           </b-navbar-brand>
           <b-navbar-nav>
             <b-nav-item to="/students" exact exact-active-class="exact-active"
-                >Students</b-nav-item>
-              <b-nav-item to="/reports" exact exact-active-class="exact-active"
-                >Reports</b-nav-item>
-              <b-nav-item to="/rooms" exact exact-active-class="exact-active"
-                >Rooms</b-nav-item>
-              <b-nav-item-dropdown text="Info" left>
-                <b-dropdown-item to="/residences" exact exact-active-class="exact-active">Residence Info</b-dropdown-item>
-                <b-dropdown-item to="/FurtherInformation" exact exact-active-class="exact-active">Further Info</b-dropdown-item>
-              </b-nav-item-dropdown>
-              <b-nav-item to="/" exact exact-active-class="exact-active"
-                >Logout</b-nav-item
+              >Students</b-nav-item
+            >
+            <b-nav-item to="/reports" exact exact-active-class="exact-active"
+              >Reports</b-nav-item
+            >
+            <b-nav-item to="/rooms" exact exact-active-class="exact-active"
+              >Rooms</b-nav-item
+            >
+            <div @mouseover="onOver" @mouseleave="onLeave">
+              <b-nav-item-dropdown
+                id="dropdown-1"
+                text="Info"
+                ref="dropdown"
+                left
               >
+                <b-dropdown-item
+                  to="/residences"
+                  exact
+                  exact-active-class="exact-active"
+                  >Residence Info</b-dropdown-item
+                >
+
+                <b-dropdown-item
+                  to="/FurtherInformation"
+                  exact
+                  exact-active-class="exact-active"
+                  >Further Info</b-dropdown-item
+                >
+              </b-nav-item-dropdown>
+            </div>
+
+            <b-nav-item to="/" exact exact-active-class="exact-active"
+              >Logout</b-nav-item
+            >
           </b-navbar-nav>
           <b-navbar-toggle target="sidebar-menu"> </b-navbar-toggle>
           <b-sidebar
@@ -52,6 +76,15 @@ import FurtherInformation from "./components/FurtherInformation.vue";
 import Rooms from "./components/rooms.vue";
 
 export default {
+  methods: {
+    onOver() {
+      this.$refs.dropdown.visible = true;
+    },
+    onLeave() {
+      this.$refs.dropdown.visible = false;
+    }
+  },
+
   name: "App",
 
   components: {
