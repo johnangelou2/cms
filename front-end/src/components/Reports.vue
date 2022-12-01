@@ -2,9 +2,10 @@
   <div class="hello">
   <b-container>
     <br>
-    <h2>Reports Information</h2>
-     <br>
-     <b-button class="float-right" variant="success" type="button" @click="addReport" >New Report</b-button>
+    <b-row>
+      <b-col><h2 style="text-center">Reports Information</h2></b-col>
+      <b-col><b-button v-b-modal.add-modal block variant="success" type="button" @click="addReport">New Report</b-button></b-col>
+    </b-row>
     <br>
     <b-table striped hover responsive :items="reports" :fields="fields"
     label-sort-asc=""
@@ -12,11 +13,7 @@
     label-sort-clear=""
     >
       <template #cell(actions)="row">
-        <b-button
-          size="sm"
-          v-b-modal.edit-modal
-          @click="edit(row.item, row.index, $event.target)"
-        >
+        <b-button size="sm" v-b-modal.edit-modal @click="edit(row.item, row.index, $event.target)">
           Edit
         </b-button>
       </template>

@@ -11,7 +11,7 @@
               <img src="https://iili.io/HffFylf.png" fluid class="d-inline-block align-top" height="35px" alt="Opal Residence Icon">
             Opal: Residential Management Services
           </b-navbar-brand>
-          <b-navbar-nav pills>
+          <b-navbar-nav>
             <b-nav-item to="/students" exact exact-active-class="exact-active"
                 >Students</b-nav-item>
               <b-nav-item to="/reports" exact exact-active-class="exact-active"
