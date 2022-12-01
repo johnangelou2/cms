@@ -28,12 +28,6 @@ public class ReportController {
     Report createReport(@RequestBody ReportDto reportDto) {
         Report newReport = new Report();
         //date, time, status, admin
-        newReport.setReportId(reportDto.getReportId());
-        newReport.setDate(reportDto.getDate());
-        newReport.setTime(reportDto.getTime());
-        newReport.setDescription(reportDto.getDescription());
-        newReport.setType(reportDto.getType());
-        newReport.setStatus(reportDto.getStatus());
         return repository.save(newReport);
     }
 
@@ -77,7 +71,6 @@ public class ReportController {
                         report.setStatus(temp.getStatus());
                     else {
                         report.setStatus(reportDto.getStatus());}
-                        report.setAuthor(temp.getAuthor());
                     return repository.save(report);
                 })
                 .orElseGet(() -> {

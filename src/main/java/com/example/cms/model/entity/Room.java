@@ -36,5 +36,4 @@ public class Room {
     private String roomType;
 
     private Integer capacity;
-
 }
