@@ -25,9 +25,10 @@ public class ReportController {
     }
 
     @PostMapping("/reports")
-    Report createReport(@RequestBody Report NewReport) {
+    Report createReport(@RequestBody ReportDto reportDto) {
+        Report newReport = new Report();
         //date, time, status, admin
-        return repository.save(NewReport);
+        return repository.save(newReport);
     }
 
     @GetMapping("/reports/{id}")
