@@ -2,7 +2,11 @@
   <div class="hello">
   <b-container>
     <h2>Reports Information</h2>
-    <b-table striped hover responsive :items="reports" :fields="fields">
+    <b-table striped hover responsive :items="reports" :fields="fields"
+    label-sort-asc=""
+    label-sort-desc=""
+    label-sort-clear=""
+    >
       <template #cell(actions)="row">
         <b-button
           size="sm"
@@ -26,7 +30,7 @@
         <label class="sr-only" for="input-id">Report ID</label>
         <b-form-input
           id="input-id"
-          v-model="form.id"
+          v-model="form.reportId"
           placeholder="Report ID"
           required
         ></b-form-input>
@@ -34,7 +38,7 @@
         <label class="sr-only" for="input-date">Report Date</label>
         <b-form-input
           id="input-date-of-birth"
-          v-model="form.dateOfBirth"
+          v-model="form.date"
           placeholder="Date of Birth"
           required
         ></b-form-input>
@@ -96,7 +100,7 @@
         <label class="sr-only" for="input-id">Report ID</label>
         <b-form-input
           id="input-id"
-          v-model="form.id"
+          v-model="form.reportId"
           placeholder="Report ID"
           required
         ></b-form-input>
@@ -104,7 +108,7 @@
         <label class="sr-only" for="input-date">Report Date</label>
         <b-form-input
           id="input-date-of-birth"
-          v-model="form.dateOfBirth"
+          v-model="form.date"
           placeholder="Date of Report"
           required
         ></b-form-input>
@@ -180,7 +184,7 @@ export default {
         { key: "actions", label: "Actions" }
       ],
       form: {
-        id:"",
+        reportId:"",
         date:"",
         time:"",
         description:"",
@@ -201,7 +205,7 @@ export default {
     addReport() {
       axios
       .post("http://localhost:8085/reports/", {
-        "reportId": this.form.id,
+        "reportId": this.form.reportId,
         "date": this.form.date,
         "time": this.form.time,
         "description": this.form.description,
@@ -215,14 +219,14 @@ export default {
     },
     removeReport() {
       axios 
-      .delete("http://localhost:8085/reports/" + this.form.id)
+      .delete("http://localhost:8085/reports/" + this.form.reportId)
       .then(() => {this.init();this.$refs['edit-modal'].hide()})
       .catch(function (error) {
         console.log(error);
       });
     },
     edit(item, index, button) {
-      this.form.id = item.id;
+      this.form.reportId = item.reportId;
       this.form.date = item.date;
       this.form.time = item.time;
       this.form.description = item.description;
@@ -231,7 +235,7 @@ export default {
       this.form.admin = item.admin;
     },
     resetEditModal() {
-      this.form.id = item.id;
+      this.form.reportId = item.reportId;
       this.form.date = item.date;
       this.form.time = item.time;
       this.form.description = item.description;
@@ -241,10 +245,10 @@ export default {
     },
     onSave() {
       var numId;
-      numId = parseInt(this.form.id);
+      numId = parseInt(this.form.reportId);
       axios
         .put("http://localhost:8085/reports/" + numId, {
-          id: numId,
+          reportId: numId,
           date: this.form.date,
           time: this.form.time,
           description: this.form.description,
