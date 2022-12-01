@@ -1,8 +1,11 @@
 <template>
   <div class="hello">
     <b-container>
-      <br>
-    <h2>Students Information</h2>
+    <br>
+    <b-row>
+      <b-col><h2 style="text-center">Students Information</h2></b-col>
+      <b-col><b-button v-b-modal.add-modal block variant="success" type="button" @click="addStudent" style="float: right;">New Student</b-button></b-col>
+    </b-row>
     <br>
     <b-table striped hover responsive :items="students" :fields="fields"
     label-sort-asc=""
@@ -18,9 +21,6 @@
         </b-button>
       </template>
     </b-table>
-    <div class = "add-button">
-      <button type="submit" v-b-modal.add-modal>New Student</button>
-    </div>
     <b-modal
       id="edit-modal"
       title="Edit Student"
