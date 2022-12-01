@@ -11,17 +11,28 @@
   <input type=radio name="slider" id="slide4" />
   <input type=radio name="slider" id="slide5" />
 
+
+  
+
+
+
   <div class="slider-wrapper">
     <div class=inner>
+      
       <article>
         <div class="element">
         <div class="info top-left">
-          <h3>University College</h3></div>
+          <h3>Innis College</h3></div>
         <div class="info bottom-left">
-          <h3>A beautiful building that offers mostly single rooms in both modern and historic residence halls</h3></div>
-        </div>
-          <a href="https://starportal.utoronto.ca/StarRezPortalX/6F477B7F/13/139/The_Residences-University_College"><img src="https://www.uc.utoronto.ca/sites/default/files/styles/scale_width_768/public/assets/images/UofT708_20080610_UniversityCollege_025%284x3%29.jpg?itok=J7E0rpPj"/></a>
+          <h3>A gender-inclusive, shared-apartment-style residence, and just a few steps from Robarts Library!</h3></div>
+          </div>
+          <a href="http://starportal.utoronto.ca/StarRezPortalX/56DB73DE/13/134/The_Residences-Innis_College"><img src="https://innis.utoronto.ca/wp-content/uploads/About-Innis-College-Feature-1.jpg"
+            height=720/></a>
+            
       </article>
+
+
+
 
       <article>
         <div class="element">
@@ -32,19 +43,27 @@
           </div>
           <a href="https://starportal.utoronto.ca/StarRezPortalX/6F477B7F/13/139/The_Residences-University_College"><img src="http://www.torontohotelsincanada.com/data/Photos/OriginalPhoto/8309/830953/830953823.JPEG"
             height=720/></a>
+
+
+            
       </article>
+
 
 
       <article>
-        <div class="element">
-        <div class="info top-left">
-          <h3>Innis College</h3></div>
-        <div class="info bottom-left">
-          <h3>A gender-inclusive, shared-apartment-style residence, and just a few steps from Robarts Library!</h3></div>
-          </div>
-          <a href="http://starportal.utoronto.ca/StarRezPortalX/56DB73DE/13/134/The_Residences-Innis_College"><img src="https://innis.utoronto.ca/wp-content/uploads/About-Innis-College-Feature-1.jpg"
-            height=720/></a>
-      </article>
+
+        
+<div class="element">
+<div class="info top-left">
+  <h3>University College</h3></div>
+<div class="info bottom-left">
+  <h3>A beautiful building that offers mostly single rooms in both modern and historic residence halls</h3></div>
+</div>
+  <a href="https://starportal.utoronto.ca/StarRezPortalX/6F477B7F/13/139/The_Residences-University_College"><img class ="img1" src="https://www.uc.utoronto.ca/sites/default/files/styles/scale_width_768/public/assets/images/UofT708_20080610_UniversityCollege_025%284x3%29.jpg?itok=J7E0rpPj"/></a>
+
+</article>
+
+
 
       <article>
         <div class="element">
@@ -69,10 +88,33 @@
       </article>
 
 
+  
+
+      
+
+
     </div>
     <!-- .inner -->
   </div>
   <!-- .slider-wrapper -->
+
+  <!-- <div class = "arrowLeft">
+  <img src = "https://static.vecteezy.com/system/resources/previews/008/844/878/original/arrow-icon-design-free-png.png"
+  width=3.2%
+  height=3.2%/>
+</div>
+
+
+<div class = "arrowRight">
+  <div class = "extraTranslate">
+  <img src = "https://static.vecteezy.com/system/resources/previews/008/844/878/original/arrow-icon-design-free-png.png"
+  width=3.2%
+  height=3.2%/>
+</div>
+</div>
+ -->
+
+
 
   <div class="slider-prev-next-control">
     <label for=slide1></label>
@@ -80,6 +122,8 @@
     <label for=slide3></label>
     <label for=slide4></label>
     <label for=slide5></label>
+    
+    
   </div>
   <!-- .slider-prev-next-control -->
 
@@ -89,9 +133,12 @@
     <label for=slide3></label>
     <label for=slide4></label>
     <label for=slide5></label>
+    
   </div>
   <!-- .slider-dot-control -->
 </div>
+
+
 </b-container>
 
 
@@ -113,6 +160,32 @@
   max-width: 60em;
   margin: 1em auto;
   position: relative;
+}
+
+
+.img1 {
+
+  z-index: 2;
+}
+
+.img2 {
+
+  z-index: 1;
+  
+}
+
+.arrowLeft {
+  transform: translate(95.9%, -1468%);
+}
+
+.arrowRight {
+  transform: translate(-95.9%, -1570%);
+
+}
+
+.extraTranslate {
+
+  transform: rotateY(180deg);
 }
 
 input {
@@ -150,7 +223,7 @@ article img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.67);
   opacity: 0.7;
 }
 .slider-prev-next-control label:hover {

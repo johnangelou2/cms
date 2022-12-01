@@ -56,7 +56,7 @@
         <label class="sr-only" for="input-phone-num">Phone Number</label>
         <b-form-input
           id="input-phone-num"
-          v-model="form.last_name"
+          v-model="form.phoneNum"
           placeholder=""
           required
         ></b-form-input>
@@ -72,7 +72,7 @@
         </b-input-group>
 
         <br />
-        <b-button type="button" @click="onSave()" variant="primary"
+        <b-button type="button" @click="onSave" variant="primary"
           >Save</b-button
         >
         <b-button type="reset" variant="warning">Reset</b-button>
@@ -133,6 +133,9 @@ export default {
       }
     },
     edit(item, index, button) {
+      this.form.id = item.id;
+      this.form.firstName = item.firstName;
+      this.form.lastName = item.lastName;
       this.form.email = item.email;
       this.form.dateOfBirth = item.dateOfBirth;
       this.form.phoneNum = item.phoneNum;
@@ -147,10 +150,12 @@ export default {
       numId = parseInt(this.form.id);
       axios
         .put("http://localhost:8085/students/" + numId, {
-          id: numId,
-          dateOfBirth: this.form.dateOfBirth,
-          lastName: this.form.phoneNum,
-          email: this.form.email
+          "id": numId,
+          "firstName": this.form.firstName,
+          "lastName": this.form.lastName,
+          "dateOfBirth": this.form.dateOfBirth,
+          "phoneNum": this.form.phoneNum,
+          "email": this.form.email
         })
         .then(() => this.init())
         .catch(function(error) {
