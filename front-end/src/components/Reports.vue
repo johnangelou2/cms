@@ -28,7 +28,7 @@
           id="input-id"
           v-model="form.id"
           placeholder="Report ID"
-          readonly
+          required
         ></b-form-input>
 
         <label class="sr-only" for="input-date">Report Date</label>
@@ -215,7 +215,7 @@ export default {
     },
     removeReport() {
       axios 
-      .delete("http://localhost:8085/reports/" + this.row.id)
+      .delete("http://localhost:8085/reports/" + this.form.id)
       .then(() => {this.init();this.$refs['edit-modal'].hide()})
       .catch(function (error) {
         console.log(error);
