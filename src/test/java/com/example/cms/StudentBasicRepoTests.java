@@ -52,10 +52,10 @@ public class StudentBasicRepoTests {
                 .andReturn().getResponse();
 
         assertEquals(200, response.getStatus());
-    ObjectNode receivedJson = objectMapper.readValue(response.getContentAsString(), ObjectNode.class);
-    assertEquals(1006722520L, receivedJson.get("id").longValue());
-    assertEquals("John", receivedJson.get("firstName").textValue());
-    assertEquals("Angelou", receivedJson.get("lastName").textValue());
+        ObjectNode receivedJson = objectMapper.readValue(response.getContentAsString(), ObjectNode.class);
+        assertEquals(1006722520L, receivedJson.get("id").longValue());
+        assertEquals("John", receivedJson.get("firstName").textValue());
+        assertEquals("Angelou", receivedJson.get("lastName").textValue());
 
         receivedJson.put("firstName", "Sean");
         receivedJson.put("lastName", "ORourke");
