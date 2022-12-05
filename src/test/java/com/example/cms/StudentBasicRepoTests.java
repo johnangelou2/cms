@@ -70,7 +70,7 @@ public class StudentBasicRepoTests {
 
     //Test creating a student
     @Test
-    public void testCreateFunctionality() throws Exception {
+    public void testCreateStudent() throws Exception {
         ObjectNode studentJson = objectMapper.createObjectNode();
         studentJson.put("id", 1006722567);
         studentJson.put("firstName", "Sean");
@@ -91,7 +91,7 @@ public class StudentBasicRepoTests {
     }
 
     @Test
-    public void testDeleteFunctionality() throws Exception {
+    public void testDeleteStudent() throws Exception {
         //Create New Student to be Deleted
         Student s = new Student();
         s.setId(123456L);
