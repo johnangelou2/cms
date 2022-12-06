@@ -1,5 +1,7 @@
 package com.example.cms;
 
+import com.example.cms.controller.exceptions.AdminNotFoundException;
+import com.example.cms.controller.exceptions.StudentNotFoundException;
 import com.example.cms.model.entity.Admin;
 import com.example.cms.model.entity.Student;
 import com.example.cms.model.repository.AdminRepository;
@@ -17,8 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -93,5 +94,52 @@ public class AdminTests {
         assertEquals("first", addedAdmin.getFirstName());
         assertEquals("last", addedAdmin.getLastName());
         assertEquals("username@testing.com", addedAdmin.getEmail());
+    }
+
+    @Test
+    void updateAdmin() throws Exception {
+        Admin admin = newAdmin();
+        ObjectNode adminJson = objectMapper.createObjectNode();
+        adminJson.put("id", admin.getId());
+        adminJson.put("firstName", "updateFirst");
+        adminJson.put("lastName", "updateLast");
+        adminJson.put("email", "new@Mail.com");
+
+        MockHttpServletResponse response = mockMvc.perform(put("/admins/"+admin.getId()).
+                        contentType("application/json").content(adminJson.toString())).
+                andReturn().getResponse();
+
+        assertEquals(200, response.getStatus());
+        Admin updateAdmin = adminRepository.findById(admin.getId()).orElseThrow();
+
+        assertEquals(admin.getId(), updateAdmin.getId());
+        assertEquals("updateFirst", updateAdmin.getFirstName());
+        assertEquals("updateLast", updateAdmin.getLastName());
+        assertEquals("new@Mail.com", updateAdmin.getEmail());
+    }
+
+    @Test
+    void deleteAdmin() throws Exception {
+        Admin admin = newAdmin();
+
+        MockHttpServletResponse response = mockMvc.perform(
+                        delete("/admins/"+admin.getId()).
+                                contentType("application/json"))
+                .andReturn().getResponse();
+
+        assertEquals(200, response.getStatus());
+        assertTrue(adminRepository.findById(admin.getId()).isEmpty());
+    }
+
+    @Test
+    void testAdminNotFound() throws Exception {
+        Long id = 33445L;
+        //Make sure no student exists with this Id
+        assertTrue(adminRepository.findById(id).isEmpty());
+
+        assertEquals((new AdminNotFoundException(id)).toString(), mockMvc.perform(get("/admins/" + id))
+                .andReturn().getResponse().getContentAsString());
+
+
     }
 }

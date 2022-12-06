@@ -38,6 +38,11 @@ public class AdminController {
                 .map(admin -> {
                     admin.setFirstName(newAdmin.getFirstName());
                     admin.setLastName(newAdmin.getLastName());
+                    admin.setEmail(newAdmin.getEmail());
+                    admin.setDateOfBirth(newAdmin.getDateOfBirth());
+                    admin.setRole(newAdmin.getRole());
+                    admin.setGender(newAdmin.getGender());
+                    admin.setPhoneNum(newAdmin.getPhoneNum());
                     return repository.save(admin);
                 })
                 .orElseGet(() -> {

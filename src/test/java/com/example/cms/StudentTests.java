@@ -1,5 +1,6 @@
 package com.example.cms;
 
+import com.example.cms.controller.exceptions.StudentNotFoundException;
 import com.example.cms.model.entity.Student;
 import com.example.cms.model.repository.StudentRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -34,7 +35,7 @@ public class StudentTests {
 
     //Test Individual Get Functionality
     @Test
-    void testGetStudents() throws Exception{
+    void getStudents() throws Exception{
         MockHttpServletResponse response = mockMvc.perform(get("/students/1006722520"))
                 .andReturn().getResponse();
 
@@ -46,8 +47,8 @@ public class StudentTests {
         assertEquals("Angelou", receivedJson.get("lastName").textValue());
 
     }
-@Test
-    void testPutStudent() throws Exception{
+    @Test
+    void updateStudent() throws Exception{
         MockHttpServletResponse response = mockMvc.perform(put("/students/1006722520"))
                 .andReturn().getResponse();
 
@@ -70,7 +71,7 @@ public class StudentTests {
 
     //Test creating a student
     @Test
-    public void testCreateStudent() throws Exception {
+    public void createStudent() throws Exception {
         ObjectNode studentJson = objectMapper.createObjectNode();
         studentJson.put("id", 1006722567);
         studentJson.put("firstName", "Sean");
@@ -91,7 +92,7 @@ public class StudentTests {
     }
 
     @Test
-    public void testDeleteStudent() throws Exception {
+    public void deleteStudent() throws Exception {
         //Create New Student to be Deleted
         Student s = new Student();
         s.setId(123456L);
@@ -120,6 +121,18 @@ public class StudentTests {
         ObjectNode receivedJson = objectMapper.readValue(response.getContentAsString(), ObjectNode.class);
 
         assertEquals("password123", receivedJson.get("password").textValue());
+
+    }
+
+    @Test
+    void testStudentNotFound() throws Exception {
+        Long id = 33445L;
+        //Make sure no student exists with this Id
+        assertTrue(studentRepository.findById(id).isEmpty());
+
+        assertEquals((new StudentNotFoundException(id)).toString(), mockMvc.perform(get("/students/" + id))
+                .andReturn().getResponse().getContentAsString());
+
 
     }
 
