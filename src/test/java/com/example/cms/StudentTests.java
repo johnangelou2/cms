@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class StudentBasicRepoTests {
+public class StudentTests {
 
     @Autowired
     StudentRepository studentRepository;

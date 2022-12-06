@@ -1,6 +1,5 @@
 package com.example.cms;
 
-import com.example.cms.model.entity.Room;
 import com.example.cms.model.entity.RoomKey;
 import com.example.cms.model.repository.RoomRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,7 +22,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @SpringBootTest
 @AutoConfigureMockMvc
 @EnableWebMvc
-public class RoomRepoTests {
+public class RoomTests {
 
     @Autowired
     RoomRepository roomRepository;
@@ -97,7 +96,7 @@ public class RoomRepoTests {
         roomJson.put("roomCap", 1);
 
         MockHttpServletResponse response = mockMvc.perform(post("/rooms").
-                contentType("application/json").contentType(roomJson.toString())).
+                contentType("application/json").content(roomJson.toString())).
                 andReturn().getResponse();
 
         assertEquals(200, response.getStatus());

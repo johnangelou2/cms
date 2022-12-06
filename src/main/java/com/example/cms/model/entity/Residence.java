@@ -25,10 +25,6 @@ public class Residence {
     @NotEmpty
     private String name;
 
-    
-    @OneToMany(mappedBy = "residenceId")
-    private List<Room> rooms = new ArrayList<>();
-
     //@OneToMany(mappedBy = "reports")
     //@Nullable
     //private List<Report> resReports = new ArrayList<>();
