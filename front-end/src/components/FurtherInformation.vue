@@ -82,7 +82,7 @@
       <div class="img-container">
         <figure>
           <img
-            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+            src="https://media-exp1.licdn.com/dms/image/D5603AQHOpBn_yu1osQ/profile-displayphoto-shrink_400_400/0/1665253113814?e=1675900800&v=beta&t=5ppFhGcZ72HweV0aqdmFrwBIhkCVwCevcA8kJywpXT4"
             alt="Junwon Kang"
             style="width:50%"
           />
@@ -90,7 +90,7 @@
         </figure>
         <figure>
           <img
-            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+            src="https://media-exp1.licdn.com/dms/image/C4D03AQEN6HCLvV82ow/profile-displayphoto-shrink_400_400/0/1611343482255?e=1675900800&v=beta&t=UhWqgOkNDMiSfKntZc328zes5HUGknCK099z9DDMrps"
             alt="Minseok Song"
             style="width:50%"
           />
@@ -98,7 +98,7 @@
         </figure>
         <figure>
           <img
-            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+            src="https://media-exp1.licdn.com/dms/image/C4E03AQEf8FjghssTpA/profile-displayphoto-shrink_400_400/0/1654287451014?e=1675900800&v=beta&t=ribNTndHQCuHrTSPxg6S-jy53DnQ797a7YKfgHV_91w"
             alt="David Tong"
             style="width:50%"
           />
@@ -106,7 +106,7 @@
         </figure>
         <figure>
           <img
-            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+            src="https://media-exp1.licdn.com/dms/image/C5603AQFCQvfAE0L3og/profile-displayphoto-shrink_400_400/0/1658070123231?e=1675900800&v=beta&t=v3uzMP_0GB8jr0rIZKn_83khach_TarwuZP7lxkxGho"
             alt="John Angelou"
             style="width:50%"
           />
@@ -114,7 +114,7 @@
         </figure>
         <figure>
           <img
-            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+            src="https://media-exp1.licdn.com/dms/image/C4D03AQHXV3ct2X3DCg/profile-displayphoto-shrink_400_400/0/1619979752508?e=1675900800&v=beta&t=CjNPMkTVSeITiu4CR_7WwCcd4Pz70o_jR4QW-Yj_jcY"
             alt="Cole Stotland"
             style="width:50%"
           />
@@ -122,7 +122,7 @@
         </figure>
         <figure>
           <img
-            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+            src="https://media-exp1.licdn.com/dms/image/C4E03AQF2YAr8PvPP1g/profile-displayphoto-shrink_400_400/0/1606345714625?e=1675900800&v=beta&t=0LdzbJa-L1pMrrYa1A_h8Nh-UQEtZGIMGUyx4kwK2Uw"
             alt="Jeremie Collette"
             style="width:50%"
           />
@@ -130,7 +130,7 @@
         </figure>
         <figure>
           <img
-            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+            src="https://media-exp1.licdn.com/dms/image/D5603AQGgRAUxtifGSA/profile-displayphoto-shrink_400_400/0/1667803847827?e=1675900800&v=beta&t=H_8BjF56VH1FPXzWFB80Fzr2H9kavVfwXAYIFRakicw"
             alt="Mukund Hari"
             style="width:50%"
           />
