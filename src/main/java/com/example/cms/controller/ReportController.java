@@ -3,6 +3,7 @@ import com.example.cms.controller.dto.ReportDto;
 import com.example.cms.controller.exceptions.ReportNotFoundException;
 import com.example.cms.model.entity.Report;
 import com.example.cms.model.entity.Admin;
+import com.example.cms.model.repository.AdminRepository;
 import com.example.cms.model.repository.ReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,9 @@ public class ReportController {
     @Autowired
     private final ReportRepository repository;
 
+    @Autowired
+    private AdminRepository adminRepository;
+
     public ReportController(ReportRepository repository) {
         this.repository = repository;
     }
@@ -28,13 +32,14 @@ public class ReportController {
     Report createReport(@RequestBody ReportDto reportDto) {
         Report newReport = new Report();
         //date, time, status, admin
-        reportDto.setReportId(newReport.getReportId());
-        reportDto.setTime(newReport.getTime());
-        reportDto.setType(newReport.getType());
-        reportDto.setDate(newReport.getDate());
-        reportDto.setDescription(newReport.getDescription());
-        reportDto.setStatus(newReport.getStatus());
-        reportDto.setAuthor(newReport.getAuthor());
+        newReport.setReportId(reportDto.getReportId());
+        newReport.setDate(reportDto.getDate());
+        newReport.setTime(reportDto.getTime());
+        newReport.setType(reportDto.getType());
+        newReport.setDescription(reportDto.getDescription());
+        newReport.setStatus(reportDto.getStatus());
+        newReport.setAuthor(adminRepository.findById(reportDto.getAuthor()).orElseThrow(() -> new ReportNotFoundException(reportDto.getAuthor())));
+
         return repository.save(newReport);
     }
 

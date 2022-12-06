@@ -19,6 +19,6 @@ public class ReportDto {
     String description;
     String type;
     String status;
-    Admin author;
+    Long author;
 
 }

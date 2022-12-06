@@ -69,18 +69,22 @@ public class ReportTests {
     @Test
     public void testCreateReport() throws Exception {
         ObjectNode reportJson = objectMapper.createObjectNode();
-        reportJson.put("id", 010);
+        reportJson.put("reportId", 10L);
         reportJson.put("date", "2022-12-10");
+        reportJson.put("author", 22222222L);
+        reportJson.put("status", "current");
 
         MockHttpServletResponse response = mockMvc.perform(post("/reports").
-                        contentType("application/json").
-                        content(reportJson.toString()))
+                        contentType("application/json").content(reportJson.toString()))
                 .andReturn().getResponse();
         assertEquals(200, response.getStatus());
 
-        assertTrue(reportRepository.findById(010L).isPresent());
-        Report testRep = reportRepository.findById(010L).get();
+        assertTrue(reportRepository.findById(10L).isPresent());
+        Report testRep = reportRepository.findById(10L).get();
+        assertEquals(10, testRep.getReportId());
         assertEquals("2022-12-10", testRep.getDate());
+        assertEquals(22222222L, testRep.getAuthor().getId());
+        assertEquals("current", testRep.getStatus());
     }
 
     @Test
