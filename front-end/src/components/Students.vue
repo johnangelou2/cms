@@ -1,157 +1,172 @@
 <template>
   <div class="hello">
     <b-container>
-    <br>
-    <b-row>
-      <b-col><h2 style="text-center">Students Information</h2></b-col>
-      <b-col><b-button v-b-modal.add-modal block variant="success" type="button" @click="addStudent" style="float: right;">New Student</b-button></b-col>
-    </b-row>
-    <br>
-    <b-table striped hover responsive :items="students" :fields="fields"
-    label-sort-asc=""
-    label-sort-desc=""
-    label-sort-clear="">
-      <template #cell(actions)="row">
-        <b-button
-          size="sm"
-          v-b-modal.edit-modal
-          @click="edit(row.item, row.index, $event.target)"
+      <br />
+      <b-row>
+        <b-col><h2 style="text-center">Students Information</h2></b-col>
+        <b-col
+          ><b-button
+            v-b-modal.add-modal
+            block
+            variant="success"
+            type="button"
+            style="float: right;"
+            >New Student</b-button
+          ></b-col
         >
-          Edit
-        </b-button>
-      </template>
-    </b-table>
-    <b-modal
-      id="edit-modal"
-      title="Edit Student"
-      @hide="resetEditModal"
-      hide-footer
-    >
-      <b-form>
-        <label class="sr-only" for="input-id">Student ID</label>
-        <b-form-input
-          id="input-id"
-          v-model="form.id"
-          placeholder="Student ID"
-          readonly
-        ></b-form-input>
-
-        <label class="sr-only" for="input-first-name">First Name</label>
-        <b-form-input
-          id="input-first-name"
-          v-model="form.firstName"
-          placeholder="Jane"
-          required
-          
-        ></b-form-input>
-
-        <label class="sr-only" for="input-last-name">Last Name</label>
-        <b-form-input
-          id="input-last-name"
-          v-model="form.lastName"
-          placeholder="Doe"
-          required
-        ></b-form-input>
-
-        <label class="sr-only" for="input-date-of-birth">Date of Birth</label>
-        <b-form-input
-          id="input-date-of-birth"
-          v-model="form.dateOfBirth"
-          placeholder="Date of Birth"
-          required
-        ></b-form-input>
-
-        <label class="sr-only" for="input-phone-num">Phone Number</label>
-        <b-form-input
-          id="input-phone-num"
-          v-model="form.phoneNum"
-          placeholder=""
-          required
-        ></b-form-input>
-
-        <label class="sr-only" for="input-email">Email</label>
-        <b-input-group prepend="@">
+      </b-row>
+      <br />
+      <b-table
+        striped
+        hover
+        responsive
+        :items="students"
+        :fields="fields"
+        label-sort-asc=""
+        label-sort-desc=""
+        label-sort-clear=""
+      >
+        <template #cell(actions)="row">
+          <b-button
+            size="sm"
+            v-b-modal.edit-modal
+            @click="edit(row.item, row.index, $event.target)"
+          >
+            Edit
+          </b-button>
+        </template>
+      </b-table>
+      <b-modal
+        id="edit-modal"
+        title="Edit Student"
+        @hide="resetEditModal"
+        hide-footer
+      >
+        <b-form>
+          <label class="sr-only" for="input-id">Student ID</label>
           <b-form-input
-            id="input-email"
-            v-model="form.email"
-            placeholder="Email"
+            id="input-id"
+            v-model="form.id"
+            placeholder="Student ID"
+            readonly
+          ></b-form-input>
+
+          <label class="sr-only" for="input-first-name">First Name</label>
+          <b-form-input
+            id="input-first-name"
+            v-model="form.firstName"
+            placeholder="Jane"
             required
           ></b-form-input>
-        </b-input-group>
 
-        <br />
-        <b-button type="button" @click="onSave" variant="primary"
-          >Save</b-button
-        >
-        <b-button type="reset" variant="warning">Reset</b-button>
-        <b-button type="button" @click="removeStudent" variant="danger">Remove Student</b-button>
-      </b-form>
-    </b-modal>
-    <b-modal
-      id="add-modal"
-      title="Add Student"
-      @hide="resetEditModal"
-      hide-footer
-    >
-      <b-form>
-        <label class="sr-only" for="input-id">Student ID</label>
-        <b-form-input
-          id="input-id"
-          v-model="form.id"
-          placeholder="Student ID"
-          required
-        ></b-form-input>
-
-        <label class="sr-only" for="input-first-name">First Name</label>
-        <b-form-input
-          id="input-first-name"
-          v-model="form.firstName"
-          placeholder="Jane"
-          required
-          
-        ></b-form-input>
-
-        <label class="sr-only" for="input-last-name">Last Name</label>
-        <b-form-input
-          id="input-last-name"
-          v-model="form.lastName"
-          placeholder="Doe"
-          required
-        ></b-form-input>
-
-        <label class="sr-only" for="input-date-of-birth">Date of Birth</label>
-        <b-form-input
-          id="input-date-of-birth"
-          v-model="form.dateOfBirth"
-          placeholder="Date of Birth"
-          required
-        ></b-form-input>
-
-        <label class="sr-only" for="input-phone-num">Phone Number</label>
-        <b-form-input
-          id="input-phone-num"
-          v-model="form.phoneNum"
-          placeholder=""
-          required
-        ></b-form-input>
-
-        <label class="sr-only" for="input-email">Email</label>
-        <b-input-group prepend="@">
+          <label class="sr-only" for="input-last-name">Last Name</label>
           <b-form-input
-            id="input-email"
-            v-model="form.email"
-            placeholder="Email"
+            id="input-last-name"
+            v-model="form.lastName"
+            placeholder="Doe"
             required
           ></b-form-input>
-        </b-input-group>
 
-        <br />
-        <b-button type="button" @click="addStudent" variant="primary"
-          >Add</b-button
-        >
-      </b-form>
-    </b-modal>
-  </b-container>
+          <label class="sr-only" for="input-date-of-birth">Date of Birth</label>
+          <b-form-input
+            id="input-date-of-birth"
+            v-model="form.dateOfBirth"
+            placeholder="Date of Birth"
+            required
+          ></b-form-input>
+
+          <label class="sr-only" for="input-phone-num">Phone Number</label>
+          <b-form-input
+            id="input-phone-num"
+            v-model="form.phoneNum"
+            placeholder=""
+            required
+          ></b-form-input>
+
+          <label class="sr-only" for="input-email">Email</label>
+          <b-input-group prepend="@">
+            <b-form-input
+              id="input-email"
+              v-model="form.email"
+              placeholder="Email"
+              required
+            ></b-form-input>
+          </b-input-group>
+
+          <br />
+          <b-button type="button" @click="onSave" variant="primary"
+            >Save</b-button
+          >
+          <b-button type="reset" variant="warning">Reset</b-button>
+          <b-button type="button" @click="removeStudent" variant="danger"
+            >Remove Student</b-button
+          >
+        </b-form>
+      </b-modal>
+      <b-modal
+        id="add-modal"
+        title="Add Student"
+        @hide="resetEditModal"
+        hide-footer
+      >
+        <b-form>
+          <label class="sr-only" for="input-id">Student ID</label>
+          <b-form-input
+            id="input-id"
+            v-model="form.id"
+            placeholder="Student ID"
+            required
+          ></b-form-input>
+
+          <label class="sr-only" for="input-first-name">First Name</label>
+          <b-form-input
+            id="input-first-name"
+            v-model="form.firstName"
+            placeholder="Jane"
+            required
+          ></b-form-input>
+
+          <label class="sr-only" for="input-last-name">Last Name</label>
+          <b-form-input
+            id="input-last-name"
+            v-model="form.lastName"
+            placeholder="Doe"
+            required
+          ></b-form-input>
+
+          <label class="sr-only" for="input-date-of-birth">Date of Birth</label>
+          <b-form-input
+            id="input-date-of-birth"
+            v-model="form.dateOfBirth"
+            placeholder="Date of Birth"
+            required
+          ></b-form-input>
+
+          <label class="sr-only" for="input-phone-num">Phone Number</label>
+          <b-form-input
+            id="input-phone-num"
+            v-model="form.phoneNum"
+            placeholder=""
+            required
+          ></b-form-input>
+
+          <label class="sr-only" for="input-email">Email</label>
+          <b-input-group prepend="@">
+            <b-form-input
+              id="input-email"
+              v-model="form.email"
+              placeholder="Email"
+              required
+            ></b-form-input>
+          </b-input-group>
+
+          <br />
+          <b-button type="button" @click="addStudent" variant="primary"
+            >Add</b-button
+          >
+        </b-form>
+      </b-modal>
+    </b-container>
   </div>
 </template>
 
@@ -166,8 +181,8 @@ export default {
       studentnum: "",
       fields: [
         { key: "id", label: "Student ID", sortable: true },
-        { key: "lastName", label: "Last Name", sortable: true},
-        { key: "firstName", label: "First Name", sortable: true},
+        { key: "lastName", label: "Last Name", sortable: true },
+        { key: "firstName", label: "First Name", sortable: true },
         { key: "dateOfBirth", label: "Date of Birth", sortable: false },
         { key: "phoneNum", label: "Phone Number", sortable: true },
         { key: "email", label: "Email", sortable: true, sortable: true },
@@ -193,27 +208,33 @@ export default {
         .then(response => (this.students = response.data));
     },
     addStudent() {
-      axios 
-      .post("http://localhost:8085/students", {
-        "id": this.form.id,
-        "firstName": this.form.firstName,
-        "lastName": this.form.lastName,
-        "dateOfBirth": this.form.dateOfBirth,
-        "phoneNum": this.form.phoneNum,
-        "email": this.form.email
-      })
-      .then(() => {this.init();this.$refs['add-modal'].hide()})
-      .catch(function (error) {
-        console.log(error);
-      }); 
+      axios
+        .post("http://localhost:8085/students", {
+          id: this.form.id,
+          firstName: this.form.firstName,
+          lastName: this.form.lastName,
+          dateOfBirth: this.form.dateOfBirth,
+          phoneNum: this.form.phoneNum,
+          email: this.form.email
+        })
+        .then(() => {
+          this.init();
+          this.$refs["add-modal"].hide();
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     },
     removeStudent() {
       axios
-      .delete("http://localhost:8085/students/" + this.form.id)
-      .then(() => {this.init();this.$refs['edit-modal'].hide()})
-      .catch(function (error) {
-        console.log(error);
-      });
+        .delete("http://localhost:8085/students/" + this.form.id)
+        .then(() => {
+          this.init();
+          this.$refs["edit-modal"].hide();
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     },
     edit(item, index, button) {
       this.form.id = item.id;
@@ -233,19 +254,19 @@ export default {
       numId = parseInt(this.form.id);
       axios
         .put("http://localhost:8085/students/" + numId, {
-          "id": numId,
-          "firstName": this.form.firstName,
-          "lastName": this.form.lastName,
-          "dateOfBirth": this.form.dateOfBirth,
-          "phoneNum": this.form.phoneNum,
-          "email": this.form.email
+          id: numId,
+          firstName: this.form.firstName,
+          lastName: this.form.lastName,
+          dateOfBirth: this.form.dateOfBirth,
+          phoneNum: this.form.phoneNum,
+          email: this.form.email
         })
         .then(() => this.init())
         .catch(function(error) {
           console.log(error);
         });
-        window.alert("Changes Saved!");
-        this.init();
+      window.alert("Changes Saved!");
+      this.init();
     }
   }
 };
@@ -269,6 +290,6 @@ a {
   color: #42b983;
 }
 .search-container {
-  padding:2%
+  padding: 2%;
 }
 </style>
