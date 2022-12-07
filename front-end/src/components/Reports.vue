@@ -31,6 +31,7 @@
           v-model="form.reportId"
           placeholder="Report ID"
           required
+          readonly
         ></b-form-input>
 
         <label class="sr-only" for="input-date">Report Date</label>
@@ -73,12 +74,13 @@
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-adminId">Author</label>
+        <label class="sr-only" for="input-adminId">Original Author</label>
         <b-form-input
           id="input-adminId"
           v-model="form.adminId"
           placeholder="adminId"
           required
+          readonly
         ></b-form-input>
         <br />
         <b-button type="button" @click="onSave" variant="primary"
@@ -177,7 +179,7 @@ export default {
         { key: "type", label: "Report Type", sortable: true },
         { key: "status", label: "Report Status", sortable: true },
         {
-          key: "adminId",
+          key: "adminId.id",
           label: "Report Admin",
           sortable: true
         },
@@ -212,7 +214,7 @@ export default {
         description: this.form.description,
         type: this.form.type,
         status: this.form.status,
-        adminId: this.form.adminId,
+        adminId: this.form.adminId.id,
       })
       .then(() => {this.init();this.$refs['add-modal'].hide()})
       .catch(function (error) {
@@ -234,7 +236,7 @@ export default {
       this.form.description = item.description;
       this.form.type = item.type;
       this.form.status = item.status;
-      this.form.adminId = item.adminId;
+      this.form.adminId = item.adminId.id;
     },
     resetEditModal() {
       this.form.reportId = item.reportId;
@@ -243,7 +245,7 @@ export default {
       this.form.description = item.description;
       this.form.type = item.type;
       this.form.status = item.status;
-      this.form.adminId = item.adminId;
+      this.form.adminId = item.adminId.id;
     },
     onSave() {
       var numId;
@@ -256,7 +258,7 @@ export default {
           description: this.form.description,
           type: this.form.type,
           status: this.form.status,
-          adminId: this.form.adminId
+          adminId: this.form.id
         })
         .then(() => {this.init();this.$refs['edit-modal'].hide()})
         .catch(function(error) {
