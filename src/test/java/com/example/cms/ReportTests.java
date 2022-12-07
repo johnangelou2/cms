@@ -71,7 +71,7 @@ public class ReportTests {
         ObjectNode reportJson = objectMapper.createObjectNode();
         reportJson.put("reportId", 10L);
         reportJson.put("date", "2022-12-10");
-        reportJson.put("author", 22222222L);
+        reportJson.put("adminId", 22222222L);
         reportJson.put("status", "current");
 
         MockHttpServletResponse response = mockMvc.perform(post("/reports").
@@ -83,7 +83,7 @@ public class ReportTests {
         Report testRep = reportRepository.findById(10L).get();
         assertEquals(10, testRep.getReportId());
         assertEquals("2022-12-10", testRep.getDate());
-        assertEquals(22222222L, testRep.getAuthor().getId());
+        assertEquals(22222222L, testRep.getAdminId().getId());
         assertEquals("current", testRep.getStatus());
     }
 

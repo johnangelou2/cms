@@ -35,8 +35,8 @@ public class Report {
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "id")
-    private Admin author;
+    @JoinColumn(name = "adminId")
+    private Admin adminId;
 
     @ManyToOne
     @JoinColumns({

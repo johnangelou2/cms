@@ -73,11 +73,11 @@
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-author">Author</label>
+        <label class="sr-only" for="input-adminId">Author</label>
         <b-form-input
-          id="input-author"
-          v-model="form.author"
-          placeholder="Author"
+          id="input-adminId"
+          v-model="form.adminId"
+          placeholder="adminId"
           required
         ></b-form-input>
         <br />
@@ -143,14 +143,18 @@
           required
         ></b-form-input>
 
-        <label class="sr-only" for="input-author">Author</label>
+        <label class="sr-only" for="input-adminId">Author</label>
         <b-form-input
-          id="input-author"
-          v-model="form.author"
-          placeholder="Author"
+          id="input-adminId"
+          v-model="form.adminId"
+          placeholder="adminId"
           required
         ></b-form-input>
         <br />
+        <br />
+          <b-button type="button" @click="addReport" variant="primary"
+            >Add</b-button
+          >
       </b-form>
     </b-modal>
   </b-container>
@@ -173,7 +177,7 @@ export default {
         { key: "type", label: "Report Type", sortable: true },
         { key: "status", label: "Report Status", sortable: true },
         {
-          key: "author.id",
+          key: "adminId",
           label: "Report Admin",
           sortable: true
         },
@@ -185,7 +189,8 @@ export default {
         time:"",
         description:"",
         type: "",
-        status: ""
+        status: "",
+        adminId: ""
       }
     };
   },
@@ -201,12 +206,13 @@ export default {
     addReport() {
       axios
       .post("http://localhost:8085/reports/", {
-        "reportId": this.form.reportId,
-        "date": this.form.date,
-        "time": this.form.time,
-        "description": this.form.description,
-        "type": this.form.type,
-        "status": this.form.status,
+        reportId: this.form.reportId,
+        date: this.form.date,
+        time: this.form.time,
+        description: this.form.description,
+        type: this.form.type,
+        status: this.form.status,
+        adminId: this.form.adminId,
       })
       .then(() => {this.init();this.$refs['add-modal'].hide()})
       .catch(function (error) {
@@ -228,7 +234,7 @@ export default {
       this.form.description = item.description;
       this.form.type = item.type;
       this.form.status = item.status;
-      this.form.admin = item.admin;
+      this.form.adminId = item.adminId;
     },
     resetEditModal() {
       this.form.reportId = item.reportId;
@@ -237,7 +243,7 @@ export default {
       this.form.description = item.description;
       this.form.type = item.type;
       this.form.status = item.status;
-      this.form.admin = item.admin;
+      this.form.adminId = item.adminId;
     },
     onSave() {
       var numId;
@@ -250,7 +256,7 @@ export default {
           description: this.form.description,
           type: this.form.type,
           status: this.form.status,
-          admin: this.form.admin
+          adminId: this.form.adminId
         })
         .then(() => {this.init();this.$refs['edit-modal'].hide()})
         .catch(function(error) {

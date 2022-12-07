@@ -65,11 +65,11 @@ INSERT INTO admins (id, firstName, lastName, gender, dateOfBirth, phoneNum, pass
 INSERT INTO admins (id, firstName, lastName, gender, dateOfBirth, phoneNum, password, residenceIdence, roomNumber, resId, email, role, contractStart, contractEnd) VALUES (55555555, 'Mary', 'Brown', 'F', '1998-03-14', '12798371289', 'adminPassword5', 1, 102, 1, 'Mary.brown@mail.utoronto.ca', 'Floor 17 Don', '2020-01-01', '2022-12-20');
 
 --REPORTS
-INSERT INTO reports (reportId, date, time, description, type, status, resId, roomNumber,  id) VALUES (001, '2022-09-10', '040812', 'A student got in a fight', 'Violent', 'resolved', 3, 201, 11111111);
-INSERT INTO reports (reportId, date, time, description, type, status, resId, roomNumber,  id) VALUES (002, '2022-12-07', '050812', 'Underage Drinking', 'Nonviolent', 'resolved', 3, 202, 22222222);
-INSERT INTO reports (reportId, date, time, description, type, status, resId, roomNumber,  id) VALUES (003, '2022-10-10', '060812', 'Noise complaint', 'Nonviolent', 'resolved', 3, 203, 33333333);
-INSERT INTO reports (reportId, date, time, description, type, status, resId, roomNumber,  id) VALUES (004, '2022-12-08', '080812', 'Room capacity violation', 'Nonviolent', 'resolved', 3, 204, 44444444);
-INSERT INTO reports (reportId, date, time, description, type, status, resId, roomNumber,  id) VALUES (005, '2022-10-10', '070812', 'Illegal drugs', 'Nonviolent', 'in progress', 3, 205, 55555555);
+INSERT INTO reports (reportId, date, time, description, type, status, resId, roomNumber, adminId) VALUES (001, '2022-09-10', '040812', 'A student got in a fight', 'Violent', 'resolved', 3, 201, 11111111);
+INSERT INTO reports (reportId, date, time, description, type, status, resId, roomNumber, adminId) VALUES (002, '2022-12-07', '050812', 'Underage Drinking', 'Nonviolent', 'resolved', 3, 202, 22222222);
+INSERT INTO reports (reportId, date, time, description, type, status, resId, roomNumber, adminId) VALUES (003, '2022-10-10', '060812', 'Noise complaint', 'Nonviolent', 'resolved', 3, 203, 33333333);
+INSERT INTO reports (reportId, date, time, description, type, status, resId, roomNumber, adminId) VALUES (004, '2022-12-08', '080812', 'Room capacity violation', 'Nonviolent', 'resolved', 3, 204, 44444444);
+INSERT INTO reports (reportId, date, time, description, type, status, resId, roomNumber, adminId) VALUES (005, '2022-10-10', '070812', 'Illegal drugs', 'Nonviolent', 'in progress', 3, 205, 55555555);
 
 
 

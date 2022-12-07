@@ -38,7 +38,7 @@ public class ReportController {
         newReport.setType(reportDto.getType());
         newReport.setDescription(reportDto.getDescription());
         newReport.setStatus(reportDto.getStatus());
-        newReport.setAuthor(adminRepository.findById(reportDto.getAuthor()).orElseThrow(() -> new ReportNotFoundException(reportDto.getAuthor())));
+        newReport.setAdminId(adminRepository.findById(reportDto.getAdminId()).orElseThrow(() -> new ReportNotFoundException(reportDto.getAdminId())));
 
         return repository.save(newReport);
     }
